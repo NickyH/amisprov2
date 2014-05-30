@@ -621,6 +621,7 @@ function show_member_timesheet() {
 
 function goto_map() {
   map_navbar();
+  $('#insert-left').empty();
   $('#insert-form').empty();
   $.get('MapLayer.html', function(data) {
     $('#insert-map').html(data);
