@@ -7,11 +7,6 @@ body {
   font-family: @font-family-main;
 }
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
-
 //login panel
 
 .container-fluid {
@@ -94,16 +89,16 @@ li.active {
 
 #insert-map {
   position: fixed;
-  left: @left-bar-width;
+  left: 0;
   top: @top-bar-height;
-  width: 100%;
-  height: 100%;
+  width: 1300px;
+  height: auto;
 }
 
 #map {
   display: block;
-  width: 100%;
-  height: 100%;
+  width: 1300px;
+  height: auto;
   margin: 0;
   img {
     width: 100%;
@@ -127,83 +122,31 @@ li.active {
   z-index: 3;
 }
 
-//top bar right panel (utility bar)
-
-.utility-tab {
-  display: inline;
-  float: right;
-  padding: 0;
-  margin: 0;
-  .tab-shape { height: 100px; }
-  width: auto;
-}
-
 // top right icons
 
 .top-bar-icons {
   border-radius: 8px;
-  position: absolute;
+  position: relative;
   top: 0px;
-  margin: 24px;
+  margin: 10px;
   width: 50px;
-  opacity: 0.8;
+  opacity: 0.7;
+  margin-right: 30px;
+  cursor: pointer;
+  float: right;
   &.inactive {
     opacity: 0.2;
   }
   &.amis-icon {
-    left: 0;
     width: 300px;
     margin-top: 0;
+    cursor: pointer;
+    float: left;
   }
-  &.icon-address-book {
-    right: 330px;
-    background-color: @map-highlight-colour !important;
-  }
-  &.icon-locate-me {
-    right: 230px;
-    background-color: @map-highlight-colour !important;
-  }
-  &.icon-follow-me {
-    right: 130px;
-    background-color: @map-highlight-colour !important;
-  }
-  &.icon-startgps {
-    right: 30px;
-    background-color: @map-highlight-colour !important;
-  }
-  //form tool icons
-  &.icon-raise {
-    left: 130px;
-    background-color: @map-highlight-colour !important;
-  }
-  &.icon-asset {
-    right: 530px;
-    background-color: @form-highlight-colour !important;
-  }
-  &.icon-request {
-    right: 450px;
-    background-color: @form-highlight-colour !important;
-  }
-  &.icon-inspect {
-    right: 370px;
-    background-color: @form-highlight-colour !important;
-  }
-  &.icon-defects {
-    right: 290px;
-    background-color: @form-highlight-colour !important;
-  }
-  &.icon-task {
-    right: 210px;
-    background-color: @form-highlight-colour !important;
-  }
-  &.icon-clock {
-    right: 130px;
-    background-color: @form-highlight-colour !important;
-  }
-  &.icon-history {
-    right: 30px;
-    background-color: @map-highlight-colour !important;
-  }
+}
+
+.top-bar-icons:hover {
+  opacity: 0.9;
 }
 
 .top-bar-icons {
@@ -216,26 +159,6 @@ li.active {
     position: absolute;
     margin-top: 15px;
     margin-bottom: auto;
-    &.icon-asset {
-      left: 30px;
-      background-color: @form-highlight-colour !important;
-    }
-    &.icon-request {
-      left: 130px;
-      background-color: @form-highlight-colour !important;
-    }
-    &.icon-inspect {
-      left: 230px;
-      background-color: @form-highlight-colour !important;
-    }
-    &.icon-defects {
-      left: 330px;
-      background-color: @form-highlight-colour !important;
-    }
-    &.icon-task {
-      left: 430px;
-      background-color: @form-highlight-colour !important;
-    }
   }
 }
 
@@ -344,20 +267,6 @@ li.active {
   bottom: 0;
   z-index: 4;
   border-right: 1px solid darken(@left-bar-colour, 20%);
-  .powered {
-    position: absolute;
-    bottom: 15px;
-    padding: 0 10px 0 10px;
-    span {
-      color: @white;
-      font-size: 11px;
-      display: block;
-    }
-    span:nth-child(1) {
-      font-weight: bold;
-      font-size: 13px;
-    }
-  }
 }
 
 .left-bar-icons {

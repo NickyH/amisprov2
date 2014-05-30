@@ -4,7 +4,6 @@ $(function(){
 
   //prototype only functions - Benito can delete in Visual Studio??
   insert_map();
-  insert_left();
   insert_top();
 });
 
