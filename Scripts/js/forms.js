@@ -625,8 +625,6 @@ function goto_map() {
   $.get('MapLayer.html', function(data) {
     $('#insert-map').html(data);
     });
-  $('#insert-map').trigger('create');
-  insert_left();
 }
 
 function map_navbar() {

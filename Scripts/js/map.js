@@ -538,7 +538,7 @@ function goto_forms() {
   $.get('forms/form_cr.html', function(data) {
     $('#insert-form').html(data);
     });
-  $('#insert-form').trigger('create');
+  insert_left();
   var formName = 'request'
   show_correct_ovals(formName);
 }

@@ -135,7 +135,6 @@ function insert_top() {
   $.get('top_bar.html', function(data) {
     $('#insert-top').html(data);
   });
-  $('#insert-top').trigger('create');
 }
 
 function refresh_map()

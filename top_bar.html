@@ -1,26 +1,17 @@
 <div class="top-bar">
   <div class="utility-tab map-tools">
     <!--downer icon-->
-    <img class="top-bar-icons amis-icon" id="map-link" src="../Content/images/amispro-text.png">
+    <img class="top-bar-icons amis-icon" id="map-link" src="../Content/images/amispro-text-with-icon.png">
 
     <!-- icons for map tools -->
-    <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-asset-white.png">
-    <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-history-white.png">
     <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-category-white.png">
     <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-layers-white.png">
-    <img class="top-bar-icons icon-map" id="search-by-address-button" src="../Content/images/icons/icon-globe-white.png">
+    <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-globe-white.png">
+    <img class="top-bar-icons icon-map temp" id="form-link" src="../Content/images/icons/icon-globe-white.png">
 
     <!--form icons-->
-    <img class="top-bar-icons icon-form icon-raise hidden" src="../Content/images/icons/icon-raise-white.png">
-    <img class="top-bar-icons icon-form icon-asset icon-scaffold hidden" src="../Content/images/icons/icon-asset-white.png">
-    <img class="top-bar-icons icon-form icon-request hidden" src="../Content/images/icons/icon-cr-white.png">
-    <img class="top-bar-icons icon-form icon-inspect hidden" src="../Content/images/icons/icon-inspection-white.png">
-    <img class="top-bar-icons icon-form icon-defects hidden" src="../Content/images/icons/icon-defect-white.png">
-    <img class="top-bar-icons icon-form icon-task hidden inactive" src="../Content/images/icons/icon-task-white.png">
-    <img class="top-bar-icons icon-form icon-clock hidden inactive" src="../Content/images/icons/icon-clock-white.png">
-
-    <!-- history icon -->
-    <img class="top-bar-icons icon-form icon-history hidden" src="../Content/images/icons/icon-history-white.png">
+    <img class="top-bar-icons icon-form hidden" src="../Content/images/icons/icon-asset-white.png">
+    <img class="top-bar-icons icon-form hidden" src="../Content/images/icons/icon-history-white.png">
 
   </div>
 
@@ -420,4 +411,5 @@
   $('.icon-task').on('click', insert_task_form);
   $('.icon-clock').on('click', insert_timesheet_form);
   $('#map-link').on('click', goto_map);
+  $('#form-link').on('click', goto_forms);
 </script>
