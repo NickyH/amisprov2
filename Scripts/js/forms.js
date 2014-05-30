@@ -25,7 +25,6 @@ $('.icon-raise').on('click', show_raise_qtip);
 
 function calendar_icon_click() {
   // $('.date.datepicker').trigger('focus');
-  // console.log($(this).parent().parent().children('input'));
   $(this).parent().parent().children('input').trigger('click');
 }
 
@@ -556,7 +555,6 @@ function check_this_panel_required(thisObj) {
   return required;
 }
 
-
 // datetimepicker
 $('.insert-time-picker').datetimepicker({
   pickDate: false,
@@ -596,14 +594,12 @@ $('.glyphicon-picture').on('click', show_task_map);
 $('.member-timesheet-row').on('click', show_member_timesheet);
 
 function highlight_current_break() {
-  // event.preventDefault();
   $('.breaks-row.current-break').removeClass('current-break');
   console.log($(this).parents());
   $(this).parents('.breaks-row').addClass('current-break');
 }
 
 function highlight_current_task() {
-  // event.preventDefault();
   $('.task-row.current-task').removeClass('current-task');
   console.log($(this).parents());
   $(this).parents('.task-row').addClass('current-task');
@@ -614,7 +610,6 @@ function show_task_map() {
 }
 
 function show_member_timesheet() {
-  // event.preventDefault();
   $('.member-timesheet-panel').toggleClass('hidden');
 }
 
