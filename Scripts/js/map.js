@@ -605,6 +605,7 @@ function insert_timesheet_form() {
 
 function show_correct_ovals(formName) {
   if (formName === 'request') {
+    console.log('request');
     $('a[data-href="#bookmark_condition"]').parent('li').hide();
 
     $('a[data-href="#bookmark_contact"]').parent('li').show();

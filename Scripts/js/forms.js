@@ -10,7 +10,7 @@ $('.form-horizontal').on('keyup', this, check_panel_valid);
 $('.form-horizontal').on('change', this, check_panel_valid);
 $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
-$('#bookmark-nav').on('click', 'a', check_form_location);
+$('#bookmark-nav').on('click', 'li', check_form_location);
 $('.referral-icon').on('click', toggle_referral);
 $('.reference-history tr').on('click', open_current_contact_row);
 $('.icon-history').on('click', history_qtip);
@@ -22,9 +22,13 @@ $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activat
 $('.history-button .button').on('click', toggle_history_button);
 $('.icon-raise').on('click', show_raise_qtip);
 
+function get_bubbles() {
+  $('.row').each(function() {
+    $('#bookmark-nav ul').last().append('<li><div class="oval"><span>' + this.dataset.ovalName + '</span></div></li>');
+  });
+}
 
 function calendar_icon_click() {
-  // $('.date.datepicker').trigger('focus');
   $(this).parent().parent().children('input').trigger('click');
 }
 
@@ -45,7 +49,6 @@ function toggle_history_button() {
   else {
     return false
   }
-
 }
 
 $('.select-all').on('click', function() {
@@ -67,8 +70,6 @@ function select_none() {
 $("input[type='text']").on("click", function () {
   $(this).select();
 });
-
-
 
 $(".checkbox label input").change(function() {
     var boxes = $(".action-checkbox").click(function(){
@@ -126,12 +127,10 @@ function check_panel_valid() {
         rowValid = true;
       }
     });
-
     if (rowValid) {
       toggle_oval_colour( (this), 'complete' );
     }
   }
-
   if (panelValid === false) {
     $(icon).removeClass('glyphicon-remove panel-remove glyphicon-ok panel-ok').addClass('glyphicon-remove panel-remove');
   }
@@ -404,7 +403,6 @@ function skip_to_details() {
   $(window).scrollTop((details - 200));
 }
 
-
 function table_search(thisObj, tableID) {
   var $rows = $("#"+tableID+" tr");
   var val = '^(?=.*\\b' + $.trim($(thisObj).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
@@ -612,7 +610,6 @@ function show_task_map() {
 function show_member_timesheet() {
   $('.member-timesheet-panel').toggleClass('hidden');
 }
-
 
 function goto_map() {
   map_navbar();

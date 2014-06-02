@@ -130,7 +130,7 @@ li.active {
   top: 0px;
   margin: 10px;
   width: 50px;
-  opacity: 0.7;
+  opacity: 1;
   margin-right: 40px;
   cursor: pointer;
   float: right;
@@ -138,17 +138,19 @@ li.active {
     opacity: 0.2;
   }
   &.amis-icon {
-    width: 330px;
-    margin-top: 5px;
+    width: 280px;
+    margin-top: 10px;
     cursor: pointer;
     float: left;
     margin-left: 5px;
-    opacity: 1;
   }
 }
 
 .top-bar-icons:hover {
-  opacity: 0.9;
+  opacity: 0.4;
+  &.amis-icon {
+    opacity: 0.8;
+  }
 }
 
 .top-bar-icons {
@@ -270,7 +272,6 @@ li.active {
   top: 80px;
   bottom: 0;
   z-index: 4;
-  border-right: 1px solid darken(@left-bar-colour, 20%);
 }
 
 .left-bar-icons {
@@ -348,14 +349,6 @@ li.active {
     -ms-filter: fliph; /*IE*/
     filter: fliph; /*IE*/
   }
-}
-
-.pages-icons {
-  width: 120px;
-}
-
-.pages-top {
-  margin-top: 50px !important;
 }
 
 // forms
@@ -497,7 +490,7 @@ li.active {
     float: right;
     height: 100%;
     width: 100%;
-    padding-left: 120px;
+    padding-left: @left-bar-width;
     padding-top: 50px;
     background-color: @background-main;
     }
@@ -581,7 +574,7 @@ li.active {
   float: right;
   height: 70px;
   position: fixed;
-  top: 100px;
+  top: @top-bar-height;
   right: 0;
   background-color: @background-main;
   z-index: 3;
@@ -1640,12 +1633,13 @@ li.required {
 }
 
 .oval {
-  width: 80px;
+  width: 120px;
   height: 30px;
-  border-radius: 50%;
-  background-color: @form-panel-colour;
-  border: 3px solid @white-medium;
+  border-radius: 8px;
+  background-color: @bubble-background;
+  border: 2px solid @bubble-background;
   margin-right: auto;
+  margin-top: 25px;
   margin-left: auto;
   padding-top: 5px;
   text-align: center;
@@ -1655,20 +1649,23 @@ li.required {
   transition-duration: 2s;
   span {
     color: @black-medium;
-    font-size: 13px;
+    font-size: 12px;
+    font-stretch: ultra-condensed;
     font-weight: bold;
-    letter-spacing: 0.5px;
   }
   &.current {
-    background-color: @form-highlight-colour;
+    background-color: @bubble-background-current;
+    border: 1px solid @bubble-border-current;
     box-shadow: 3px 3px 3px @black;
     -webkit-box-shadow: 3px 3px 3px @black;
-    transform: scale(1.25);
-    -ms-transform: scale(1.25);
-    -webkit-transform: scale(1.25);
+    transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
     transition-duration: 1s;
     span {
-    color: @white;
+      font-weight: bold;
+      color: @white;
+      padding-top: 10px;
     }
   }
   &.incomplete {
@@ -1679,37 +1676,16 @@ li.required {
   }
 }
 
-a.oval-text:after {
-  content: url('../images/icons/pages-line-white.png') no-repeat;
-  margin-left: 59px;
-  display: block;
-  position: relative;
-}
-
-a.oval-last:after {
-  content: "";
-}
-
 .left-nav {
-  margin-top: 50px;
+  margin-top: 10px;
   li {
-    height: 60px;
     cursor: pointer;
-    a {
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-    }
   }
 }
 
 #bookmark-nav ul {
   &.disabled {
     opacity: 0.2;
-    a {
-      cursor: auto;
-      pointer-events: none;
-    }
   }
 }
 
@@ -1740,7 +1716,6 @@ a.oval-last:after {
   }
 }
 
-
 .reference-history {
     tr:first-child th {
     font-size: 13px;
@@ -1750,7 +1725,6 @@ a.oval-last:after {
     border-bottom: 1px solid @form-highlight-colour !important;
   }
 }
-
 
 // file upload attachment styling
 input[type="file"] {

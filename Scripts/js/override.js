@@ -156,6 +156,5 @@ function show_first_form() {
   $.get('forms/form_cr.html', function(data) {
     $('#insert-form').html(data);
     });
-  $('#insert-form').trigger('create');
   window.location = ('form.html'); //initial refresh
 }
