@@ -130,6 +130,18 @@ function show_asset_select_qtip() {
       }
   });
   $('#asset-select-content').removeClass('invisible');
+  is_asset_meta1_data_selected();
+}
+
+function is_asset_meta1_data_selected() {
+  var asset_meta1_select = $('.radio-button input[type="radio"]').is(":checked");
+  if (asset_meta1_select) {
+    show_meta2_panel();
+  }
+}
+
+function show_meta2_panel() {
+  $('.asset-select-panel.panel-2').removeClass('hidden');
 }
 
 function layers_qtip() {

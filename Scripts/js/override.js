@@ -12,6 +12,7 @@ function toggle_radio() {
     $('.radio-button').removeClass('checked');
     $(this).children('input[type="radio"]').prop("checked", true);
     $(this).addClass('checked');
+    show_meta2_panel()
   }
 }
 

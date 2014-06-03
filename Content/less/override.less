@@ -954,7 +954,7 @@ li.active {
   width: 96% !important;
   height: auto !important;
   left: 2% !important;
-  top: 90px !important;
+  top: 50px !important;
   right: 2% !important;
   bottom: 20px !important;
   max-width: 2000px !important;
@@ -967,12 +967,24 @@ li.active {
   }
 }
 
-.asset-select-panel-1 {
-  margin-right: 35px;
-  margin-top: 10px;
-  background-color: #e5e5e5;
-  border-color: #dbdbdb;
-  border: 1px solid #c9c9c9;
+.asset-select-panel {
+  &.panel-1 {
+    margin-top: 40px;
+    background-color: #e5e5e5;
+    border-color: #dbdbdb;
+    border: 1px solid #c9c9c9;
+  }
+}
+
+.panel-2:before {
+  content: ' ';
+  height: 0;
+  position: absolute;
+  width: 0;
+  border: 20px solid transparent;
+  border-bottom-color: #ffffff;
+  left: 50%;
+  margin-top: -40px;
 }
 
 .input-group.radio-button {
