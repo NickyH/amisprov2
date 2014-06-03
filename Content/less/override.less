@@ -125,8 +125,9 @@ li.active {
 // top right icons
 
 .top-bar-icons {
-  border-radius: 8px;
   position: relative;
+  background-color: white;
+  border-color: @top-bar-colour;
   top: 0px;
   margin: 10px;
   width: 50px;
@@ -138,33 +139,29 @@ li.active {
     opacity: 0.2;
   }
   &.amis-icon {
+    background-color: @top-bar-colour;
     width: 280px;
     margin-top: 10px;
     cursor: pointer;
     float: left;
     margin-left: 5px;
   }
-}
-
-.top-bar-icons:hover {
-  opacity: 0.4;
-  &.amis-icon {
-    opacity: 0.8;
+  &.temp {
+    width: 5px;
   }
-}
-
-.top-bar-icons {
-  border-radius: 8px;
-  top: 0px;
-  width: 50px;
-  opacity: 0.8;
   &.icon-small {
     position: absolute;
     margin-top: 15px;
     margin-bottom: auto;
   }
-  &.temp {
-    width: 5px;
+}
+
+.top-bar-icons:hover,
+.top-bar-icons.active {
+  background-color: @icon-active-colour;
+  &.amis-icon {
+    background-color: #3e3e3e;
+    opacity: 0.8;
   }
 }
 
@@ -954,9 +951,8 @@ li.active {
   width: 96% !important;
   height: auto !important;
   left: 2% !important;
-  top: 50px !important;
+  top: 60px !important;
   right: 2% !important;
-  bottom: 20px !important;
   max-width: 2000px !important;
   max-height: 2000px !important;
   &.qtip-default {
@@ -968,15 +964,36 @@ li.active {
 }
 
 .asset-select-panel {
+  &.title-panel {
+    margin-top: -10px;
+    width: intrinsic;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 5px;
+    background-color: white;
+    border-bottom-color: #c9c9c9;
+    border-left-color: #c9c9c9;
+    border-right-color: #c9c9c9;
+    border-top-color: white;
+    .panel-body {
+      padding-bottom: 5px !important;
+      padding-top: 10px !important;
+      padding-right: 30px !important;
+      padding-left: 30px !important;
+      font-size: 16px !important;
+      font-weight: bold;
+      color: @asset-select-buttons;
+    }
+  }
   &.panel-1 {
-    margin-top: 40px;
     background-color: #e5e5e5;
     border-color: #dbdbdb;
     border: 1px solid #c9c9c9;
   }
 }
 
-.panel-2:before {
+.panel-2:before,
+.panel-3:before {
   content: ' ';
   height: 0;
   position: absolute;
@@ -989,7 +1006,7 @@ li.active {
 
 .input-group.radio-button {
   display: inline-block;
-  margin: 10px;
+  margin: 5px;
   cursor: pointer;
   width: 200px;
   height: 30px;

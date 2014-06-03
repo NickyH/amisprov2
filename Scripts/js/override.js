@@ -8,12 +8,19 @@ $(function(){
 
 function toggle_radio() {
   if ($(this).children('input[type="radio"]').prop('checked') === false ) {
-    $('input[type="radio"]').prop('checked', false);
-    $('.radio-button').removeClass('checked');
+    $(this).parents('.panel-body').children('.radio-button').children('input[type="radio"]').prop('checked', false);
+    $(this).parents('.panel-body').children('.radio-button').removeClass('checked');
     $(this).children('input[type="radio"]').prop("checked", true);
     $(this).addClass('checked');
-    show_meta2_panel()
   }
+}
+
+function show_meta2_panel() {
+  $('.asset-select-panel.panel-2').removeClass('hidden');
+}
+
+function show_meta3_panel() {
+  $('.asset-select-panel.panel-3').removeClass('hidden');
 }
 
 /* Custom animation for a table row to slide up or down */

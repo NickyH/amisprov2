@@ -93,6 +93,7 @@ function layer_active_clicked() {
 }
 
 function show_asset_select_qtip() {
+  $(this).addClass('active');
   $(this).qtip({
       content: {
         text: $('#asset-select-content'),
@@ -117,6 +118,7 @@ function show_asset_select_qtip() {
           event: 'click',
           effect: function () {
               $(this).slideUp(300);
+              $('#asset-select').removeClass('active');
           }
       },
       overwrite: false,
@@ -138,10 +140,6 @@ function is_asset_meta1_data_selected() {
   if (asset_meta1_select) {
     show_meta2_panel();
   }
-}
-
-function show_meta2_panel() {
-  $('.asset-select-panel.panel-2').removeClass('hidden');
 }
 
 function layers_qtip() {
