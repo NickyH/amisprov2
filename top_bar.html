@@ -4,7 +4,7 @@
     <img class="top-bar-icons amis-icon" id="map-link" src="../Content/images/amispro-text-with-icon.png">
 
     <!-- icons for map tools -->
-    <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-category-white.png">
+    <img class="top-bar-icons icon-map" id="asset-select" src="../Content/images/icons/icon-category-white.png">
     <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-layers-white.png">
     <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-globe-white.png">
     <img class="top-bar-icons icon-map temp" id="form-link" src="../Content/images/icons/icon-globe-white.png">
@@ -16,7 +16,6 @@
   </div>
 
 </div>
-
 
 <!--  <!-- history tree -->
 
@@ -389,6 +388,33 @@
 </div>
 <!-- end history list qtip content -->
 
+<!-- asset select qtip -->
+<div class="invisible" id="asset-select-content">
+
+  <div class="panel panel-default asset-select-panel-1">
+    <div class="panel-body">
+
+      <div class="input-group radio-button">
+        <input type="radio" name="asset-select">
+          Customer Request
+      </div><!-- /input-group -->
+
+      <div class="input-group radio-button">
+        <input type="radio" name="asset-select">
+          Task
+      </div><!-- /input-group -->
+
+      <div class="input-group radio-button">
+        <input type="radio" name="asset-select">
+          Defect
+      </div><!-- /input-group -->
+
+    </div>
+  </div>
+
+</div>
+<!-- asset select qtip -->
+
 <!-- raise-->
 <div id="raise-buttons" class="invisible">
   <div>
@@ -401,7 +427,6 @@
 </div>
 <!--raise-->
 
-
 <script>
   $('.icon-form').on('click', show_correct_ovals);
   $('.icon-scaffold').on('click', insert_scaffold_form);
@@ -410,6 +435,10 @@
   $('.icon-inspect').on('click', insert_inspection_form);
   $('.icon-task').on('click', insert_task_form);
   $('.icon-clock').on('click', insert_timesheet_form);
+
   $('#map-link').on('click', goto_map);
   $('#form-link').on('click', goto_forms);
+  $('#asset-select').on('click', show_asset_select_qtip);
+  $('.radio-button').on('click', toggle_radio);
+
 </script>

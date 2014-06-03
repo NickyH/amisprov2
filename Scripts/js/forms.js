@@ -1,4 +1,5 @@
 var topOffset = 170;
+var position_array = {}
 
 add_cross_to_required_forms();
 change_selectpicker_values();
@@ -136,69 +137,73 @@ function check_panel_valid() {
   }
 }
 
+// function check_form_location() {
+//   if (!$('#bookmark-nav ul').hasClass('disabled')) {
+//     var href = $(this).attr('data-href');
+//     if (href === '#bookmark_location') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab1');
+//     }
+//     if (href === '#bookmark_details') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({scrollTop: scrollAmount }, 1500);
+//       oval_border_highlight('#tab2');
+//     }
+//     if (href === '#bookmark_contact') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab3');
+//     }
+//     if (href === '#bookmark_condition') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab3');
+//     }
+//     if (href === '#bookmark_notes') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab4');
+//     }
+//     if (href === '#bookmark_closeout') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab5');
+//     }
+//     //timesheet form
+//     if (href === '#bookmark_start') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab20');
+//     }
+//     if (href === '#bookmark_work') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab21');
+//     }
+//     if (href === '#bookmark_breaks') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab22');
+//     }
+//     if (href === '#bookmark_end') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab23');
+//     }
+//     if (href === '#bookmark_review') {
+//       var scrollAmount = ($(href).offset().top) - topOffset;
+//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+//       oval_border_highlight('#tab24');
+//     }
+//   }
+// }
+
 function check_form_location() {
-  if (!$('#bookmark-nav ul').hasClass('disabled')) {
-    var href = $(this).attr('data-href');
-    if (href === '#bookmark_location') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab1');
-    }
-    if (href === '#bookmark_details') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({scrollTop: scrollAmount }, 1500);
-      oval_border_highlight('#tab2');
-    }
-    if (href === '#bookmark_contact') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab3');
-    }
-    if (href === '#bookmark_condition') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab3');
-    }
-    if (href === '#bookmark_notes') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab4');
-    }
-    if (href === '#bookmark_closeout') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab5');
-    }
-    //timesheet form
-    if (href === '#bookmark_start') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab20');
-    }
-    if (href === '#bookmark_work') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab21');
-    }
-    if (href === '#bookmark_breaks') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab22');
-    }
-    if (href === '#bookmark_end') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab23');
-    }
-    if (href === '#bookmark_review') {
-      var scrollAmount = ($(href).offset().top) - topOffset;
-      $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-      oval_border_highlight('#tab24');
-    }
-  }
+
 }
 
-function oval_border_highlight(tab_id) {
+function oval_border_highlight(bookmark) {
   $('.oval').removeClass('current');
   $(tab_id).addClass('current');
 }
@@ -416,28 +421,65 @@ function table_search(thisObj, tableID) {
   $('thead tr').show();
 }
 
-function get_CR_page_position() {
-  var location = $('#bookmark_location').offset().top;
-  var details = $('#bookmark_details').offset().top;
-  var contact = $('#bookmark_contact').offset().top;
-  var notes = $('#bookmark_notes').offset().top;
-  var closeout = $('#bookmark_closeout').offset().top;
+// function get_CR_page_position() {
+//   var location = $('#bookmark_location').offset().top;
+//   var details = $('#bookmark_details').offset().top;
+//   var contact = $('#bookmark_contact').offset().top;
+//   var notes = $('#bookmark_notes').offset().top;
+//   var closeout = $('#bookmark_closeout').offset().top;
 
-  if ($(window).scrollTop() >= (location - topOffset -50) ) {
-    oval_border_highlight('#tab1');
-  }
-  if ($(window).scrollTop() >= (details - topOffset -50 ) ) {
-    oval_border_highlight('#tab2');
-  }
-  if ($(window).scrollTop() >= (contact - topOffset -50) ) {
-    oval_border_highlight('#tab3');
-  }
-  if ($(window).scrollTop() >= (notes - topOffset -50) ) {
-    oval_border_highlight('#tab4');
-  }
-  if ($(window).scrollTop() >= (closeout - topOffset -50) ) {
-    oval_border_highlight('#tab5');
-  }
+//   if ($(window).scrollTop() >= (location - topOffset -50) ) {
+//     oval_border_highlight('#tab1');
+//   }
+//   if ($(window).scrollTop() >= (details - topOffset -50 ) ) {
+//     oval_border_highlight('#tab2');
+//   }
+//   if ($(window).scrollTop() >= (contact - topOffset -50) ) {
+//     oval_border_highlight('#tab3');
+//   }
+//   if ($(window).scrollTop() >= (notes - topOffset -50) ) {
+//     oval_border_highlight('#tab4');
+//   }
+//   if ($(window).scrollTop() >= (closeout - topOffset -50) ) {
+//     oval_border_highlight('#tab5');
+//   }
+// }
+
+function get_bookmark_positions() {
+  $('.row').each(function() {
+    position_array[$(this).attr('data-oval-name')] = $(this).offset().top;
+  });
+}
+
+function get_CR_page_position() {
+  var current_position = $(window).scrollTop();
+
+  // console.log($(position_array['Details']));
+
+  // if current_position <= position_array[0];
+
+  // var location = $('.row').dataset.ovalName.offset().top;
+  // var l = $('#bookmark_location');
+  // var details = $('#bookmark_details').offset().top;
+  // var contact = $('#bookmark_contact').offset().top;
+  // var notes = $('#bookmark_notes').offset().top;
+  // var closeout = $('#bookmark_closeout').offset().top;
+
+  // if ($(window).scrollTop() >= (location - topOffset -50) ) {
+  //   oval_border_highlight('#tab1');
+  // }
+  // if ($(window).scrollTop() >= (details - topOffset -50 ) ) {
+  //   oval_border_highlight('#tab2');
+  // }
+  // if ($(window).scrollTop() >= (contact - topOffset -50) ) {
+  //   oval_border_highlight('#tab3');
+  // }
+  // if ($(window).scrollTop() >= (notes - topOffset -50) ) {
+  //   oval_border_highlight('#tab4');
+  // }
+  // if ($(window).scrollTop() >= (closeout - topOffset -50) ) {
+  //   oval_border_highlight('#tab5');
+  // }
 }
 
 function get_defect_page_position() {
@@ -593,13 +635,11 @@ $('.member-timesheet-row').on('click', show_member_timesheet);
 
 function highlight_current_break() {
   $('.breaks-row.current-break').removeClass('current-break');
-  console.log($(this).parents());
   $(this).parents('.breaks-row').addClass('current-break');
 }
 
 function highlight_current_task() {
   $('.task-row.current-task').removeClass('current-task');
-  console.log($(this).parents());
   $(this).parents('.task-row').addClass('current-task');
 }
 

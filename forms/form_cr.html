@@ -14,7 +14,7 @@
   <div class="container-fluid form-container">
 
     <!-- form row 1 -->
-    <div class="row" data-oval-name="Location" data-bookmark-position="1" id="bookmark_location">
+    <div class="row" data-oval-name="Location" id="bookmark_location">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -881,5 +881,6 @@
 <script>
 $('.form-container').on('DOMMouseScroll mousewheel', get_CR_page_position);
 $('.form-container').bind('swipemove',get_CR_page_position);
+get_bookmark_positions();
 skip_to_details();
 </script>

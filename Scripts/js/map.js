@@ -92,6 +92,46 @@ function layer_active_clicked() {
   }
 }
 
+function show_asset_select_qtip() {
+  $(this).qtip({
+      content: {
+        text: $('#asset-select-content'),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-asset-select qtip-bootstrap qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(this),
+          adjust: {
+            scroll: true // Can be ommited (e.g. default behaviour)
+        }
+      }
+  });
+  $('#asset-select-content').removeClass('invisible');
+}
+
 function layers_qtip() {
   $(this).qtip({
       content: {

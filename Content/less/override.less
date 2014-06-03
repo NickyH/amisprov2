@@ -504,7 +504,7 @@ li.active {
   -webkit-border-radius: 12px;
   box-shadow: 5px 5px 2px 2px @form-panel-outer-shadow;
   -webkit-box-shadow: 5px 5px 2px 2px @form-panel-outer-shadow;
-  margin: 30px auto 40px 30px;
+  margin: 25px auto 25px 30px;
   display: inline-block;
   width: 90% !important;
   min-height: 200px;
@@ -947,7 +947,61 @@ li.active {
 }
 
 #qtip-overlay.blurs {
-  opacity: 0.7 !important;
+  opacity: 0.3 !important;
+}
+
+.qtip.qtip-asset-select {
+  width: 96% !important;
+  height: auto !important;
+  left: 2% !important;
+  top: 90px !important;
+  right: 2% !important;
+  bottom: 20px !important;
+  max-width: 2000px !important;
+  max-height: 2000px !important;
+  &.qtip-default {
+    opacity: 1 !important;
+  }
+  .ui-icon.ui-icon-close {
+    display: none;
+  }
+}
+
+.asset-select-panel-1 {
+  margin-right: 35px;
+  margin-top: 10px;
+  background-color: #e5e5e5;
+  border-color: #dbdbdb;
+  border: 1px solid #c9c9c9;
+}
+
+.input-group.radio-button {
+  display: inline-block;
+  margin-right: 20px;
+  cursor: pointer;
+  width: 200px;
+  height: 30px;
+  background-color: @asset-select-buttons;
+  border-radius: 4px;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+  input[type="radio"] {
+    display: none;
+  }
+  &.checked {
+    font-weight: bold;
+    background-color: #2087d3;
+    border: 1px solid #000000;
+  }
+}
+
+input[type="radio"]:checked {
+  .radio-button {
+    font-weight: bold;
+    background-color: #2087d3;
+    border: 1px solid #000000;
+  }
 }
 
 .qtip {
@@ -1674,6 +1728,10 @@ li.required {
   &.complete {
     border: 4px solid @save-button-colour;
   }
+}
+
+.oval:hover {
+  background-color: lighten(@bubble-background, 15%);
 }
 
 .left-nav {
