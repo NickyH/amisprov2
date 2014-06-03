@@ -7,12 +7,12 @@ $(function(){
 });
 
 function toggle_radio() {
-    if ($(this).closest('input[type="radio"]').prop('checked') === false ) {
-      $('input[type="radio"]').prop('checked', false);
-      $('.radio-button').removeClass('checked');
-      $(this).closest('input[type="radio"]').prop("checked", true);
-      $(this).addClass('checked');
-    }
+  if ($(this).children('input[type="radio"]').prop('checked') === false ) {
+    $('input[type="radio"]').prop('checked', false);
+    $('.radio-button').removeClass('checked');
+    $(this).children('input[type="radio"]').prop("checked", true);
+    $(this).addClass('checked');
+  }
 }
 
 /* Custom animation for a table row to slide up or down */
