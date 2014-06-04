@@ -69,18 +69,22 @@ li.active {
   min-width: 158px;
   a.pill-select {
     &.inactive {
-      background-color: @white-medium;
-      color: black;
+      background-color: @asset-select-buttons;
+      color: white;
       border: 1px solid @grey-medium;
     }
-  }
-  a.login-select {
-    &.inactive {
-      background-color: @save-button-colour;
-      color: white;
-      font-size: 14px;
-      font-weight: bold;
-      border: 1px solid @grey-medium;
+    &:hover {
+      background-color: #2087d3;
+      .badge.pull-right {
+        background-color: #2087d3;
+      }
+    }
+    .badge.pull-right {
+      background-color: @asset-select-buttons;
+      margin-top: -8px;
+      img {
+        width: 30px;
+      }
     }
   }
 }
@@ -963,6 +967,18 @@ li.active {
   }
 }
 
+.qtip.qtip-map-tools-select {
+  width: 400px !important;
+  height: auto !important;
+  max-width: 2000px !important;
+  &.qtip-default {
+    opacity: 1 !important;
+  }
+  .ui-icon.ui-icon-close {
+    display: none;
+  }
+}
+
 .asset-select-panel {
   &.title-panel {
     margin-top: -10px;
@@ -1031,6 +1047,19 @@ input[type="radio"]:checked {
     background-color: #2087d3;
     border: 1px solid #000000;
   }
+}
+
+//asset select table
+td.details-control {
+    background: url('../images/plus.png') no-repeat center center;
+    cursor: pointer;
+}
+tr.details td.details-control {
+    background: url('../images/minus.png') no-repeat center center;
+}
+
+th.remove-sort {
+  background: none !important;
 }
 
 .qtip {
