@@ -1007,6 +1007,24 @@ li.active {
     border-left-color: #c9c9c9;
     border-right-color: #c9c9c9;
     border-top-color: white;
+    display: inline-block;
+    &.extra {
+      margin-left: 20px;
+      margin-top: -20px;
+      .panel-body {
+        padding-bottom: 1px !important;
+        padding-top: 9px !important;
+        padding-right: 30px !important;
+        padding-left: 30px !important;
+        font-size: 12px !important;
+        font-weight: normal;
+        color: black;
+      }
+      img {
+        height: 25px;
+        margin-left: 20px;
+      }
+    }
     .panel-body {
       padding-bottom: 5px !important;
       padding-top: 10px !important;
@@ -1021,6 +1039,7 @@ li.active {
     background-color: #e5e5e5;
     border-color: #dbdbdb;
     border: 1px solid #c9c9c9;
+    margin-top: 10px;
   }
 }
 
