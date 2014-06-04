@@ -17,7 +17,6 @@ $('.reference-history tr').on('click', open_current_contact_row);
 $('.icon-history').on('click', history_qtip);
 $('.close-form').on('click', warn_close_form);
 $('.cancel-button').on('click', warn_cancel_form);
-$('span.lookup').on('click', open_address_book);
 $('.input-group-addon .glyphicon-calendar').on('click', calendar_icon_click); //activate calendar on icon click
 $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activate timepicker on icon click
 $('.history-button .button').on('click', toggle_history_button);
@@ -373,36 +372,6 @@ function warn_close_form() {
   });
 }
 
-function open_address_book() {
-  bootbox.dialog({
-    message: "Search for contacts...",
-    title: "Contact Address Book",
-    buttons: {
-      success: {
-        label: "Search",
-        className: "btn-success",
-        callback: function() {
-          Example.show("great success");
-        }
-      },
-      danger: {
-        label: "Cancel",
-        className: "btn-danger",
-        callback: function() {
-          Example.show("uh oh, look out!");
-        }
-      },
-      main: {
-        label: "Done",
-        className: "btn-primary",
-        callback: function() {
-          Example.show("Primary button");
-        }
-      }
-    }
-  });
-}
-
 function skip_to_details() {
   var details = $('#bookmark_details').offset().top;
   $(window).scrollTop((details - 200));
@@ -600,31 +569,6 @@ $('.insert-time-picker').datetimepicker({
   pickDate: false,
   language:'en'
 });
-
-// $('.insert-date-picker').datetimepicker({
-//   format: 'dd/mm/yyyy',
-//   language: 'en',
-//   todayBtn: "linked",
-//   startView: 3,
-//     minView: 2,
-//     maxView: 4,
-//     autoClose: "true",
-//     todayHighlight: 1,
-//     startView: 2,
-//     forceParse: 1
-// });
-
-// $('.insert-picker').datetimepicker({
-//     language: 'en',
-//     weekStart: 1,
-//     todayBtn: 1,
-//       autoClose: 1,
-//       todayHighlight: 1,
-//       startView: 2,
-//       forceParse: 0,
-//     showMeridian: 1
-// });
-
 
 //task form functions
 
