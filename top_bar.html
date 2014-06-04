@@ -5,7 +5,7 @@
 
     <!-- icons for map tools -->
     <img class="top-bar-icons icon-map" id="asset-select" src="../Content/images/icons/icon-category-inverse-3e3e3e.png">
-    <img class="top-bar-icons icon-map" src="../Content/images/icons/icon-layers-inverse-3e3e3e.png">
+    <img class="top-bar-icons icon-map" id="layer-select"  src="../Content/images/icons/icon-layers-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map" id="map-tools-select" src="../Content/images/icons/icon-globe-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map temp" id="form-link" src="../Content/images/icons/icon-globe-white.png">
 
@@ -542,31 +542,31 @@
         <li class="active">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-globe-white.png"></span>
-            View Map
+              View Map
           </a>
         </li>
         <li class="active">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-address-white.png"></span>
-            Search By Address
+              Search By Address
           </a>
         </li>
         <li class="active">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-locateme-white.png"></span>
-            Show My Location
+              Show My Location
           </a>
         </li>
         <li class="active">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-followme-white.png"></span>
-            Follow Me
+              Follow Me
           </a>
         </li>
         <li class="active">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-startgps-white.png"></span>
-            Start GPS / Stop GPS
+              Start GPS / Stop GPS
           </a>
         </li>
       </ul>
@@ -575,6 +575,139 @@
 
 </div>
 <!-- map tools select qtip -->
+
+<!-- layer select qtip -->
+<div class="invisible" id="layer-select-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Layer Selection
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1">
+    <div class="panel-body">
+
+      <ul class="nav nav-pills">
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Customer Request
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Task
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Defect
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Assets
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Asset Schedule
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Infrastructure
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Inspection
+          </a>
+        </li>
+
+        <li class="active">
+          <a href="#" class="pill-select layers inactive">
+            <span class="badge pull-right">
+              <div class="input-group active-layer">
+                <input type="radio" name="layer-select">
+              </div>
+            </span>
+              Base Maps
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </div>
+
+  <!-- asset select meta2 panel -->
+  <div class="panel panel-default asset-select-panel panel-2 hidden">
+    <div class="panel-body">
+
+      <div class="input-group radio-button">
+        <input type="radio" name="layer-select">
+          Customer Request
+      </div>
+
+      <div class="input-group radio-button">
+        <input type="radio" name="layer-select">
+          Task
+      </div>
+
+      <div class="input-group radio-button">
+        <input type="radio" name="layer-select">
+          Defect
+      </div>
+
+    </div>
+  </div>
+  <!-- asset select meta2 panel -->
+
+</div>
+<!-- layer select qtip -->
 
 <!-- raise-->
 <div id="raise-buttons" class="invisible">
@@ -601,7 +734,10 @@
   $('#form-link').on('click', goto_forms);
   $('#asset-select').on('click', show_asset_select_qtip);
   $('#map-tools-select').on('click', show_map_tools_select_qtip);
+  $('#layer-select').on('click', show_layer_select_qtip);
+  $('#layer-select-content .layers').on('click', toggle_layer_selection);
   $('.radio-button').on('click', toggle_radio);
+  $('input[name="layer-select"]').on('click', toggle_active_layer);
   $('.panel-1 .radio-button').on('click', show_meta2_panel);
   $('.panel-2 .radio-button').on('click', show_meta3_panel);
 

@@ -951,6 +951,22 @@ li.active {
   opacity: 0.3 !important;
 }
 
+.qtip.qtip-layer-select {
+  width: 96% !important;
+  height: auto !important;
+  left: 2% !important;
+  top: 60px !important;
+  right: 2% !important;
+  max-width: 2000px !important;
+  max-height: 2000px !important;
+  &.qtip-default {
+    opacity: 1 !important;
+  }
+  .ui-icon.ui-icon-close {
+    display: none;
+  }
+}
+
 .qtip.qtip-asset-select {
   width: 96% !important;
   height: auto !important;
@@ -1046,6 +1062,45 @@ input[type="radio"]:checked {
     font-weight: bold;
     background-color: #2087d3;
     border: 1px solid #000000;
+  }
+}
+
+li.active {
+  a.pill-select.layers {
+    padding-right: 0;
+    margin-right: 20px;
+    &.checked {
+      font-weight: bold;
+      background-color: #54bc11;
+    }
+    &.current-active {
+      background-color: #e1e523;
+      font-weight: bold;
+      color: black;
+    }
+    .badge.pull-right {
+      background-color: black;
+      margin-top: -10px;
+      margin-left: 20px;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+      .active-layer {
+        width: 40px;
+        height: 40px;
+        margin-left: 0;
+        input {
+          margin-left: 4px;
+          margin-top: -3px;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      &.select {
+        background-color: #e1e523;
+        border: 1px solid #54bc11;
+      }
+    }
   }
 }
 

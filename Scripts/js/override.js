@@ -15,6 +15,19 @@ function toggle_radio() {
   }
 }
 
+function toggle_active_layer() {
+  if ($(this).prop('checked')) {
+    $('input[name="layer-select"]').parents('.pull-right').removeClass('select');
+    $(this).parents('.pull-right').addClass('select');
+    $('input[name="layer-select"]').parents('.layers').removeClass('current-active');
+    $(this).parents('.layers').addClass('current-active');
+  }
+}
+
+function toggle_layer_selection() {
+  $(this).toggleClass('checked');
+}
+
 function show_meta2_panel() {
   $('.asset-select-panel.panel-2').removeClass('hidden');
 }
