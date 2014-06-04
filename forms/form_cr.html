@@ -260,13 +260,7 @@
 
               <form class="form-horizontal container" role="form">
 
-                <div class="form-group" role="search">
-                  <div class="col-sm-12">
-                    <input type="text" class="form-control search" placeholder="Search">
-                  </div>
-                </div>
-
-                <table id="table-filter-1" class="table table-condensed table-striped reference-history">
+                <table id="contact-reference-table" class="table table-condensed table-striped reference-history">
                   <thead>
                     <tr>
                       <th></th>
@@ -883,4 +877,31 @@ $('.form-container').on('DOMMouseScroll mousewheel', get_CR_page_position);
 $('.form-container').bind('swipemove',get_CR_page_position);
 get_bookmark_positions();
 skip_to_details();
+
+// contact reference table
+$('#contact-reference-table').dataTable({
+    "columns": [
+      {
+        "class": "remove-sort",
+        "orderable": false,
+        "defaultContent": ""
+      },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      }
+    ]
+  });
 </script>

@@ -494,11 +494,10 @@ li.active {
     padding-left: @left-bar-width;
     padding-top: 50px;
     background-color: @background-main;
-    }
   }
+}
 
-.form-panel
-{
+.form-panel {
   background-color: @form-panel-colour;
   border: @form-panel-border;
   border-radius: @form-panel-border-radius;
@@ -1957,10 +1956,25 @@ li.required {
 .reference-history {
     tr:first-child th {
     font-size: 13px;
-    color: @black;
+    color: white;
     font-weight: bold;
-    background-color: lighten(@form-highlight-colour, 50%);
-    border-bottom: 1px solid @form-highlight-colour !important;
+    background-color: @top-bar-colour;
+    &.remove-sort {
+      background: @top-bar-colour !important;
+    }
+  }
+}
+
+#contact-reference-table_filter {
+  input {
+    margin-top: -5px;
+  }
+}
+
+#contact-reference-table_length {
+  select {
+    margin-top: -5px;
+    margin-left: 5px;
   }
 }
 

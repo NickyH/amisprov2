@@ -36,7 +36,7 @@ function show_meta3_panel() {
   $('.asset-select-panel.panel-3').removeClass('hidden');
 }
 
-  //prototype only functions - Benito can delete?
+//prototype only functions - Benito can delete?
 
 function insert_map() {
   $.get('MapLayer.html', function(data) {
@@ -58,8 +58,7 @@ function insert_top() {
   });
 }
 
-function refresh_map()
-{
+function refresh_map() {
   window.location = ('index.html');
 }
 
