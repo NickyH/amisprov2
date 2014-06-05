@@ -538,7 +538,7 @@ li.active {
 .form-buttons {
   .form-title {
     span {
-      line-height: 20px;
+      line-height: 15px;
     }
     background-color: @background-main;
     border-radius: 5px;
@@ -552,7 +552,6 @@ li.active {
     height: 30px;
     display: inline-block;
     font: @form-header-font;
-    font-weight: bold !important;
     @media @widthMedium {
       display: none;
       span {
@@ -586,6 +585,7 @@ li.active {
   z-index: 3;
     .form-button {
     float: right;
+    border: 1px solid darken(@left-bar-colour, 5%);
     height: 30px;
     min-width: 160px;
     -webkit-border-radius: 8px;
@@ -597,6 +597,9 @@ li.active {
     font-weight: bold !important;
     font: @form-button-font;
     color: @white;
+    &:hover {
+      opacity: 0.8;
+    }
     @media @widthMediumLarge {
       height: 30px;
       min-width: 120px;
@@ -619,6 +622,7 @@ li.active {
   width: 22px;
   margin-right: 10px;
   border-radius: 2px;
+  background-color: @icon-active-colour;
 }
 
 .status {
