@@ -22,7 +22,7 @@ $('.history-button .button').on('click', toggle_history_button);
 $('.icon-raise').on('click', show_raise_qtip);
 
 function get_bubbles() {
-  $('.row').each(function() {
+  $('.row[data-oval-name]').each(function() {
     $('#bookmark-nav ul').last().append('<li><div class="oval"><span>' + this.dataset.ovalName + '</span></div></li>');
   });
 }
