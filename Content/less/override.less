@@ -538,15 +538,21 @@ li.active {
 .form-buttons {
   .form-title {
     span {
-      line-height: 33px;
+      line-height: 20px;
     }
+    background-color: @background-main;
+    border-radius: 5px;
+    border: 1px solid @top-bar-colour;
+    padding: 5px;
+    width: intrinsic;
     padding-left: 40px;
     position: relative;
     left: 180px;
-    margin-top: 10px;
+    margin-top: 8px;
+    height: 30px;
     display: inline-block;
     font: @form-header-font;
-    font-weight: bold;
+    font-weight: bold !important;
     @media @widthMedium {
       display: none;
       span {
@@ -572,25 +578,23 @@ li.active {
   width: 100%;
   display: block;
   float: right;
-  height: 70px;
+  height: 46px;
   position: fixed;
   top: @top-bar-height;
   right: 0;
-  background-color: @background-main;
+  background-color: @left-bar-colour;
   z-index: 3;
     .form-button {
     float: right;
-    height: 40px;
+    height: 30px;
     min-width: 160px;
-    -webkit-border-radius: 20px;
-    box-shadow: 2px 2px 2px @grey-medium;
-    -webkit-box-shadow: 2px 2px 2px @grey-medium;
-    border: 1px solid @grey-medium;
-    border-radius: 20px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
     margin-left: 20px;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     margin-right: 20px;
+    font-weight: bold !important;
     font: @form-button-font;
     color: @white;
     @media @widthMediumLarge {
@@ -610,19 +614,21 @@ li.active {
 
 .form-head-icon {
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 25px;
-  background-color: @form-highlight-colour;
+  left: 5px;
+  top: 4px;
+  width: 22px;
   margin-right: 10px;
   border-radius: 2px;
 }
 
 .status {
   color: red;
-  font-size: 20px;
+  font-size: 16px;
   white-space: pre;
   line-height: 8px !important;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
   @media @widthMedium {
     display: none;
   }
@@ -641,13 +647,29 @@ li.active {
   display: inline-block;
   color: @black;
   font-size: 16px;
-  white-space: pre;
   line-height: 8px !important;
-  border: 1px solid @grey-medium;
   padding: 5px 5px 5px 5px;
-  border-radius: 5px;
   margin-left: 10px;
-  background-color: @white;
+  @media @widthMedium {
+    display: none;
+  }
+  @media @widthNarrow {
+    display: none;
+  }
+  @media @widthMediumLarge {
+    font-size: 12px;
+    margin-left: 0;
+    padding: 2px 2px 2px 2px;
+  }
+}
+
+.form-name {
+  display: inline-block;
+  color: @asset-select-buttons;
+  font-size: 16px;
+  line-height: 8px !important;
+  padding: 5px 5px 5px 5px;
+  margin-left: 20px;
   @media @widthMedium {
     display: none;
   }
@@ -1973,7 +1995,7 @@ li.required {
 }
 
 #contact-reference-table_length,
-#note-reference-table_length {
+#note-reference-table_lngth {
   select {
     margin-top: -5px;
     margin-left: 5px;
