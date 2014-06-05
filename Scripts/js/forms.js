@@ -15,8 +15,7 @@ $('#bookmark-nav').on('click', 'li', check_form_location);
 $('.referral-icon').on('click', toggle_referral);
 $('.reference-history tr').on('click', open_current_contact_row);
 $('.icon-history').on('click', history_qtip);
-$('.close-form').on('click', warn_close_form);
-$('.cancel-button').on('click', warn_cancel_form);
+$('.form-button.cancel').on('click', warn_cancel_form);
 $('.input-group-addon .glyphicon-calendar').on('click', calendar_icon_click); //activate calendar on icon click
 $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activate timepicker on icon click
 $('.history-button .button').on('click', toggle_history_button);
@@ -358,14 +357,6 @@ function show_raise_qtip() {
 
 function warn_cancel_form() {
   bootbox.confirm('Are you sure you want to cancel all changes made to this form?', function (response) {
-    if(response) {
-      window.location = '/';
-    }
-  });
-}
-
-function warn_close_form() {
-  bootbox.confirm('This will permanently close off this issue', function (response) {
     if(response) {
       window.location = '/';
     }

@@ -2,6 +2,7 @@
   <div class="utility-tab map-tools">
     <!--downer icon-->
     <img class="top-bar-icons amis-icon" id="map-link" src="../Content/images/amispro-text-with-icon.png">
+    <img class="top-bar-icons amis-icon small" id="map-link-2" src="../Content/images/amis-icon-only.png">
 
     <!-- icons for map tools -->
     <img class="top-bar-icons icon-map" id="asset-select" src="../Content/images/icons/icon-category-inverse-3e3e3e.png">
@@ -823,6 +824,7 @@
   $('.icon-clock').on('click', insert_timesheet_form);
 
   $('#map-link').on('click', goto_map);
+  $('#map-link-2').on('click', goto_map);
   $('#form-link').on('click', goto_forms);
   $('#asset-select').on('click', show_asset_select_qtip);
   $('#map-tools-select').on('click', show_map_tools_select_qtip);

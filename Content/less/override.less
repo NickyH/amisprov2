@@ -149,7 +149,27 @@ li.active {
     cursor: pointer;
     float: left;
     margin-left: 5px;
+    &.small {
+      display: none;
+      width: 60px;
+      margin-left: 10px;
+      margin-top: 3px;
+      margin-right: 0;
+    }
+    @media @widthMedium {
+      display: none;
+      &.small {
+        display: inline-block;
+      }
+    }
+    @media @widthMediumLarge {
+      display: none;
+      &.small {
+        display: inline-block;
+      }
+    }
   }
+
   &.temp {
     width: 5px;
   }
@@ -538,7 +558,8 @@ li.active {
 .form-buttons {
   .form-title {
     span {
-      line-height: 15px;
+      line-height: 20px;
+      font-size: 15px;
     }
     background-color: @background-main;
     border-radius: 5px;
@@ -552,27 +573,6 @@ li.active {
     height: 30px;
     display: inline-block;
     font: @form-header-font;
-    @media @widthMedium {
-      display: none;
-      span {
-        line-height: inherit;
-      }
-    }
-    @media @widthNarrow {
-      display: none;
-      span {
-        line-height: inherit;
-      }
-    }
-    @media @widthMediumLarge {
-      font: @form-header-font-medium;
-      font-weight: bold;
-      max-width: 25%;
-      left: 150px;
-      span {
-        line-height: inherit;
-      }
-    }
   }
   width: 100%;
   display: block;
@@ -585,105 +585,76 @@ li.active {
   z-index: 3;
     .form-button {
     float: right;
-    border: 1px solid darken(@left-bar-colour, 5%);
-    height: 30px;
-    min-width: 160px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-    margin-left: 20px;
+    width: 30px;
+    margin-left: 10px;
     margin-top: 8px;
     margin-bottom: 8px;
-    margin-right: 20px;
-    font-weight: bold !important;
-    font: @form-button-font;
-    color: @white;
+    margin-right: 40px;
+    cursor: pointer;
+    &.save {
+      background-color: #cbea59;
+    }
+    &.cancel {
+      background-color: #f2543b;
+    }
     &:hover {
-      opacity: 0.8;
-    }
-    @media @widthMediumLarge {
-      height: 30px;
-      min-width: 120px;
-    }
-    &.save-button {
-    background-color: @save-button-colour;
-    letter-spacing: 2px;
-    }
-    &.cancel-button {
-    background-color: @cancel-button-colour;
-    letter-spacing: 2px;
+      &.save {
+        background-color: lighten(#cbea59, 15%);
+      }
+      &.cancel {
+        background-color: lighten(#f2543b, 15%);
+      }
     }
   }
 }
 
-.form-head-icon {
-  position: absolute;
-  left: 5px;
-  top: 4px;
-  width: 22px;
-  margin-right: 10px;
-  border-radius: 2px;
-  background-color: @icon-active-colour;
+.form-buttons {
+  .form-title {
+    .form-head-icon {
+      position: absolute;
+      left: 5px;
+      top: 4px;
+      width: 20px;
+      border-radius: 2px;
+      background-color: @icon-active-colour;
+    }
+    .form-title-text {
+      display: inline-block;
+      margin-left: 10px;
+      &.status {
+        color: @cancel-button-colour;
+        margin-right: 10px;
+      }
+      &.id {
+        color: @black;
+      }
+      &.name {
+        color: @asset-select-buttons;
+        margin-left: 0;
+      }
+    }
+  }
 }
 
-.status {
-  color: red;
-  font-size: 16px;
-  white-space: pre;
-  line-height: 8px !important;
-  display: inline-block;
-  margin-left: 20px;
-  margin-right: 20px;
+.form-buttons {
   @media @widthMedium {
-    display: none;
-  }
-  @media @widthNarrow {
-    display: none;
+    height: 90px;
+    .form-title {
+      display: block;
+      left: 180px;
+      // .form-title-text {
+      //   &.status {
+      //     float: right;
+      //   }
+      // }
+    }
+    .form-button {
+      float: right;
+    }
   }
   @media @widthMediumLarge {
-    font: @form-header-font-small;
-    font-weight: bold;
-    max-width: 25%;
-    left: 150px;
   }
-}
-
-.cr-id {
-  display: inline-block;
-  color: @black;
-  font-size: 16px;
-  line-height: 8px !important;
-  padding: 5px 5px 5px 5px;
-  margin-left: 10px;
-  @media @widthMedium {
-    display: none;
-  }
-  @media @widthNarrow {
-    display: none;
-  }
-  @media @widthMediumLarge {
-    font-size: 12px;
-    margin-left: 0;
-    padding: 2px 2px 2px 2px;
-  }
-}
-
-.form-name {
-  display: inline-block;
-  color: @asset-select-buttons;
-  font-size: 16px;
-  line-height: 8px !important;
-  padding: 5px 5px 5px 5px;
-  margin-left: 20px;
-  @media @widthMedium {
-    display: none;
-  }
-  @media @widthNarrow {
-    display: none;
-  }
-  @media @widthMediumLarge {
-    font-size: 12px;
-    margin-left: 0;
-    padding: 2px 2px 2px 2px;
+  @media @widthNormal {
   }
 }
 
