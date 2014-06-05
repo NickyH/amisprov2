@@ -673,13 +673,7 @@
 
               <form class="form-horizontal container" role="form">
 
-                <div class="form-group" role="search">
-                  <div class="col-sm-12">
-                    <input type="text" class="form-control search" placeholder="Search">
-                  </div>
-                </div>
-
-                <table id="table-filter-2" class="table table-condensed table-striped">
+                <table id="note-reference-table" class="table table-condensed reference-history table-striped">
                   <thead>
                     <tr>
                       <th>Ref. No.</th>
@@ -886,6 +880,28 @@ $('#contact-reference-table').dataTable({
         "orderable": false,
         "defaultContent": ""
       },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      }
+    ]
+  });
+
+// notes reference table
+$('#note-reference-table').dataTable({
+    "columns": [
       { "class": "text" },
       { "class": "text" },
       { "class": "text" },
