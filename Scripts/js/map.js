@@ -120,6 +120,48 @@ function show_map_tools_select_qtip() {
   $('#map-tools-select-content').removeClass('invisible');
 }
 
+function show_forms_raise_select_qtip() {
+  $(this).addClass('active');
+  $(this).qtip({
+      content: {
+        text: $('#forms-raise-content'),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-map-tools-select qtip-bootstrap qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#forms-raise-select').removeClass('active');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'top right',
+          at: 'bottom left',
+          target: $(this),
+          adjust: {
+            scroll: true // Can be ommited (e.g. default behaviour)
+        }
+      }
+  });
+  $('#forms-raise-content').removeClass('invisible');
+}
+
 function show_layer_select_qtip() {
   $(this).addClass('active');
   $(this).qtip({
@@ -140,7 +182,7 @@ function show_layer_select_qtip() {
           }
       },
       style: {
-          classes: 'qtip-layer-select qtip-bootstrap qtip-shadow qtip-light'
+          classes: 'qtip-forms-raise qtip-bootstrap qtip-shadow qtip-light'
       },
       hide: {
           event: 'click',

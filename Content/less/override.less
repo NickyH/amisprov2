@@ -171,7 +171,7 @@ li.active {
   }
 
   &.temp {
-    width: 5px;
+    width: 20px;
   }
   &.icon-small {
     position: absolute;
@@ -642,11 +642,6 @@ li.active {
     .form-title {
       display: block;
       left: 180px;
-      // .form-title-text {
-      //   &.status {
-      //     float: right;
-      //   }
-      // }
     }
     .form-button {
       float: right;
@@ -963,6 +958,22 @@ li.active {
   }
 }
 
+.qtip.qtip-forms-raise {
+  width: 96% !important;
+  height: auto !important;
+  left: 2% !important;
+  top: 60px !important;
+  right: 2% !important;
+  max-width: 2000px !important;
+  max-height: 2000px !important;
+  &.qtip-default {
+    opacity: 1 !important;
+  }
+  .ui-icon.ui-icon-close {
+    display: none;
+  }
+}
+
 .qtip.qtip-asset-select {
   width: 96% !important;
   height: auto !important;
@@ -1126,8 +1137,6 @@ li.active {
           input {
             margin-left: -3px;
             margin-top: -3px;
-            width: 30px;
-            height: 30px;
           }
         }
       }
@@ -1155,8 +1164,6 @@ li.active {
         input {
           margin-left: 4px;
           margin-top: -3px;
-          width: 40px;
-          height: 40px;
         }
       }
       &.select {
