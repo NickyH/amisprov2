@@ -486,14 +486,16 @@ li.active {
   display: inline-block;
   position: relative;
   top: -20px;
-  left: 80%;
+  left: 3%;
   width: fit-content;
   white-space: nowrap;
   height: 30px;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  background-color: darken(@form-panel-colour, 10%);
-  border: 1px solid @form-highlight-colour;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  background-color: darken(@form-highlight-colour, 10%);
+  border: 1px solid darken(@form-highlight-colour, 20%);
   margin: 0;
   padding-top: 0;
   padding-left: 2%;
@@ -521,7 +523,7 @@ li.active {
   background-color: @form-panel-colour;
   border: @form-panel-border;
   border-radius: @form-panel-border-radius;
-  -webkit-border-radius: 12px;
+  -webkit-border-radius: 8px;
   box-shadow: 5px 5px 2px 2px @form-panel-outer-shadow;
   -webkit-box-shadow: 5px 5px 2px 2px @form-panel-outer-shadow;
   margin: 25px auto 25px 30px;
@@ -1972,14 +1974,14 @@ li.required {
 #contact-reference-table_filter,
 #note-reference-table_filter {
   input {
-    margin-top: -5px;
+    margin-top: -9px;
   }
 }
 
 #contact-reference-table_length,
-#note-reference-table_lngth {
+#note-reference-table_length {
   select {
-    margin-top: -5px;
+    margin-top: -9px;
     margin-left: 5px;
   }
 }
