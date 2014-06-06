@@ -1,4 +1,4 @@
-var topOffset = 170;
+var topOffset = 140;
 var position_array = {}
 
 add_cross_to_required_forms();
@@ -23,8 +23,10 @@ $('.icon-raise').on('click', show_raise_qtip);
 
 function get_bubbles() {
   $('.row[data-oval-name]').each(function() {
-    $('#bookmark-nav ul').last().append('<li><div class="oval"><span>' + this.dataset.ovalName + '</span></div></li>');
+    var ovalNameValue = this.dataset.ovalName.replace(/\s/g, '');
+    $('#bookmark-nav ul').last().append('<li><div class="oval" data-oval-name=' + ovalNameValue + '><span>' + this.dataset.ovalName + '</span></div></li>');
   });
+  $('#bookmark-nav .oval[data-oval-name="Details"]').addClass('current');
 }
 
 function calendar_icon_click() {
@@ -134,68 +136,6 @@ function check_panel_valid() {
     $(icon).removeClass('glyphicon-remove panel-remove glyphicon-ok panel-ok').addClass('glyphicon-remove panel-remove');
   }
 }
-
-// function check_form_location() {
-//   if (!$('#bookmark-nav ul').hasClass('disabled')) {
-//     var href = $(this).attr('data-href');
-//     if (href === '#bookmark_location') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab1');
-//     }
-//     if (href === '#bookmark_details') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({scrollTop: scrollAmount }, 1500);
-//       oval_border_highlight('#tab2');
-//     }
-//     if (href === '#bookmark_contact') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab3');
-//     }
-//     if (href === '#bookmark_condition') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab3');
-//     }
-//     if (href === '#bookmark_notes') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab4');
-//     }
-//     if (href === '#bookmark_closeout') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab5');
-//     }
-//     //timesheet form
-//     if (href === '#bookmark_start') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab20');
-//     }
-//     if (href === '#bookmark_work') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab21');
-//     }
-//     if (href === '#bookmark_breaks') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab22');
-//     }
-//     if (href === '#bookmark_end') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab23');
-//     }
-//     if (href === '#bookmark_review') {
-//       var scrollAmount = ($(href).offset().top) - topOffset;
-//       $('html, body').animate({ scrollTop: scrollAmount }, 1000);
-//       oval_border_highlight('#tab24');
-//     }
-//   }
-// }
 
 function check_form_location() {
 
@@ -363,10 +303,7 @@ function warn_cancel_form() {
   });
 }
 
-function skip_to_details() {
-  var details = $('#bookmark_details').offset().top;
-  $(window).scrollTop((details - 200));
-}
+
 
 function table_search(thisObj, tableID) {
   var $rows = $("#"+tableID+" tr");
@@ -381,165 +318,36 @@ function table_search(thisObj, tableID) {
   $('thead tr').show();
 }
 
-// function get_CR_page_position() {
-//   var location = $('#bookmark_location').offset().top;
-//   var details = $('#bookmark_details').offset().top;
-//   var contact = $('#bookmark_contact').offset().top;
-//   var notes = $('#bookmark_notes').offset().top;
-//   var closeout = $('#bookmark_closeout').offset().top;
-
-//   if ($(window).scrollTop() >= (location - topOffset -50) ) {
-//     oval_border_highlight('#tab1');
-//   }
-//   if ($(window).scrollTop() >= (details - topOffset -50 ) ) {
-//     oval_border_highlight('#tab2');
-//   }
-//   if ($(window).scrollTop() >= (contact - topOffset -50) ) {
-//     oval_border_highlight('#tab3');
-//   }
-//   if ($(window).scrollTop() >= (notes - topOffset -50) ) {
-//     oval_border_highlight('#tab4');
-//   }
-//   if ($(window).scrollTop() >= (closeout - topOffset -50) ) {
-//     oval_border_highlight('#tab5');
-//   }
-// }
-
 function get_bookmark_positions() {
-  $('.row').each(function() {
+  $('.row[data-oval-name]').each(function() {
     position_array[$(this).attr('data-oval-name')] = $(this).offset().top;
+    var top = $(window).scrollTop() + topOffset;
+    var current_bubble;
+    var previous_value = 0;
+    $.each( position_array, function( key, value ) {
+      if ( value < top && top - previous_value > 250 ) {
+        current_bubble = key;
+        previous_value = value;
+      }
+    });
+    update_current_bubble(current_bubble);
   });
 }
 
-function get_CR_page_position() {
-  var current_position = $(window).scrollTop();
-
-  // console.log($(position_array['Details']));
-
-  // if current_position <= position_array[0];
-
-  // var location = $('.row').dataset.ovalName.offset().top;
-  // var l = $('#bookmark_location');
-  // var details = $('#bookmark_details').offset().top;
-  // var contact = $('#bookmark_contact').offset().top;
-  // var notes = $('#bookmark_notes').offset().top;
-  // var closeout = $('#bookmark_closeout').offset().top;
-
-  // if ($(window).scrollTop() >= (location - topOffset -50) ) {
-  //   oval_border_highlight('#tab1');
-  // }
-  // if ($(window).scrollTop() >= (details - topOffset -50 ) ) {
-  //   oval_border_highlight('#tab2');
-  // }
-  // if ($(window).scrollTop() >= (contact - topOffset -50) ) {
-  //   oval_border_highlight('#tab3');
-  // }
-  // if ($(window).scrollTop() >= (notes - topOffset -50) ) {
-  //   oval_border_highlight('#tab4');
-  // }
-  // if ($(window).scrollTop() >= (closeout - topOffset -50) ) {
-  //   oval_border_highlight('#tab5');
-  // }
+function update_current_bubble(current_bubble) {
+  if (typeof current_bubble === "undefined" ) {
+    return;
+  }
+  else {
+    var ovalNameValue = current_bubble.replace(/\s/g, '');
+    $('#bookmark-nav .oval').removeClass('current');
+    $('#bookmark-nav .oval[data-oval-name='+ovalNameValue+']').addClass('current');
+  }
 }
 
-function get_defect_page_position() {
-  var location = $('#bookmark_location').offset().top;
+function skip_to_details() {
   var details = $('#bookmark_details').offset().top;
-  var condition = $('#bookmark_condition').offset().top;
-  var notes = $('#bookmark_notes').offset().top;
-  var referral = $('#bookmark_referral').offset().top;
-
-  if ($(window).scrollTop() >= (location - topOffset -50) ) {
-    oval_border_highlight('#tab1');
-  }
-  if ($(window).scrollTop() >= (details - topOffset -50 ) ) {
-    oval_border_highlight('#tab2');
-  }
-  if ($(window).scrollTop() >= (condition - topOffset -50) ) {
-    oval_border_highlight('#tab3');
-  }
-  if ($(window).scrollTop() >= (notes - topOffset -50) ) {
-    oval_border_highlight('#tab4');
-  }
-  if ($(window).scrollTop() >= (referral - topOffset -50) ) {
-    oval_border_highlight('#tab5');
-  }
-}
-
-function get_inspection_page_position() {
-  var location = $('#bookmark_location').offset().top;
-  var details = $('#bookmark_details').offset().top;
-  var contact = $('#bookmark_contact').offset().top;
-  var notes = $('#bookmark_notes').offset().top;
-  var closeout = $('#bookmark_closeout').offset().top;
-
-  if ($(window).scrollTop() >= (location - topOffset -50) ) {
-    oval_border_highlight('#tab1');
-  }
-  if ($(window).scrollTop() >= (details - topOffset -50 ) ) {
-    oval_border_highlight('#tab2');
-  }
-  if ($(window).scrollTop() >= (contact - topOffset -50) ) {
-    oval_border_highlight('#tab3');
-  }
-  if ($(window).scrollTop() >= (notes - topOffset -50) ) {
-    oval_border_highlight('#tab4');
-  }
-  if ($(window).scrollTop() >= (closeout - topOffset -50) ) {
-    oval_border_highlight('#tab5');
-  }
-}
-
-function get_task_page_position() {
-  var taskdetails = $('#bookmark_taskdetails').offset().top;
-  var extdetails = $('#bookmark_extdetails').offset().top;
-  var loe = $('#bookmark_loe').offset().top;
-  var wip = $('#bookmark_wip').offset().top;
-  var traffic = $('#bookmark_traffic').offset().top;
-  var tasknotes = $('#bookmark_tasknotes').offset().top;
-
-  if ($(window).scrollTop() >= (taskdetails - topOffset -50) ) {
-    oval_border_highlight('#tab10');
-  }
-  if ($(window).scrollTop() >= (extdetails - topOffset -50 ) ) {
-    oval_border_highlight('#tab11');
-  }
-  if ($(window).scrollTop() >= (loe - topOffset -50) ) {
-    oval_border_highlight('#tab12');
-  }
-  if ($(window).scrollTop() >= (wip - topOffset -50) ) {
-    oval_border_highlight('#tab13');
-  }
-  if ($(window).scrollTop() >= (traffic - topOffset -50) ) {
-    oval_border_highlight('#tab14');
-  }
-  if ($(window).scrollTop() >= (tasknotes - topOffset -50) ) {
-    oval_border_highlight('#tab15');
-  }
-}
-
-function get_timesheet_page_position() {
-  var start = $('#bookmark_start').offset().top;
-  var work = $('#bookmark_work').offset().top;
-  var breaks = $('#bookmark_breaks').offset().top;
-  var end = $('#bookmark_end').offset().top;
-  var review = $('#bookmark_review').offset().top;
-
-  if ($(window).scrollTop() >= (start - topOffset -50 ) ) {
-    oval_border_highlight('#tab20');
-  }
-  if ($(window).scrollTop() >= (work - topOffset -50) ) {
-    oval_border_highlight('#tab21');
-  }
-  if ($(window).scrollTop() >= (breaks - topOffset -50) ) {
-    oval_border_highlight('#tab22');
-  }
-  if ($(window).scrollTop() >= (end - topOffset -50) ) {
-    oval_border_highlight('#tab23');
-  }
-  if ($(window).scrollTop() >= (review - topOffset -50) ) {
-    oval_border_highlight('#tab24');
-  }
+  $(window).scrollTop((details - topOffset));
 }
 
 function check_this_panel_required(thisObj) {

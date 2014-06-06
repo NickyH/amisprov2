@@ -351,7 +351,7 @@
     <!-- end form row 3 -->
 
     <!-- form row 4 -->
-    <div class="row"  data-oval-name="Contacts">
+    <div class="row"  data-oval-name="Contact">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -868,9 +868,8 @@
 
 <script src="../Scripts/js/forms.js"></script>
 <script>
-$('.form-container').on('DOMMouseScroll mousewheel', get_CR_page_position);
-$('.form-container').bind('swipemove',get_CR_page_position);
-get_bookmark_positions();
+$('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
+$('.form-container').bind('swipemove', get_bookmark_positions);
 skip_to_details();
 
 // contact reference table
