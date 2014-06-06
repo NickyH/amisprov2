@@ -21,14 +21,6 @@ $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activat
 $('.history-button .button').on('click', toggle_history_button);
 $('.icon-raise').on('click', show_raise_qtip);
 
-function get_bubbles() {
-  $('.row[data-oval-name]').each(function() {
-    var ovalNameValue = this.dataset.ovalName.replace(/\s/g, '');
-    $('#bookmark-nav ul').last().append('<li><div class="oval" data-oval-name=' + ovalNameValue + '><span>' + this.dataset.ovalName + '</span></div></li>');
-  });
-  $('#bookmark-nav .oval[data-oval-name="Details"]').addClass('current');
-}
-
 function calendar_icon_click() {
   $(this).parent().parent().children('input').trigger('click');
 }
@@ -303,8 +295,6 @@ function warn_cancel_form() {
   });
 }
 
-
-
 function table_search(thisObj, tableID) {
   var $rows = $("#"+tableID+" tr");
   var val = '^(?=.*\\b' + $.trim($(thisObj).val()).split(/\s+/).join('\\b)(?=.*\\b') + ').*$',
@@ -316,6 +306,22 @@ function table_search(thisObj, tableID) {
       return !reg.test(text);
   }).hide();
   $('thead tr').show();
+}
+
+function get_bubbles() {
+  $('.row[data-oval-name]').each(function() {
+    var ovalNameValue = this.dataset.ovalName;
+    var ovalNameText = this.dataset.ovalName.replace(/([a-z])([A-Z])/g, '$1 $2');
+    $('#bookmark-nav ul').last().append('<li><div class="oval" data-oval-name=' + ovalNameValue + '><span>' + ovalNameText + '</span></div></li>');
+  });
+  $('#bookmark-nav .oval[data-oval-name="Details"]').addClass('current');
+}
+
+function bubble_click() {
+  var ovalName = $(this).data('oval-name');
+  var href = ($('.row[data-oval-name='+ovalName+']'));
+  var scrollAmount = ($(href).offset().top) - topOffset;
+  $('html, body').animate({ scrollTop: scrollAmount }, 1000);
 }
 
 function get_bookmark_positions() {
