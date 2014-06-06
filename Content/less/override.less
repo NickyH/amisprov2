@@ -2,9 +2,14 @@
 // @import "globals_dark.less"; // use for dark theme, and comment out globals_light.less
 @import "globals_light.less"; // use for light theme and comment out globals_dark.less
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: @white-medium;
   font-family: @font-family-main;
+  min-height: 100%;
 }
 
 //login panel
@@ -324,9 +329,6 @@ li.active {
   z-index: 99 !important;
 }
 
-.content_div {
-  display: none;
-}
 .content_div:first-child {
   display: block;
 }
@@ -1811,13 +1813,14 @@ li.required {
   text-align: center;
   box-shadow: 2px 2px 2px @black;
   -webkit-box-shadow: 2px 2px 2px @black;
-  transform: rotate(0deg);
-  transition-duration: 2s;
   span {
     color: @black-medium;
     font-size: 12px;
     font-stretch: ultra-condensed;
     font-weight: bold;
+  }
+  &:hover {
+    background-color: darken(@bubble-background, 10%);
   }
   &.current {
     background-color: darken(@form-highlight-colour, 10%);

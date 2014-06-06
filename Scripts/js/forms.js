@@ -322,6 +322,7 @@ function bubble_click() {
   var href = ($('.row[data-oval-name='+ovalName+']'));
   var scrollAmount = ($(href).offset().top) - topOffset;
   $('html, body').animate({ scrollTop: scrollAmount }, 1000);
+  update_current_bubble(ovalName);
 }
 
 function get_bookmark_positions() {
@@ -352,7 +353,7 @@ function update_current_bubble(current_bubble) {
 }
 
 function skip_to_details() {
-  var details = $('#bookmark_details').offset().top;
+  var details = $('.row.first').offset().top;
   $(window).scrollTop((details - topOffset));
 }
 
