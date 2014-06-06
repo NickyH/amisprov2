@@ -328,7 +328,7 @@ function bubble_click() {
 function get_bookmark_positions() {
   $('.row[data-oval-name]').each(function() {
     position_array[$(this).attr('data-oval-name')] = $(this).offset().top;
-    var top = $(window).scrollTop() + topOffset;
+    var top = $(window).scrollTop() + topOffset + 150;
     var current_bubble;
     var previous_value = 0;
     $.each( position_array, function( key, value ) {
