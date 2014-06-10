@@ -3,6 +3,11 @@ $(function(){
   $('#details-link').on('click', form_navbar);
   $("#insert-left").on('click', '#tools-button', tools_options_qtip);
   $("#insert-top").on('click', '#search-by-address-button', searchByAddress_qtip);
+
+  $('ul[id^="accordion-"]').dcAccordion();
+  //prototype only functions - Benito can delete in Visual Studio??
+  insert_map();
+  insert_top();
 });
 
 function checkbox_when_clicked() {
@@ -330,3 +335,63 @@ function change_tab_content() {
   $('.pages-icons').removeClass("current");
   $(this).addClass('current');
 }
+
+function toggle_radio() {
+  if ($(this).children('input[type="radio"]').prop('checked') === false ) {
+    $(this).parents('.panel-body').children('.radio-button').children('input[type="radio"]').prop('checked', false);
+    $(this).parents('.panel-body').children('.radio-button').removeClass('checked');
+    $(this).children('input[type="radio"]').prop("checked", true);
+    $(this).addClass('checked');
+  }
+}
+
+function toggle_active_layer() {
+  if ($(this).prop('checked')) {
+    $('input[name="layer-select"]').parents('.pull-right').removeClass('select');
+    $(this).parents('.pull-right').addClass('select');
+    $('input[name="layer-select"]').parents('.layers').removeClass('current-active');
+    $(this).parents('.layers').addClass('current-active');
+  }
+}
+
+function toggle_layer_selection() {
+  $(this).toggleClass('checked');
+}
+
+function show_meta2_panel() {
+  $('.asset-select-panel.panel-2').removeClass('hidden');
+}
+
+function show_meta3_panel() {
+  $('.asset-select-panel.panel-3').removeClass('hidden');
+}
+
+//prototype only functions - Benito can delete?
+
+function insert_map() {
+  $.get('MapLayer.html', function(data) {
+    $('#insert-map').html(data);
+    });
+  $('#insert-map').trigger('create');
+}
+
+function insert_left() {
+  $('#insert-left').empty();
+  $.get('left_bar.html', function(data) {
+    $('#insert-left').html(data);
+  });
+}
+
+function insert_top() {
+  $.get('top_bar.html', function(data) {
+    $('#insert-top').html(data);
+  });
+}
+
+function refresh_map() {
+  window.location = ('index.html');
+}
+
+$(function() {
+  $("#map-link").on('click', refresh_map);
+});

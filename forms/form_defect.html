@@ -453,10 +453,9 @@
 
           <form class="form-horizontal container" role="form">
 
-            <table id="table-filter-4" class="table table-condensed table-striped">
+            <table id="note-reference-table3" class="table table-condensed reference-history table-striped">
               <thead>
                 <tr>
-                  <th>Note ID</th>
                   <th>Ref. No.</th>
                   <th>First Name</th>
                   <th>Last Name</th>
@@ -469,7 +468,6 @@
               <tbody>
                 <tr>
                   <td>1035.35</td>
-                  <td>1035.35</td>
                   <td>Julia</td>
                   <td>Blogg</td>
                   <td>14/10/2012</td>
@@ -478,7 +476,6 @@
                   <td>0416496845</td>
                 </tr>
                 <tr>
-                  <td>1934.56</td>
                   <td>1035.35</td>
                   <td>Gerald</td>
                   <td>Lim</td>
@@ -488,7 +485,6 @@
                   <td>0412059483</td>
                 </tr>
                 <tr>
-                  <td>4857.45</td>
                   <td>1035.35</td>
                   <td>Joseph</td>
                   <td>Koll</td>
@@ -498,7 +494,6 @@
                   <td>0418384736</td>
                 </tr>
                 <tr>
-                  <td>5834.67</td>
                   <td>1035.35</td>
                   <td>Samantha</td>
                   <td>Rickson</td>
@@ -508,7 +503,6 @@
                   <td>0413958473</td>
                 </tr>
                 <tr>
-                  <td>4857.45</td>
                   <td>1035.35</td>
                   <td>Daniella</td>
                   <td>Olivetti</td>
@@ -518,7 +512,6 @@
                   <td>0418384736</td>
                 </tr>
                 <tr>
-                  <td>5834.67</td>
                   <td>1035.35</td>
                   <td>Gregory</td>
                   <td>Heath</td>
@@ -640,4 +633,27 @@
 $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
 $('.form-container').bind('swipemove', get_bookmark_positions);
 skip_to_details();
+
+
+// notes reference table
+$('#note-reference-table3').dataTable({
+    "columns": [
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      }
+    ]
+  });
 </script>

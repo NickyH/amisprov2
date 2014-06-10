@@ -323,7 +323,7 @@
               </div>
             </div>
 
-            <table id="table-filter-1" class="table table-condensed table-striped reference-history">
+            <table id="contact-reference-table2" class="table table-condensed table-striped reference-history">
               <thead>
                 <tr>
                   <th></th>
@@ -744,7 +744,7 @@
               </div>
             </div>
 
-            <table id="table-filter-2" class="table table-condensed table-striped">
+            <table id="note-reference-table2" class="table table-condensed reference-history table-striped">
               <thead>
                 <tr>
                   <th>Ref. No.</th>
@@ -926,4 +926,54 @@
   skip_to_details();
 
   $('input[type=file]').on('change', add_filename);
+
+  // contact reference table
+$('#contact-reference-table2').dataTable({
+    "columns": [
+      {
+        "class": "remove-sort",
+        "orderable": false,
+        "defaultContent": ""
+      },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      }
+    ]
+  });
+
+// notes reference table
+$('#note-reference-table2').dataTable({
+    "columns": [
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      { "class": "text" },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      },
+      {
+        "class": "remove-sort",
+        "orderable": false
+      }
+    ]
+  });
+
 </script>
