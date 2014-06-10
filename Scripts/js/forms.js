@@ -352,6 +352,7 @@ function update_current_bubble(current_bubble) {
 }
 
 function skip_to_details() {
+  console.log($('.row.first').offset());
   var details = $('.row.first').offset().top;
   $(window).scrollTop((details - topOffset));
 }

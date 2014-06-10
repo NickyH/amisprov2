@@ -310,13 +310,12 @@ function goto_forms() {
 
 function insert_form() {
   close_current_qtip();
-  var filename = $(this).children('a').attr('href');
+  var filename = $(this).children('a').attr('data-filename');
   $('#insert-form').empty();
   $.get(filename, function(data) {
     $('#insert-form').html(data);
   });
   insert_left();
-  return false;
 }
 
 // add current class to image pages-icons class on click
