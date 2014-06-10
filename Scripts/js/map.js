@@ -308,58 +308,15 @@ function goto_forms() {
   insert_left();
 }
 
-function insert_inspection_form() {
+function insert_form() {
   close_current_qtip();
+  var filename = $(this).children('a').attr('href');
   $('#insert-form').empty();
-  $.get('forms/form_inspect.html', function(data) {
-    $('#insert-form').html(data);
-    });
-  insert_left();
-}
-
-function insert_asset_form() {
-  close_current_qtip();
-  $('#insert-form').empty();
-  $.get('forms/form_scaffold.html', function(data) {
+  $.get(filename, function(data) {
     $('#insert-form').html(data);
   });
   insert_left();
-}
-
-function insert_CR_form() {
-  close_current_qtip();
-  $('#insert-form').empty();
-  $.get('forms/form_cr.html', function(data) {
-    $('#insert-form').html(data);
-  });
-  insert_left();
-}
-
-function insert_defect_form() {
-  close_current_qtip();
-  $('#insert-form').empty();
-  $.get('forms/form_defect.html', function(data) {
-    $('#insert-form').html(data);
-  });
-  insert_left();
-}
-
-function insert_task_form() {
-  close_current_qtip();
-  $('#insert-form').empty();
-  $.get('forms/form_task.html', function(data) {
-    $('#insert-form').html(data);
-  });
-  insert_left();
-}
-
-function insert_timesheet_form() {
-  close_current_qtip();
-  $('#insert-form').empty();
-  $.get('forms/form_timesheet.html', function(data) {
-    $('#insert-form').html(data);
-  });
-  insert_left();
+  return false;
 }
 
 // add current class to image pages-icons class on click

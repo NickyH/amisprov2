@@ -18,9 +18,27 @@ $('.input-group-addon .glyphicon-calendar').on('click', calendar_icon_click); //
 $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activate timepicker on icon click
 $('.history-button .button').on('click', toggle_history_button);
 $('.icon-raise').on('click', show_raise_qtip);
+$('.filename-delete').on('click', delete_selected_file);
 
 function calendar_icon_click() {
   $(this).parent().parent().children('input').trigger('click');
+}
+
+function add_filename() {
+  // get filename when file is attached and display it in the next form-group
+  $in=$(this);
+  var filename = $in.val().split('\\').pop();
+  if (filename === "No files added" || filename === "" ) {
+    filename = recentfile;
+  }
+  $in.parents('.form-group').next('.filename').children().find('.filename-text').html(filename);
+  $in.parents('.form-group').next('.filename').children().find('.filename-delete').html('x');
+  var recentfile = filename
+}
+
+function delete_selected_file() {
+  $(this).parent('div').children('.filename-text').html("No files added");
+  $(this).parent('div').children('.filename-delete').html("");
 }
 
 function clock_icon_click() {

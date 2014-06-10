@@ -28,7 +28,7 @@
             </div>
           </div>
 
-          <form class="form-horizontal container">
+          <div class="form-horizontal container">
 
             <div class="form-column col-lg-6 col-md-6 col-sm-12">
 
@@ -55,8 +55,7 @@
             <!-- end form-column-->
 
             <span class="glyphicon insert-cross-icon"></span>
-          </form>
-
+          </div>
 
         </div>
       </div>
@@ -79,7 +78,7 @@
             </div>
           </div>
 
-          <form class="form-horizontal container" role="form">
+          <div class="form-horizontal container" role="form">
 
             <div class="form-column col-lg-6 col-md-6 col-sm-12">
 
@@ -293,7 +292,7 @@
             <!-- end form-column-->
 
             <span class="glyphicon insert-cross-icon"></span>
-          </form>
+          </div>
 
         </div>
       </div>
@@ -316,7 +315,7 @@
             </div>
           </div>
 
-          <form class="form-horizontal container" role="form">
+          <div class="form-horizontal container">
 
             <div class="form-group" role="search">
               <div class="col-sm-12">
@@ -401,7 +400,7 @@
             </table>
 
             <span class="glyphicon insert-cross-icon"></span>
-          </form>
+          </div>
 
         </div>
 
@@ -425,7 +424,7 @@
             </div>
           </div>
 
-          <form class="form-horizontal container" role="form">
+          <div class="form-horizontal container">
 
             <div class="form-column col-lg-6 col-md-6 col-sm-12">
 
@@ -587,20 +586,29 @@
                 <label class="col-sm-4 control-label">Attachment</label>
                 <div class="col-sm-8">
                   <input type="file" class="form-control">
-                  <span class='btn btn-info file-select'>Select File</span>
-                  <span class='btn btn-primary attachment'><span class="glyphicon glyphicon-plus"></span></span>
-                  <span class='btn btn-success attachment'><span class="glyphicon glyphicon-ok"></span></span>
-                  <span class='btn btn-danger attachment'><span class="glyphicon glyphicon-remove"></span></span>
+                  <span class='btn btn-info file-select'>Select</span></input>
+                </div>
+              </div>
+
+              <div class="form-group filename">
+                <div class="col-sm-6">
+                </div>
+                <div class="underline col-sm-6">
+                  <label class="col-sm-6 control-label filename-text">No files added</label>
+                  <label class="col-sm-1 control-label filename-delete"></label>
+                  <div class="col-sm-5">
+                  </div>
                 </div>
               </div>
 
             <span class="glyphicon insert-cross-icon"></span>
-          </form>
+          </div>
 
         </div>
 
       </div>
       <!-- end form panel 1 -->
+    </div>
 
     </div>
     <!-- end form row 4 -->
@@ -619,7 +627,7 @@
             </div>
           </div>
 
-          <form class="form-horizontal container" role="form">
+          <div class="form-horizontal container">
 
             <div class="form-column col-lg-6 col-md-6 col-sm-12">
 
@@ -681,7 +689,7 @@
               <div class="form-group">
                 <label class="col-sm-4 control-label">Note Description</label>
                 <div class="col-sm-8">
-                  <textarea class="form-control" rows="7"></textarea>
+                  <textarea class="form-control" rows="4"></textarea>
                 </div>
               </div>
 
@@ -689,10 +697,15 @@
                 <label class="col-sm-4 control-label">Attachment</label>
                 <div class="col-sm-8">
                   <input type="file" class="form-control">
-                  <span class='btn btn-info file-select'>Select File</span>
-                  <span class='btn btn-primary attachment'><span class="glyphicon glyphicon-plus"></span></span>
-                  <span class='btn btn-success attachment'><span class="glyphicon glyphicon-ok"></span></span>
-                  <span class='btn btn-danger attachment'><span class="glyphicon glyphicon-remove"></span></span>
+                  <span class='btn btn-info file-select'>Select</span></input>
+                </div>
+              </div>
+
+              <div class="form-group filename">
+                <div class="col-sm-4"></div>
+                <div class="underline col-sm-8">
+                  <label class="col-sm-6 control-label filename-text">No files added</label>
+                  <label class="col-sm-6 control-label filename-delete"></label>
                 </div>
               </div>
 
@@ -700,7 +713,7 @@
             <!-- end form-column-->
 
             <span class="glyphicon insert-cross-icon"></span>
-          </form>
+          </div>
 
         </div>
       </div>
@@ -723,7 +736,7 @@
             </div>
           </div>
 
-          <form class="form-horizontal container" role="form">
+          <div class="form-horizontal container" role="form">
 
             <div class="form-group" role="search">
               <div class="col-sm-12">
@@ -802,7 +815,7 @@
             </table>
 
             <span class="glyphicon insert-cross-icon"></span>
-          </form>
+          </div>
 
         </div>
 
@@ -826,7 +839,7 @@
             </div>
           </div>
 
-          <form class="form-horizontal container" role="form">
+          <div class="form-horizontal container" role="form">
 
             <div class="form-group">
               <div class="col-sm-4"></div>
@@ -894,7 +907,7 @@
             </div>
 
             <span class="glyphicon insert-cross-icon"></span>
-          </form>
+          </div>
 
         </div>
       </div>
@@ -911,4 +924,6 @@
   $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
   $('.form-container').bind('swipemove', get_bookmark_positions);
   skip_to_details();
+
+  $('input[type=file]').on('change', add_filename);
 </script>
