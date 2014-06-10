@@ -14,6 +14,8 @@ $('.selectpicker').selectpicker({ size: 5 });
 $('.reference-history tr').on('click', open_current_contact_row);
 $('.icon-history').on('click', history_qtip);
 $('.form-button.cancel').on('click', warn_cancel_form);
+$('.form-button.save').on('click', show_saving_form); // use this when user saves form and form is saving
+// $('.form-button.save').on('click', alert_errors_form); // use this when user presses save but there are errors on form
 $('.input-group-addon .glyphicon-calendar').on('click', calendar_icon_click); //activate calendar on icon click
 $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activate timepicker on icon click
 $('.history-button .button').on('click', toggle_history_button);
@@ -292,6 +294,26 @@ function warn_cancel_form() {
       window.location = '/';
     }
   });
+}
+
+function show_saving_form() {
+  bootbox.dialog({
+    message: "<div class='spinner'><span class='mask'></span></div> Saving Changes...",
+    className: 'save-modal',
+    closeButton: false
+  });
+  setTimeout(close_save_form_dialog, 4000);
+}
+
+function alert_errors_form() {
+  bootbox.dialog({
+    message: "Sorry, there are errors on the page. Please fix the errors and save again.",
+    className: 'errors-modal'
+  });
+}
+
+function close_save_form_dialog() {
+  $('.bootbox.modal.save-modal').modal('hide');
 }
 
 function table_search(thisObj, tableID) {
