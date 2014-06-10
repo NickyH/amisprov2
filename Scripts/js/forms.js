@@ -11,8 +11,6 @@ $('.form-horizontal').on('keyup', this, check_panel_valid);
 $('.form-horizontal').on('change', this, check_panel_valid);
 $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
-$('#bookmark-nav').on('click', 'li', check_form_location);
-$('.referral-icon').on('click', toggle_referral);
 $('.reference-history tr').on('click', open_current_contact_row);
 $('.icon-history').on('click', history_qtip);
 $('.form-button.cancel').on('click', warn_cancel_form);
@@ -129,15 +127,6 @@ function check_panel_valid() {
   }
 }
 
-function check_form_location() {
-
-}
-
-function oval_border_highlight(bookmark) {
-  $('.oval').removeClass('current');
-  $(tab_id).addClass('current');
-}
-
 function toggle_oval_colour( thisObj, className) {
   $(thisObj).parent().find('.text-circle').removeClass('incomplete complete').addClass(className);
   ovalName = '#' + $(thisObj).parents("div[id^='bookmark_']" ).attr('id');
@@ -145,14 +134,6 @@ function toggle_oval_colour( thisObj, className) {
   if ($(change_oval_colour).attr('data-href') === ovalName ) {
     $(change_oval_colour).children('div').removeClass('incomplete complete').addClass(className);
   }
-}
-
-function toggle_referral() {
-  $('.row').toggleClass('hidden');
-  $('html body').animate({ scrollTop: 0 });
-  $('#bookmark_closeout').toggleClass('hidden');
-  oval_border_highlight('#tab1');
-  $('.referral-icon').toggleClass('current');
 }
 
 function change_selectpicker_values() {

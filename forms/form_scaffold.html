@@ -1,18 +1,21 @@
 <div class="content_div">
 
   <div class="form-buttons">
-    <div class="form-title"><img class="form-head-icon" src="../Content/images/icons/icon-asset-white.png"><span>Scaffolding</span>
-      <span class="cr-id">1023.56</span>
+    <div class="form-title">
+      <img class="form-head-icon" src="../Content/images/icons/icon-cr-inverse-3e3e3e.png">
+      <span class="form-title-text name">Scaffold</span>
+      <span class="form-title-text id">1023.56</span>
+      <span class="form-title-text status">Received</span>
     </div>
-    <input type="submit" value="Cancel" class="form-button cancel-button" data-role="button" />
-    <input type="submit" value="Save" class="form-button save-button" data-role="button" />
+    <img class="form-button cancel" src="../Content/images/icons/icon-cancel-inverse-717172.png" title="Cancel">
+    <img class="form-button save" src="../Content/images/icons/icon-save-inverse-717172.png" title="Save">
   </div>
 
   <!-- forms content container -->
   <div class="container-fluid form-container">
 
     <!-- form row 1 -->
-    <div class="row">
+    <div class="row first"  data-oval-name="Details">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -122,7 +125,7 @@
     <!-- end form row 1 -->
 
     <!-- form row 2 -->
-    <div class="row">
+    <div class="row"  data-oval-name="Planning">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -252,7 +255,7 @@
     <!-- end form row 2 -->
 
     <!-- form row 3 -->
-    <div class="row">
+    <div class="row"  data-oval-name="WorkOrder">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -263,7 +266,7 @@
               <!-- numbered circle in each form panel-->
               <div class="text-circle">
                 <div class="text-in-circle">
-                  WO
+                  Work Order
                 </div>
               </div>
 
@@ -320,7 +323,7 @@
     <!-- end form row 3 -->
 
     <!-- form row 4 -->
-    <div class="row">
+    <div class="row"  data-oval-name="Schedule">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -434,7 +437,7 @@
     <!-- end form row 4 -->
 
     <!-- form row 5 -->
-    <div class="row">
+    <div class="row"  data-oval-name="Cancel">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -504,3 +507,8 @@
 </div>
 
 <script src="../Scripts/js/forms.js"></script>
+<script>
+$('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
+$('.form-container').bind('swipemove', get_bookmark_positions);
+skip_to_details();
+</script>

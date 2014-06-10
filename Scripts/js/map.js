@@ -295,6 +295,10 @@ function searchByAddress_qtip() {
   $('#address-search').removeClass('invisible');
 }
 
+function close_current_qtip() {
+  $('.qtip').qtip('hide');
+}
+
 function goto_forms() {
   form_navbar();
   $('#insert-map').empty();
@@ -302,177 +306,60 @@ function goto_forms() {
     $('#insert-form').html(data);
     });
   insert_left();
-  var formName = 'request'
-  show_correct_ovals(formName);
 }
 
 function insert_inspection_form() {
+  close_current_qtip();
   $('#insert-form').empty();
   $.get('forms/form_inspect.html', function(data) {
     $('#insert-form').html(data);
     });
-  var formName = 'inspection'
-  show_correct_ovals(formName);
-  $('#insert-form').on('change', skip_to_details);
-  oval_border_highlight('#tab2');
+  insert_left();
 }
 
-function insert_scaffold_form() {
+function insert_asset_form() {
+  close_current_qtip();
   $('#insert-form').empty();
   $.get('forms/form_scaffold.html', function(data) {
     $('#insert-form').html(data);
   });
-  $('html body').animate({ scrollTop: 0 });
+  insert_left();
 }
 
 function insert_CR_form() {
+  close_current_qtip();
   $('#insert-form').empty();
   $.get('forms/form_cr.html', function(data) {
     $('#insert-form').html(data);
   });
-  var formName = 'request'
-  show_correct_ovals(formName);
-  $('#insert-form').on('change', skip_to_details);
-  oval_border_highlight('#tab2');
+  insert_left();
 }
 
 function insert_defect_form() {
+  close_current_qtip();
   $('#insert-form').empty();
   $.get('forms/form_defect.html', function(data) {
     $('#insert-form').html(data);
   });
-  var formName = 'defect'
-  show_correct_ovals(formName);
-  $('#insert-form').on('change', skip_to_details);
-  oval_border_highlight('#tab2');
+  insert_left();
 }
 
 function insert_task_form() {
+  close_current_qtip();
   $('#insert-form').empty();
   $.get('forms/form_task.html', function(data) {
     $('#insert-form').html(data);
   });
-  var formName = 'task'
-  show_correct_ovals(formName);
+  insert_left();
 }
 
 function insert_timesheet_form() {
+  close_current_qtip();
   $('#insert-form').empty();
   $.get('forms/form_timesheet.html', function(data) {
     $('#insert-form').html(data);
   });
-  var formName = 'timesheet'
-  show_correct_ovals(formName);
-  $('html body').animate({ scrollTop: 0 });
-}
-
-function show_correct_ovals(formName) {
-  if (formName === 'request') {
-    console.log('request');
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-
-    $('a[data-href="#bookmark_contact"]').parent('li').show();
-    $('a[data-href="#bookmark_details"]').parent('li').show();
-    $('a[data-href="#bookmark_location"]').parent('li').show();
-    $('a[data-href="#bookmark_notes"]').parent('li').show();
-    $('a[data-href="#bookmark_closeout"]').parent('li').show();
-
-    $('a[data-href="#bookmark_start"]').parent('li').hide();
-    $('a[data-href="#bookmark_work"]').parent('li').hide();
-    $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-    $('a[data-href="#bookmark_end"]').parent('li').hide();
-    $('a[data-href="#bookmark_review"]').parent('li').hide();
-    hide_timesheet_ovals();
-    hide_task_ovals();
-  }
-  if (formName === 'defect') {
-    $('a[data-href="#bookmark_contact"]').parent('li').hide();
-
-    $('a[data-href="#bookmark_condition"]').parent('li').show();
-    $('a[data-href="#bookmark_details"]').parent('li').show();
-    $('a[data-href="#bookmark_location"]').parent('li').show();
-    $('a[data-href="#bookmark_notes"]').parent('li').show();
-    $('a[data-href="#bookmark_closeout"]').parent('li').show();
-
-    $('a[data-href="#bookmark_start"]').parent('li').hide();
-    $('a[data-href="#bookmark_work"]').parent('li').hide();
-    $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-    $('a[data-href="#bookmark_end"]').parent('li').hide();
-    $('a[data-href="#bookmark_review"]').parent('li').hide();
-    hide_timesheet_ovals();
-    hide_task_ovals();
-  }
-  if (formName === 'inspection') {
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-    $('a[data-href="#bookmark_contact"]').parent('li').show();
-
-    $('a[data-href="#bookmark_details"]').parent('li').show();
-    $('a[data-href="#bookmark_location"]').parent('li').show();
-    $('a[data-href="#bookmark_notes"]').parent('li').show();
-    $('a[data-href="#bookmark_closeout"]').parent('li').show();
-
-    $('a[data-href="#bookmark_start"]').parent('li').hide();
-    $('a[data-href="#bookmark_work"]').parent('li').hide();
-    $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-    $('a[data-href="#bookmark_end"]').parent('li').hide();
-    $('a[data-href="#bookmark_review"]').parent('li').hide();
-    hide_timesheet_ovals();
-    hide_task_ovals();
-  }
-  if (formName === 'task') {
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-    $('a[data-href="#bookmark_contact"]').parent('li').hide();
-    $('a[data-href="#bookmark_location"]').parent('li').hide();
-    $('a[data-href="#bookmark_details"]').parent('li').hide();
-    $('a[data-href="#bookmark_notes"]').parent('li').hide();
-    $('a[data-href="#bookmark_closeout"]').parent('li').hide();
-    hide_timesheet_ovals();
-    show_task_ovals();
-  }
-  if (formName === 'timesheet') {
-    $('a[data-href="#bookmark_condition"]').parent('li').hide();
-    $('a[data-href="#bookmark_contact"]').parent('li').hide();
-    $('a[data-href="#bookmark_location"]').parent('li').hide();
-    $('a[data-href="#bookmark_details"]').parent('li').hide();
-    $('a[data-href="#bookmark_notes"]').parent('li').hide();
-    $('a[data-href="#bookmark_closeout"]').parent('li').hide();
-    show_timesheet_ovals();
-    hide_task_ovals();
-  }
-}
-
-function hide_task_ovals() {
-  $('a[data-href="#bookmark_taskdetails"]').parent('li').hide();
-  $('a[data-href="#bookmark_extdetails"]').parent('li').hide();
-  $('a[data-href="#bookmark_loe"]').parent('li').hide();
-  $('a[data-href="#bookmark_wip"]').parent('li').hide();
-  $('a[data-href="#bookmark_traffic"]').parent('li').hide();
-  $('a[data-href="#bookmark_tasknotes"]').parent('li').hide();
-}
-
-function show_task_ovals() {
-  $('a[data-href="#bookmark_taskdetails"]').parent('li').show();
-  $('a[data-href="#bookmark_extdetails"]').parent('li').show();
-  $('a[data-href="#bookmark_loe"]').parent('li').show();
-  $('a[data-href="#bookmark_wip"]').parent('li').show();
-  $('a[data-href="#bookmark_traffic"]').parent('li').show();
-  $('a[data-href="#bookmark_tasknotes"]').parent('li').show();
-}
-
-function show_timesheet_ovals() {
-  $('a[data-href="#bookmark_start"]').parent('li').show();
-  $('a[data-href="#bookmark_work"]').parent('li').show();
-  $('a[data-href="#bookmark_breaks"]').parent('li').show();
-  $('a[data-href="#bookmark_end"]').parent('li').show();
-  $('a[data-href="#bookmark_review"]').parent('li').show();
-}
-
-function hide_timesheet_ovals() {
-  $('a[data-href="#bookmark_start"]').parent('li').hide();
-  $('a[data-href="#bookmark_work"]').parent('li').hide();
-  $('a[data-href="#bookmark_breaks"]').parent('li').hide();
-  $('a[data-href="#bookmark_end"]').parent('li').hide();
-  $('a[data-href="#bookmark_review"]').parent('li').hide();
+  insert_left();
 }
 
 // add current class to image pages-icons class on click

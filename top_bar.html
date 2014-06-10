@@ -814,37 +814,37 @@
   <div class="panel panel-default asset-select-panel panel-1">
     <div class="panel-body">
       <ul class="nav nav-pills nav-stacked">
-        <li class="active">
+        <li class="active" id="raise-insert-asset">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-asset-white.png"></span>
               Asset
           </a>
         </li>
-        <li class="active">
+        <li class="active" id="raise-insert-request">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-cr-white.png"></span>
               Customer Request
           </a>
         </li>
-        <li class="active">
+        <li class="active" id="raise-insert-inspect">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-inspection-white.png"></span>
               Inspection
           </a>
         </li>
-        <li class="active">
+        <li class="active" id="raise-insert-defects">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-defect-white.png"></span>
               Defect
           </a>
         </li>
-        <li class="active">
+        <li class="active" id="raise-insert-task">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-task-white.png"></span>
               Task
           </a>
         </li>
-        <li class="active">
+        <li class="active" id="raise-insert-asset">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-complete-white.png"></span>
               Completion
@@ -857,34 +857,13 @@
 </div>
 <!-- forms raise qtip -->
 
-
-
-
-
-
-
-
-
-<!-- raise-->
-<div id="raise-buttons" class="invisible">
-  <div>
-    <a href="#"><img class="raise-icons icon-asset" src="../Content/images/icons/icons-raise-asset.png"></a>
-    <a href="#"><img class="raise-icons icon-request" src="../Content/images/icons/icons-raise-cr.png"></a>
-    <a href="#"><img class="raise-icons icon-inspect" src="../Content/images/icons/icons-raise-inspect.png"></a>
-    <a href="#"><img class="raise-icons icon-defects" src="../Content/images/icons/icons-raise-defect.png"></a>
-    <a href="#"><img class="raise-icons icon-task" src="../Content/images/icons/icons-raise-task.png"></a>
-    <a href="#"><img class="raise-icons icon-task inactive" src="../Content/images/icons/icons-raise-complete.png"></a>
-</div>
-<!--raise-->
-
 <script>
-  $('.icon-form').on('click', show_correct_ovals);
-  $('.icon-scaffold').on('click', insert_scaffold_form);
-  $('.icon-request').on('click', insert_CR_form);
-  $('.icon-defects').on('click', insert_defect_form);
-  $('.icon-inspect').on('click', insert_inspection_form);
-  $('.icon-task').on('click', insert_task_form);
-  $('.icon-clock').on('click', insert_timesheet_form);
+  $('#raise-insert-asset').on('click', insert_asset_form);
+  $('#raise-insert-request').on('click', insert_CR_form);
+  $('#raise-insert-defects').on('click', insert_defect_form);
+  $('#raise-insert-inspect').on('click', insert_inspection_form);
+  $('#raise-insert-task').on('click', insert_task_form);
+  $('#raise-insert-timesheet').on('click', insert_timesheet_form);
 
   $('#map-link').on('click', goto_map);
   $('#map-link-2').on('click', goto_map);

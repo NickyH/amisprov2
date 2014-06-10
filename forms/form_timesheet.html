@@ -1,18 +1,21 @@
 <div class="content_div">
 
   <div class="form-buttons">
-    <div class="form-title"><img class="form-head-icon" src="../Content/images/icons/icon-clock-white.png"><span>Timesheet</span>
-      <span class="status">Monday 16th December</span>
+    <div class="form-title">
+      <img class="form-head-icon" src="../Content/images/icons/icon-cr-inverse-3e3e3e.png">
+      <span class="form-title-text name">Timesheet</span>
+      <span class="form-title-text id">1203.56</span>
+      <span class="form-title-text status">16/05/2014</span>
     </div>
-    <input type="submit" value="Cancel" class="form-button cancel-button" data-role="button" />
-    <input type="submit" value="Save" class="form-button save-button" data-role="button" />
+    <img class="form-button cancel" src="../Content/images/icons/icon-cancel-inverse-717172.png" title="Cancel">
+    <img class="form-button save" src="../Content/images/icons/icon-save-inverse-717172.png" title="Save">
   </div>
 
   <!-- forms content container -->
   <div class="container-fluid form-container">
 
     <!-- form row 1 -->
-    <div class="row" id="bookmark_start">
+    <div class="row first">
       <div class="col-12">
         <div class="row-fluid">
 
@@ -1073,6 +1076,6 @@
 
 <script src="../Scripts/js/forms.js"></script>
 <script>
-  $('.form-container').on('DOMMouseScroll mousewheel', get_timesheet_page_position);
-  $('.form-container').bind('swipemove',get_timesheet_page_position);
+  $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
+  $('.form-container').bind('swipemove', get_bookmark_positions);
 </script>
