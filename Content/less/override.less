@@ -1321,11 +1321,11 @@ th.remove-sort {
 }
 
 .layers-owl-wrapper {
-  width: 86% !important;
+  width: 90% !important;
   height: intrinsic;
-  min-height: 600px;
-  margin-right: 7%;
-  margin-left: 7%;
+  min-height: 400px;
+  margin-right: 5%;
+  margin-left: 5%;
 }
 
 .owl-controls.clickable {
@@ -1352,19 +1352,59 @@ th.remove-sort {
 
 #owl-layers {
   .owl-item {
-    width: 280px !important;
+    width: 260px !important;
   }
   .item {
     .layer {
       background-color: lighten(@map-highlight-colour, 10%);
       border-top-left-radius: 1px solid @map-highlight-colour;
+      &.lvl1 {
+        background-color: darken(@map-highlight-colour, 5%);
+        font-weight: bold;
+        .select {
+          display: inline-block;
+          background-color: white;
+          width: intrinsic;
+          height: 20px;
+          padding-left: 5px;
+          padding-right: 5px;
+          border-radius: 5px;
+          color: black;
+          float: right;
+          margin-right: 5px;
+          margin-top: 8px;
+          text-align: center;
+          font-size: 12px;
+          &:hover {
+            background-color: #e5e5e5;
+          }
+          &:active {
+            background-color: #e5e5e5;
+          }
+          &.selected {
+            span {
+              display: none;
+            }
+          }
+          &.selected:after {
+            content: "Select None";
+          }
+        }
+      }
+      &.lvl2 {
+        padding-left: 15px;
+        font-weight: normal;
+      }
+      &.selected {
+        background-color: @save-button-colour;
+      }
     }
-    width: 270px;
+    width: 260px;
     display: block !important;
     height: 100%;
     overflow: auto;
     li {
-      width: 260px;
+      width: 250px;
       background-color: darken(@map-highlight-colour, 5%);
       list-style: none;
       border-radius: 5px;
@@ -1395,10 +1435,11 @@ th.remove-sort {
     margin-right: 0;
     font-size: 13px;
     ul {
-      background-color: lighten( @map-highlight-colour, 10% );
+      // background-color: lighten( @map-highlight-colour, 10% );
+      background-color: #e5e5e5;
     }
     li {
-      background-color: lighten( @map-highlight-colour, 10% );
+      // background-color: lighten( @map-highlight-colour, 10% );
     }
   }
 }
@@ -1460,7 +1501,8 @@ th.remove-sort {
   padding: 5px;
   z-index: 10;
   .glyphicon {
-    margin-left: 5px;
+    margin-left: 4px;
+    margin-top: 3px;
   }
   &.active {
     background-color: @layer-active;

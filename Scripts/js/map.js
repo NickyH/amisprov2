@@ -11,6 +11,52 @@ $(function(){
   insert_top();
 });
 
+function toggle_layer_select_colour() {
+  var checkbox = $(this).children('.input-group').children('input');
+  $(checkbox).each(function() {
+    if ((checkbox).prop('checked')) {
+      layer_select_colour($(this).closest('li'));
+    }
+    else if (checkbox.closest('span make-active').hasClass('active')){
+      return false;
+    }
+    else {
+      layer_deselect_colour($(this).closest('li'));
+    }
+  });
+
+}
+
+function toggle_select_all_layers() {
+  $(this).toggleClass('selected');
+  var selected = $(this).hasClass('selected');
+  var list = $(this).closest('li').children('ul').children('li');
+  if (selected) {
+    $(list).each(function() {
+      $(this).children('.input-group').children('input').prop('checked', true);
+      layer_select_colour(this);
+    });
+  }
+  else {
+    $(list).each(function() {
+      $(this).children('.input-group').children('input').prop('checked', false);
+      layer_deselect_colour(this);
+    });
+  }
+}
+
+function layer_select_colour(layer) {
+  $(layer).each(function() {
+    $(this).addClass('selected');
+  });
+}
+
+function layer_deselect_colour(layer) {
+  $(layer).each(function() {
+    $(this).removeClass('selected');
+  });
+}
+
 function checkbox_when_clicked() {
   var checkbox = $(this).children().first().children().first();
   if ($(checkbox).parent().hasClass('no-deselect')) {
@@ -445,4 +491,27 @@ function create_layers_carousel() {
     })
   $('.owl-prev').addClass('arrow-left');
   $('.owl-next').addClass('arrow-right');
+}
+
+function checkbox_when_clicked() {
+  var checkbox = $(this).children().first().children().first();
+  if ($(checkbox).parent().hasClass('no-deselect')) {
+    return false;
+  }
+  $(checkbox).prop('checked', !checkbox.prop("checked"));
+}
+
+function layer_active_clicked() {
+  var activate = $(this);
+  if ($(activate).hasClass('active')) {
+    return false;
+  }
+  else {
+    $('.make-active').removeClass('active');
+    $('.input-group').removeClass('no-deselect');
+    $(activate).toggleClass('active');
+    $(this).parent().children().first().addClass('no-deselect');
+    var checkbox = $(this).parent().children().first().children().first();
+    $(checkbox).prop('checked', true);
+  }
 }
