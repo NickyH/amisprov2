@@ -1307,6 +1307,10 @@ th.remove-sort {
     .layer {
       background-color: lighten(@map-highlight-colour, 10%);
       border-top-left-radius: 1px solid @map-highlight-colour;
+      text-overflow: ellipsis;
+          // width: 140px;
+          white-space: nowrap;
+          overflow: hidden;
       &.lvl1 {
         background-color: darken(@map-highlight-colour, 5%);
         font-weight: bold;
@@ -1365,13 +1369,11 @@ th.remove-sort {
         padding: 5px;
         vertical-align: middle;
         display: inline-block;
-        &.truncate {
-          text-overflow: ellipsis;
-          width: 140px;
-          white-space: nowrap;
-          overflow: hidden;
-          padding-right: 0;
-        }
+        text-overflow: ellipsis;
+        width: 160px;
+        white-space: nowrap;
+        overflow: hidden;
+        padding-right: 0;
       }
     }
   }
@@ -1870,7 +1872,8 @@ li.required {
   }
 }
 
-.reference-history {
+.reference-history,
+.asset-select {
     tr:first-child th {
     font-size: 13px;
     color: white;
@@ -1880,8 +1883,17 @@ li.required {
       background: @top-bar-colour !important;
     }
   }
+  thead tr th {
+    &.sorting,
+    &.sorting_asc,
+    &.sorting_desc {
+      background-position: left center;
+      padding-left: 20px;
+    }
+  }
 }
 
+#asset-select-table_filter,
 #contact-reference-table_filter,
 #note-reference-table_filter {
   input {
@@ -1889,10 +1901,25 @@ li.required {
   }
 }
 
+#asset-select-table_length,
 #contact-reference-table_length,
 #note-reference-table_length {
   select {
     margin-top: -9px;
+    margin-left: 5px;
+  }
+}
+
+
+#asset-select-table_filter {
+  input {
+    margin-top: -5px;
+  }
+}
+
+#asset-select-table_length {
+  select {
+    margin-top: -5px;
     margin-left: 5px;
   }
 }
