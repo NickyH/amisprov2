@@ -891,17 +891,6 @@ input[type="file"] {
   }
 }
 
-#search-by-category {
-  .item {
-    height: 400px !important;
-    width: 400px !important;
-    li {
-      width: 360px;
-      font-weight: bold;
-    }
-  }
-}
-
 .category-list-search-field {
   display: block;
   width: 333px;
@@ -1090,6 +1079,8 @@ li.active {
     padding-right: 0;
     margin-right: 20px;
     font-weight: bold;
+    font-size: 12px;
+    height: 36px;
     &.sub {
       margin-bottom: -15px;
       margin-right: 0;
@@ -1131,7 +1122,7 @@ li.active {
       margin-top: -10px;
       margin-left: 20px;
       width: 40px;
-      height: 40px;
+      height: 34px;
       border-radius: 5px;
       .active-layer {
         width: 40px;
@@ -1286,13 +1277,13 @@ th.remove-sort {
 .owl-next {
   position: relative;
   top: -250px;
-  right: -330px;
+  left: 52%;
 }
 
 .owl-prev {
   position: relative;
   top: -250px;
-  left: -340px;
+  right: 52%;
 }
 
 .arrow-right {
@@ -1330,14 +1321,11 @@ th.remove-sort {
 }
 
 .layers-owl-wrapper {
-  width: 630px;
-  height: 400px;
-}
-
-.owl-wrapper-outer {
-  margin-right: auto;
-  margin-left: auto;
-  height: 300px;
+  width: 86% !important;
+  height: intrinsic;
+  min-height: 600px;
+  margin-right: 7%;
+  margin-left: 7%;
 }
 
 .owl-controls.clickable {
@@ -1352,7 +1340,7 @@ th.remove-sort {
 .owl-carousel {
   max-height: 300px !important;
   .panel-item {
-    width: 200px;
+    width: 260px;
     display: block;
     float: left;
     ul {
@@ -1362,36 +1350,45 @@ th.remove-sort {
   }
 }
 
-.item {
-  width: 100%;
-  display: block !important;
-  height: 100%;
-  overflow: auto;
-  li {
-    width: 200px;
-    background-color: @map-highlight-colour;
-    list-style: none;
-    border-radius: 5px;
-    margin-top: 5px;
-    text-align: left;
-    a {
-      color: @white;
-      text-decoration: none;
-      padding: 5px;
-      vertical-align: middle;
-      display: inline-block;
-      &.truncate {
-        text-overflow: ellipsis;
-        width: 140px;
-        white-space: nowrap;
-        overflow: hidden;
-        padding-right: 0;
+#owl-layers {
+  .owl-item {
+    width: 280px !important;
+  }
+  .item {
+    .layer {
+      background-color: lighten(@map-highlight-colour, 10%);
+      border-top-left-radius: 1px solid @map-highlight-colour;
+    }
+    width: 270px;
+    display: block !important;
+    height: 100%;
+    overflow: auto;
+    li {
+      width: 260px;
+      background-color: darken(@map-highlight-colour, 5%);
+      list-style: none;
+      border-radius: 5px;
+      margin-top: 5px;
+      text-align: left;
+      a {
+        color: @white;
+        text-decoration: none;
+        padding: 5px;
+        vertical-align: middle;
+        display: inline-block;
+        &.truncate {
+          text-overflow: ellipsis;
+          width: 140px;
+          white-space: nowrap;
+          overflow: hidden;
+          padding-right: 0;
+        }
       }
     }
   }
 }
 
-#owl-example,
+#owl-layers,
 #search-by-category {
  .dcjq-parent-li {
     margin-left: 0;
@@ -1408,11 +1405,11 @@ th.remove-sort {
 
 #process-history {
   .item {
-    width: 420px;
+    width: 320px;
     height: 400px;
     overflow: scroll;
     li {
-      width: 400px;
+      width: 280px;
       background-color: darken(@form-highlight-colour, 10%);
       list-style: none;
       border-radius: 5px;
@@ -1448,22 +1445,6 @@ th.remove-sort {
   }
 }
 
-#search-by-category {
-  .dcjq-parent-li {
-    width: 400px;
-  }
-}
-
-
-#owl-example {
-  .item {
-    .layer {
-      background-color: lighten(@map-highlight-colour, 20%);
-    }
-  }
-}
-
-
 .input-group.list {
     padding-left: 5px;
   }
@@ -1482,34 +1463,6 @@ th.remove-sort {
     margin-left: 5px;
   }
   &.active {
-    background-color: @layer-active;
-  }
-}
-
-//select category styling
-
-.select-this-category {
-  background-color: @map-highlight-colour;
-  border-bottom-right-radius: 5px;
-  border-top-right-radius: 5px;
-  color: @white;
-  float: right;
-  height: 30px;
-  width: 80px;
-  z-index: 10;
-  margin-top: 0;
-  margin-right: 0;
-  line-height: 30px;
-  &.active {
-    background-color: @layer-active;
-  }
-  .select-category-text {
-    vertical-align: middle;
-    margin-left: 12px;
-    font-weight: bold;
-    margin-top: 5px;
-  }
-  &.selected {
     background-color: @layer-active;
   }
 }

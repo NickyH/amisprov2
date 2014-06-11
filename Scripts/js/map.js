@@ -1,3 +1,4 @@
+var owlLayersHtml;
 //dom ready functions
 $(function(){
   $('#details-link').on('click', form_navbar);
@@ -395,3 +396,53 @@ function refresh_map() {
 $(function() {
   $("#map-link").on('click', refresh_map);
 });
+
+function create_layers_carousel() {
+  owlLayersHtml = $("#owl-layers").owlCarousel({
+
+    // Most important owl features
+    items : 4,
+    itemsDesktop : [1199,4],
+    itemsDesktopSmall : [980,4],
+    itemsTablet: [800,4],
+    itemsTabletSmall: [400,3],
+    itemsMobile : [479,2],
+    singleItem : false,
+    itemsScaleUp : false,
+
+    //Basic Speeds
+    slideSpeed : 200,
+    paginationSpeed : 800,
+    rewindSpeed : 1000,
+
+    //Autoplay
+    autoPlay : false,
+    stopOnHover : false,
+
+    // Navigation
+    navigation : true,
+    navigationText : false,
+    rewindNav : true,
+    scrollPerPage : false,
+
+    //Pagination
+    pagination : true,
+    paginationNumbers: true,
+
+    // Responsive
+    responsive: true,
+    responsiveRefreshRate : 100,
+    responsiveBaseWidth: window,
+
+    // CSS Styles
+    baseClass : "owl-carousel",
+
+    //Auto height
+    autoHeight : false,
+
+    //Transitions
+    transitionStyle : false,
+    })
+  $('.owl-prev').addClass('arrow-left');
+  $('.owl-next').addClass('arrow-right');
+}
