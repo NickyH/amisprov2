@@ -358,6 +358,7 @@ function goto_forms() {
     $('#insert-form').html(data);
     });
   insert_left();
+  close_current_qtip();
 }
 
 function insert_form() {

@@ -11,7 +11,7 @@ $('.form-horizontal').on('keyup', this, check_panel_valid);
 $('.form-horizontal').on('change', this, check_panel_valid);
 $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
-$('.reference-history tr').on('click', open_current_contact_row);
+$('table.row-children tbody tr').on('click', open_current_contact_row);
 $('.icon-history').on('click', history_qtip);
 $('.form-button.cancel').on('click', warn_cancel_form);
 $('.form-button.save').on('click', show_saving_form); // use this when user saves form and form is saving
@@ -429,6 +429,7 @@ function goto_map() {
   $.get('MapLayer.html', function(data) {
     $('#insert-map').html(data);
     });
+  close_current_qtip();
 }
 
 function map_navbar() {

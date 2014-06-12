@@ -471,12 +471,13 @@
   <div class="panel panel-default asset-select-panel panel-3 hidden">
     <div class="panel-body">
 
-      <table id="asset-select-table" class="table table-condensed asset-select">
+      <table id="asset-select-table" class="table row-children table-condensed asset-select">
         <thead>
           <tr>
             <th></th>
             <th>ID</th>
             <th>Name</th>
+            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -485,37 +486,43 @@
             <td></td>
             <td>4532</td>
             <td>Defect 1</td>
-            <td></td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
           </tr>
           <tr>
             <td></td>
             <td>4533</td>
             <td>Defect 2</td>
-            <td></td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
           </tr>
           <tr>
             <td></td>
             <td>4534</td>
             <td>Defect 3</td>
-            <td></td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
           </tr>
           <tr>
             <td></td>
             <td>4535</td>
             <td>Defect 4</td>
-            <td></td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
           </tr>
           <tr>
             <td></td>
             <td>4536</td>
             <td>Defect 5</td>
-            <td></td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
           </tr>
           <tr>
             <td></td>
             <td>4537</td>
             <td>Defect 6</td>
-            <td></td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
           </tr>
         </tbody>
       </table>
@@ -1500,21 +1507,24 @@
   $('.panel-1 .radio-button').on('click', show_meta2_panel);
   $('.panel-2 .radio-button').on('click', show_meta3_panel);
 
-  function format ( d ) {
-    return 'The child row can contain any data you wish, including links, images, inner tables etc.';
-  }
+  $('#asset-select-table td.open').on('click', goto_forms);
+  $('#asset-select-table td.locate').on('click', goto_map);
 
   $('#asset-select-table').dataTable({
     "columns": [
       {
-        "class": "remove-sort",
+        "class": "details-control remove-sort",
         "orderable": false,
         "defaultContent": ""
       },
       { "class": "text" },
       { "class": "text" },
       {
-        "class": "text remove-sort",
+        "class": "text remove-sort open",
+        "orderable": false
+      },
+      {
+        "class": "text remove-sort locate",
         "orderable": false
       }
     ]

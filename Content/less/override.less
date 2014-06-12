@@ -1893,8 +1893,40 @@ li.required {
     &.remove-sort {
       text-indent: -10px;
     }
+    &.open,
+    &.locate {
+      width: 50px;
+    }
+  }
+  tr td {
+    &.open,
+    &.locate {
+      font-size: 11px;
+      color: blue;
+      cursor: pointer;
+      &:hover {
+        color: darken(blue, 10%);
+      }
+    }
   }
 }
+
+table.row-children {
+  tbody {
+    tr.row-open {
+      td.details-control {
+        background: url('../images/minus.png') no-repeat center center !important;
+      }
+      &.odd {
+        td.details-control {
+          background-color: #f9f9f9 !important;
+        }
+      }
+    }
+  }
+}
+
+
 
 #asset-select-table_filter,
 #contact-reference-table_filter,
