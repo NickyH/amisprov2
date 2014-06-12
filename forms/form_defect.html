@@ -653,32 +653,9 @@
   </div> <!-- end form container -->
 </div>
 
+<script src="../Scripts/js/tables.js"></script>
 <script src="../Scripts/js/forms.js"></script>
 <script>
-$('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
-$('.form-container').bind('swipemove', get_bookmark_positions);
 skip_to_details();
 $('input[type=file]').on('change', add_filename);
-
-// notes reference table
-$('#note-reference-table3').dataTable({
-    "columns": [
-      { "class": "text" },
-      { "class": "text" },
-      { "class": "text" },
-      { "class": "text" },
-      {
-        "class": "remove-sort",
-        "orderable": false
-      },
-      {
-        "class": "remove-sort",
-        "orderable": false
-      },
-      {
-        "class": "remove-sort",
-        "orderable": false
-      }
-    ]
-  });
 </script>

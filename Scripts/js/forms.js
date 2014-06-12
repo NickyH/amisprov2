@@ -12,14 +12,16 @@ $('.form-horizontal').on('change', this, check_panel_valid);
 $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
 $('table.row-children tbody tr').on('click', open_current_contact_row);
-$('.form-button.cancel').on('click', warn_cancel_form);
 $('.form-button.save').on('click', show_saving_form); // use this when user saves form and form is saving
 // $('.form-button.save').on('click', alert_errors_form); // use this when user presses save but there are errors on form
 $('.input-group-addon .glyphicon-calendar').on('click', calendar_icon_click); //activate calendar on icon click
 $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activate timepicker on icon click
-$('.history-button .button').on('click', toggle_history_button);
 $('.icon-raise').on('click', show_raise_qtip);
 $('.filename-delete').on('click', delete_selected_file);
+$('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
+$('.form-container').bind('swipemove', get_bookmark_positions);
+
+//use function warn_exit_form() when users moves away from form without saving...
 
 function calendar_icon_click() {
   $(this).parent().parent().children('input').trigger('click');
@@ -44,21 +46,6 @@ function delete_selected_file() {
 
 function clock_icon_click() {
   $(this).parent().parent('.input-group').children('.insert-time-picker').trigger('focus');
-}
-
-function toggle_history_button() {
-  if ($(this).hasClass('active')) {
-    $('.button').toggleClass('active');
-    if ($('.button').hasClass('show-closed')) {
-      // attach show closed functionality here
-    }
-    if ($('.button').hasClass('hide-closed')) {
-      // attach hide closed functionality here
-    }
-  }
-  else {
-    return false
-  }
 }
 
 $('.select-all').on('click', function() {
@@ -288,10 +275,31 @@ function show_raise_qtip() {
   $('#raise-buttons').removeClass('invisible');
 }
 
-function warn_cancel_form() {
-  bootbox.confirm('Are you sure you want to cancel all changes made to this form?', function (response) {
-    if(response) {
-      window.location = '/';
+function warn_exit_form() {
+  bootbox.dialog({
+    message: "You are about to exit this form without saving. Save changes before leaving this form?",
+    buttons: {
+      success: {
+        label: "Save",
+        className: "btn-success",
+        callback: function() {
+          window.location = '/';
+        }
+      },
+      main: {
+        label: "Don't Save",
+        className: "btn-danger",
+        callback: function() {
+          window.location = '/';
+        }
+      },
+      danger: {
+        label: "Cancel",
+        className: "btn-primary",
+        callback: function() {
+          return false;
+        }
+      }
     }
   });
 }
