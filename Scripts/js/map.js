@@ -80,6 +80,48 @@ function layer_active_clicked() {
   }
 }
 
+function show_layer_select_qtip() {
+  $(this).addClass('active');
+  $(this).qtip({
+      content: {
+        text: $('#layer-select-content'),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-layer-select qtip-bootstrap qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#layer-select').removeClass('active');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(this),
+          adjust: {
+            scroll: true // Can be ommited (e.g. default behaviour)
+        }
+      }
+  });
+  $('#layer-select-content').removeClass('invisible');
+}
+
 function show_asset_select_qtip() {
   $(this).addClass('active');
   $(this).qtip({
@@ -212,48 +254,6 @@ function show_forms_raise_select_qtip() {
       }
   });
   $('#forms-raise-content').removeClass('invisible');
-}
-
-function show_layer_select_qtip() {
-  $(this).addClass('active');
-  $(this).qtip({
-      content: {
-        text: $('#layer-select-content'),
-        button: 'Close'
-      },
-      show: {
-          modal: {
-              on: true,
-              solo: true
-          },
-
-          ready: true,
-          event: 'click',
-          effect: function (offset) {
-              $(this).slideDown(300);
-          }
-      },
-      style: {
-          classes: 'qtip-forms-raise qtip-bootstrap qtip-shadow qtip-light'
-      },
-      hide: {
-          event: 'click',
-          effect: function () {
-              $(this).slideUp(300);
-              $('#layer-select').removeClass('active');
-          }
-      },
-      overwrite: false,
-      position: {
-          my: 'center',
-          at: 'center',
-          target: $(this),
-          adjust: {
-            scroll: true // Can be ommited (e.g. default behaviour)
-        }
-      }
-  });
-  $('#layer-select-content').removeClass('invisible');
 }
 
 function tools_options_qtip() {

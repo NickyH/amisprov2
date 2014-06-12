@@ -224,11 +224,7 @@ function history_qtip() {
           }
       },
       style: {
-          classes: 'qtip-process-history qtip-rounded qtip-shadow qtip-light',
-          tip: {
-            width: 0,
-            height: 0
-        }
+          classes: 'qtip-process-history qtip-rounded qtip-shadow qtip-light'
       },
       hide: {
           event: 'click',
@@ -240,7 +236,12 @@ function history_qtip() {
       },
       overwrite: false,
       position: {
-          viewport: $(window)
+          my: 'top right',
+          at: 'bottom left',
+          target: $(this),
+          adjust: {
+            scroll: true // Can be ommited (e.g. default behaviour)
+        }
       }
   });
   $('#process-history').removeClass('hidden');

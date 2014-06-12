@@ -905,8 +905,8 @@ input[type="file"] {
 .qtip.qtip-layer-select {
   width: 96% !important;
   height: auto !important;
-  left: 2% !important;
   top: 60px !important;
+  left: 2% !important;
   right: 2% !important;
   max-width: 2000px !important;
   max-height: 2000px !important;
@@ -922,7 +922,6 @@ input[type="file"] {
   width: 96% !important;
   height: auto !important;
   left: 2% !important;
-  top: 60px !important;
   right: 2% !important;
   max-width: 2000px !important;
   max-height: 2000px !important;
@@ -937,8 +936,8 @@ input[type="file"] {
 .qtip.qtip-process-history {
   width: 50% !important;
   height: auto !important;
-  left: 45% !important;
   top: 60px !important;
+  left: 45% !important;
   right: 5% !important;
   max-width: 500px !important;
   min-width: 500px !important;
@@ -956,8 +955,8 @@ input[type="file"] {
 .qtip.qtip-asset-select {
   width: 96% !important;
   height: auto !important;
-  left: 2% !important;
   top: 60px !important;
+  left: 2% !important;
   right: 2% !important;
   max-width: 2000px !important;
   max-height: 2000px !important;
@@ -1093,6 +1092,7 @@ input[type="radio"]:checked {
 }
 
 li.active {
+    margin-bottom: 5px;
   a.pill-select.layers {
     padding-right: 0;
     margin-right: 20px;
@@ -1415,7 +1415,7 @@ th.remove-sort {
     height: intrinsic;
     li {
       width: 420px;
-      background-color: darken(@form-highlight-colour, 10%);
+      background-color: @form-highlight-colour;
       list-style: none;
       border-radius: 5px;
       margin-top: 5px;
@@ -1427,13 +1427,11 @@ th.remove-sort {
       padding: 5px;
       vertical-align: middle;
       display: inline-block;
-      &.truncate {
-        text-overflow: ellipsis;
-        width: 140px;
-        white-space: nowrap;
-        overflow: hidden;
-        padding-right: 0;
-        }
+      text-overflow: ellipsis;
+      width: 300px;
+      white-space: nowrap;
+      overflow: hidden;
+      padding-right: 0;
       }
     }
   }
@@ -1442,10 +1440,10 @@ th.remove-sort {
     margin-right: 0;
     font-size: 13px;
     ul {
-      background-color: darken( @form-highlight-colour, 5% );
+      background-color: lighten( @form-highlight-colour, 5% );
     }
     li {
-      background-color: darken( @form-highlight-colour, 5% );
+      background-color: lighten( @form-highlight-colour, 5% );
     }
   }
 }
@@ -1479,7 +1477,7 @@ th.remove-sort {
     width: 400px;
   }
   .select-history {
-    background-color: @form-highlight-colour;
+    background-color: black;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
     color: @white;
@@ -1490,10 +1488,14 @@ th.remove-sort {
     margin-top: 0;
     margin-right: 0;
     line-height: 30px;
+    cursor: pointer;
+    &:hover {
+      background-color: grey;
+    }
     &.active {
       background-color: @layer-active;
     }
-    .select-category-text {
+    span {
       vertical-align: middle;
       margin-left: 12px;
       font-weight: bold;
