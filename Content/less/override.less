@@ -939,6 +939,25 @@ input[type="file"] {
   }
 }
 
+.qtip.qtip-process-history {
+  width: 40% !important;
+  height: auto !important;
+  right: 2% !important;
+  top: 60px !important;
+  right: 2% !important;
+  max-width: 2000px !important;
+  max-height: 2000px !important;
+  &.qtip-default {
+    opacity: 1 !important;
+  }
+  .qtip-content {
+    height: intrinsic;
+  }
+  .ui-icon.ui-icon-close {
+    display: none;
+  }
+}
+
 .qtip.qtip-asset-select {
   width: 96% !important;
   height: auto !important;
@@ -1397,11 +1416,10 @@ th.remove-sort {
 
 #process-history {
   .item {
-    width: 320px;
-    height: 400px;
-    overflow: scroll;
+    width: 400px;
+    height: intrinsic;
     li {
-      width: 280px;
+      width: 380px;
       background-color: darken(@form-highlight-colour, 10%);
       list-style: none;
       border-radius: 5px;
@@ -1524,6 +1542,7 @@ th.remove-sort {
     &.active {
       background-color: black;
       color: @white;
+      cursor: pointer;
     }
   }
   .hide-closed {
@@ -1544,6 +1563,7 @@ th.remove-sort {
     &.active {
       background-color: black;
       color: @white;
+      cursor: pointer;
     }
   }
 }
@@ -1703,21 +1723,20 @@ input.action-checkbox {
   margin-bottom: 10px;
 }
 
-.closeout-left {
-  background-color: @white;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+.closeout {
   height: 30px;
-}
-.closeout-middle {
   background-color: @white;
-  height: 30px;
-}
-.closeout-right {
-  background-color: @white;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  height: 30px;
+  label {
+    font-weight: bold;
+  }
+  &.left {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+  &.right {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 }
 
 // bootstrap accordion overrides
@@ -1911,6 +1930,10 @@ li.required {
   }
 }
 
+th.details-control {
+  width: 30px;
+}
+
 table.row-children {
   tbody {
     tr.row-open {
@@ -1925,8 +1948,6 @@ table.row-children {
     }
   }
 }
-
-
 
 #asset-select-table_filter,
 #contact-reference-table_filter,
@@ -2188,12 +2209,10 @@ span.lookup:hover {
 
 //history panel accordion
 #accordion-20 {
-  height: 450px;
-  overflow: hidden;
+  height: intrinsic;
   width: 400px;
   border-radius: 5px;
-  margin-left: 10px;
-  margin-top: 40px;
+  margin: 40px 30px 30px 30px;
 }
 
 .cb_slide_panel a.close {

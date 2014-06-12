@@ -12,7 +12,6 @@ $('.form-horizontal').on('change', this, check_panel_valid);
 $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
 $('table.row-children tbody tr').on('click', open_current_contact_row);
-$('.icon-history').on('click', history_qtip);
 $('.form-button.cancel').on('click', warn_cancel_form);
 $('.form-button.save').on('click', show_saving_form); // use this when user saves form and form is saving
 // $('.form-button.save').on('click', alert_errors_form); // use this when user presses save but there are errors on form
@@ -226,8 +225,8 @@ function history_qtip() {
       style: {
           classes: 'qtip-process-history qtip-rounded qtip-shadow qtip-light',
           tip: {
-            width: 50,
-            height: 30
+            width: 25,
+            height: 15
         }
       },
       hide: {

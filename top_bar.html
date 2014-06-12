@@ -12,7 +12,7 @@
 
     <!--form icons-->
     <img class="top-bar-icons icon-form hidden" id="forms-raise-select" src="../Content/images/icons/icon-asset-inverse-3e3e3e.png">
-    <img class="top-bar-icons icon-form hidden" src="../Content/images/icons/icon-history-inverse-3e3e3e.png">
+    <img class="top-bar-icons icon-form hidden" id="history-select" src="../Content/images/icons/icon-history-inverse-3e3e3e.png">
 
   </div>
 
@@ -471,7 +471,7 @@
   <div class="panel panel-default asset-select-panel panel-3 hidden">
     <div class="panel-body">
 
-      <table id="asset-select-table" class="table row-children table-condensed asset-select">
+      <table id="asset-select-table" class="table row-children table-condensed table-striped asset-select">
         <thead>
           <tr>
             <th></th>
@@ -506,7 +506,7 @@
           <tr>
             <td></td>
             <td>4535</td>
-            <td>Defect 4</td>
+            <td>Defect test</td>
             <td class="open">OPEN</td>
             <td class="locate">LOCATE</td>
           </tr>
@@ -521,6 +521,55 @@
             <td></td>
             <td>4537</td>
             <td>Defect 6</td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4537</td>
+            <td>Defect 6</td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4537</td>
+            <td>Defect 6</td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4537</td>
+            <td>Defect 6</td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4534</td>
+            <td>Defect 3</td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4535</td>
+            <td>Defect 4</td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4536</td>
+            <td>Defect hello</td>
+            <td class="open">OPEN</td>
+            <td class="locate">LOCATE</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>4537</td>
+            <td>Defect last</td>
             <td class="open">OPEN</td>
             <td class="locate">LOCATE</td>
           </tr>
@@ -1498,6 +1547,7 @@
   $('#map-link-2').on('click', goto_map);
   $('#form-link').on('click', goto_forms);
   $('#asset-select').on('click', show_asset_select_qtip);
+  $('#history-select').on('click', history_qtip);
   $('#map-tools-select').on('click', show_map_tools_select_qtip);
   $('#layer-select').on('click', show_layer_select_qtip);
   $('#forms-raise-select').on('click', show_forms_raise_select_qtip);
