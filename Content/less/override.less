@@ -859,14 +859,9 @@ input[type="file"] {
   &.qtip-process-history {
     width: 500px;
     height: 450px;
-    padding-left: 20px;
-    padding-top: 30px;
-    padding-top: 20px;
     opacity: 1;
     .qtip-content {
-    padding-left: 10px !important;
-    height: 400px;
-    overflow: hidden;
+    padding-top: 10px !important;
     }
   }
 }
@@ -940,13 +935,13 @@ input[type="file"] {
 }
 
 .qtip.qtip-process-history {
-  width: 40% !important;
+  width: 50% !important;
   height: auto !important;
-  right: 2% !important;
+  left: 45% !important;
   top: 60px !important;
-  right: 2% !important;
-  max-width: 2000px !important;
-  max-height: 2000px !important;
+  right: 5% !important;
+  max-width: 500px !important;
+  min-width: 500px !important;
   &.qtip-default {
     opacity: 1 !important;
   }
@@ -1416,10 +1411,10 @@ th.remove-sort {
 
 #process-history {
   .item {
-    width: 400px;
+    width: 420px;
     height: intrinsic;
     li {
-      width: 380px;
+      width: 420px;
       background-color: darken(@form-highlight-colour, 10%);
       list-style: none;
       border-radius: 5px;
@@ -1513,57 +1508,42 @@ th.remove-sort {
 //history show/hide closed button
 
 .history-button {
-  position: absolute;
+  position: relative;
   top: 0;
-  right: 60px;
-  background-color: cyan;
-  width: 220px;
+  margin-right: 60px;
+  width: 420px;
   height: 30px;
   border-radius: 10px;
   margin-left: 10px;
   font-size: 12px;
   font-weight: bold;
   color: grey;
-  .show-closed {
+  .button.closed {
     position: absolute;
     display: inline-block;
     top: 0;
-    left: 0;
     width: 50%;
     height: 30px;
+    line-height: 30px;
     background-color: lighten(grey, 10%);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
+    text-align: center;
     span {
-      position: absolute;
-      left: 10px;
-      top: 5px;
+      margin-top: 10px;
     }
     &.active {
       background-color: black;
       color: @white;
       cursor: pointer;
     }
-  }
-  .hide-closed {
-    position: absolute;
-    display: inline-block;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 30px;
-    background-color: lighten(grey, 10%);
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    span {
-      position: absolute;
-      left: 10px;
-      top: 5px;
+    &.showclosed {
+      left: 0;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
     }
-    &.active {
-      background-color: black;
-      color: @white;
-      cursor: pointer;
+    &.hideclosed {
+      right: 0;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
     }
   }
 }
@@ -2210,9 +2190,9 @@ span.lookup:hover {
 //history panel accordion
 #accordion-20 {
   height: intrinsic;
-  width: 400px;
+  width: 420px;
   border-radius: 5px;
-  margin: 40px 30px 30px 30px;
+  margin: 10px;
 }
 
 .cb_slide_panel a.close {

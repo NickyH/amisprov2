@@ -206,6 +206,7 @@ function open_current_contact_row() {
 }
 
 function history_qtip() {
+  $(this).addClass('active');
   $(this).qtip({
       content: {
         text: $('#process-history'),
@@ -225,8 +226,8 @@ function history_qtip() {
       style: {
           classes: 'qtip-process-history qtip-rounded qtip-shadow qtip-light',
           tip: {
-            width: 25,
-            height: 15
+            width: 0,
+            height: 0
         }
       },
       hide: {
@@ -234,13 +235,12 @@ function history_qtip() {
           effect: function () {
               $(this).slideUp(300);
               $('#process-history').addClass('hidden');
+              $('#history-select').removeClass('active');
           }
       },
       overwrite: false,
       position: {
-          my: 'top right',
-          at: 'bottom left',
-          target: $(this)
+          viewport: $(window)
       }
   });
   $('#process-history').removeClass('hidden');
