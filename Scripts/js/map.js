@@ -240,7 +240,8 @@ function show_module_qtip() {
           event: 'click',
           effect: function () {
               $(this).slideUp(300);
-              $('#map-tools-select').removeClass('active');
+              $('#module-select-1').removeClass('active');
+              $('#module-select-2').removeClass('active');
           }
       },
       overwrite: false,
@@ -253,7 +254,7 @@ function show_module_qtip() {
         }
       }
   });
-  $('#map-tools-select-content').removeClass('invisible');
+  $('#modules-select-content').removeClass('invisible');
 }
 
 function show_forms_raise_select_qtip() {

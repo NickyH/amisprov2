@@ -5,13 +5,14 @@
     <img class="top-bar-icons amis-icon small" id="map-link-2" src="../Content/images/amis-icon-only.png">
 
     <!-- icons for map tools -->
+    <img class="top-bar-icons icon-map" id="module-select-1" src="../Content/images/icons/icon-module-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map" id="asset-select" src="../Content/images/icons/icon-category-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map" id="layer-select"  src="../Content/images/icons/icon-layers-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map" id="map-tools-select" src="../Content/images/icons/icon-globe-inverse-3e3e3e.png">
-    <img class="top-bar-icons icon-map" id="module-select" src="../Content/images/icons/icon-module-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map temp" id="form-link" src="../Content/images/icons/icon-globe-white.png">
 
     <!--form icons-->
+    <img class="top-bar-icons icon-form hidden" id="module-select-2" src="../Content/images/icons/icon-module-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-form hidden" id="forms-raise-select" src="../Content/images/icons/icon-asset-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-form hidden" id="history-select" src="../Content/images/icons/icon-history-inverse-3e3e3e.png">
 
@@ -1514,7 +1515,8 @@
   $('#asset-select').on('click', show_asset_select_qtip);
   $('#history-select').on('click', history_qtip);
   $('#map-tools-select').on('click', show_map_tools_select_qtip);
-  $('#module-select').on('click', show_module_qtip);
+  $('#module-select-1').on('click', show_module_qtip);
+  $('#module-select-2').on('click', show_module_qtip);
   $('#layer-select').on('click', show_layer_select_qtip);
   $('#forms-raise-select').on('click', show_forms_raise_select_qtip);
   $('#layer-select-content .layers').on('click', toggle_layer_selection);
