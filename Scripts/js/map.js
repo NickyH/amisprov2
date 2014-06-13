@@ -214,6 +214,48 @@ function show_map_tools_select_qtip() {
   $('#map-tools-select-content').removeClass('invisible');
 }
 
+function show_module_qtip() {
+  $(this).addClass('active');
+  $(this).qtip({
+      content: {
+        text: $('#modules-select-content'),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-module-select qtip-bootstrap qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#map-tools-select').removeClass('active');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'top right',
+          at: 'bottom left',
+          target: $(this),
+          adjust: {
+            scroll: true // Can be ommited (e.g. default behaviour)
+        }
+      }
+  });
+  $('#map-tools-select-content').removeClass('invisible');
+}
+
 function show_forms_raise_select_qtip() {
   $(this).addClass('active');
   $(this).qtip({

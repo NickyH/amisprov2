@@ -8,6 +8,7 @@
     <img class="top-bar-icons icon-map" id="asset-select" src="../Content/images/icons/icon-category-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map" id="layer-select"  src="../Content/images/icons/icon-layers-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map" id="map-tools-select" src="../Content/images/icons/icon-globe-inverse-3e3e3e.png">
+    <img class="top-bar-icons icon-map" id="module-select" src="../Content/images/icons/icon-module-inverse-3e3e3e.png">
     <img class="top-bar-icons icon-map temp" id="form-link" src="../Content/images/icons/icon-globe-white.png">
 
     <!--form icons-->
@@ -596,6 +597,55 @@
 </div>
 <!-- asset select qtip -->
 
+<!-- modules qtip -->
+<div class="invisible" id="modules-select-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Modules
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1">
+    <div class="panel-body">
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active">
+          <a href="#" class="pill-select inactive">
+            <span class="badge pull-right"><img src="../Content/images/icons/icon-module-programme-white.png"></span>
+              Programme
+          </a>
+        </li>
+        <li class="active">
+          <a href="#" class="pill-select inactive">
+            <span class="badge pull-right"><img src="../Content/images/icons/icon-module-project-white.png"></span>
+              Project
+          </a>
+        </li>
+        <li class="active">
+          <a href="#" class="pill-select inactive">
+            <span class="badge pull-right"><img src="../Content/images/icons/icon-module-wo-white.png"></span>
+              Work Order
+          </a>
+        </li>
+        <li class="active">
+          <a href="#" class="pill-select inactive">
+            <span class="badge pull-right"><img src="../Content/images/icons/icon-module-claim-white.png"></span>
+              Claim
+          </a>
+        </li>
+        <li class="active">
+          <a href="#" class="pill-select inactive">
+            <span class="badge pull-right"><img src="../Content/images/icons/icon-module-search-white.png"></span>
+              Search
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+<!-- modules qtip -->
+
 
 <!-- map tools select qtip -->
 <div class="invisible" id="map-tools-select-content">
@@ -667,104 +717,6 @@
        = Layer Selected
     </div>
   </div>
-
-  <!-- <div class="panel panel-default asset-select-panel panel-1">
-    <div class="panel-body">
-
-      <ul class="nav nav-pills">
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Customer Request
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Task
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Defect
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Assets
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Asset Schedule
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Infrastructure
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Inspection
-          </a>
-        </li>
-
-        <li class="active">
-          <a href="#" class="pill-select layers inactive">
-            <span class="badge pull-right">
-              <div class="input-group active-layer">
-                <input type="radio" name="layer-select">
-              </div>
-            </span>
-              Base Maps
-          </a>
-        </li>
-
-      </ul>
-
-    </div>
-  </div> -->
 
   <div class="panel panel-default asset-select-panel panel-1 layers">
     <div class="panel-body">
@@ -1562,6 +1514,7 @@
   $('#asset-select').on('click', show_asset_select_qtip);
   $('#history-select').on('click', history_qtip);
   $('#map-tools-select').on('click', show_map_tools_select_qtip);
+  $('#module-select').on('click', show_module_qtip);
   $('#layer-select').on('click', show_layer_select_qtip);
   $('#forms-raise-select').on('click', show_forms_raise_select_qtip);
   $('#layer-select-content .layers').on('click', toggle_layer_selection);
