@@ -666,7 +666,7 @@
               View Map
           </a>
         </li>
-        <li class="active">
+        <li class="active" id="search-by-address-select">
           <a href="#" class="pill-select inactive">
             <span class="badge pull-right"><img src="../Content/images/icons/icon-address-white.png"></span>
               Search By Address
@@ -696,6 +696,36 @@
 
 </div>
 <!-- map tools select qtip -->
+
+<!-- search qtip -->
+<div class="invisible" id="search-address-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Search By Address
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1 layers">
+    <div class="panel-body">
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control" placeholder="Search Address">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-12">
+          <input type="text" class="form-control btn btn-info" value="Search"></input>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!-- search address qtip -->
 
 <!-- layer select qtip -->
 <div class="invisible" id="layer-select-content">
@@ -1434,7 +1464,6 @@
     </div>
   </div>
 
-
 </div>
 <!-- layer select qtip -->
 
@@ -1505,9 +1534,7 @@
   $('.layer').on('click', checkbox_when_clicked);
   $('.make-active').on('click', layer_active_clicked);
   $('#owl-layers li').on('click', toggle_layer_select_colour);
-
   $('#owl-layers .select').on('click', toggle_select_all_layers);
-
   $('.raise-links').on('click', insert_form);
   $('#map-link').on('click', goto_map);
   $('#map-link-2').on('click', goto_map);
@@ -1515,6 +1542,7 @@
   $('#asset-select').on('click', show_asset_select_qtip);
   $('#history-select').on('click', history_qtip);
   $('#map-tools-select').on('click', show_map_tools_select_qtip);
+  $('#search-by-address-select').on('click', show_search_address_qtip);
   $('#module-select-1').on('click', show_module_qtip);
   $('#module-select-2').on('click', show_module_qtip);
   $('#layer-select').on('click', show_layer_select_qtip);
@@ -1524,7 +1552,6 @@
   $('input[name="layer-select"]').on('click', toggle_active_layer);
   $('.panel-1 .radio-button').on('click', show_meta2_panel);
   $('.panel-2 .radio-button').on('click', show_meta3_panel);
-
   $('#asset-select-table td.open').on('click', goto_forms);
   $('#asset-select-table td.locate').on('click', goto_map);
 

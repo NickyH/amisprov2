@@ -2,8 +2,6 @@ var owlLayersHtml;
 //dom ready functions
 $(function(){
   $('#details-link').on('click', form_navbar);
-  $("#insert-left").on('click', '#tools-button', tools_options_qtip);
-  $("#insert-top").on('click', '#search-by-address-button', searchByAddress_qtip);
 
   $('ul[id^="accordion-"]').dcAccordion();
   //prototype only functions - Benito can delete in Visual Studio??
@@ -299,60 +297,13 @@ function show_forms_raise_select_qtip() {
   $('#forms-raise-content').removeClass('invisible');
 }
 
-function tools_options_qtip() {
+function show_search_address_qtip() {
+  close_current_qtip();
+  $(this).addClass('active');
   $(this).qtip({
       content: {
-        text: $('#tools-options').clone(),
+        text: $('#search-address-content'),
         button: 'Close'
-      },
-      show: {
-          modal: {
-              on: true,
-              solo: true
-          },
-          ready: true,
-          event: 'click',
-          effect: function (offset) {
-              $(this).slideDown(300);
-              $('.tools-options-icons').removeClass('hidden');
-          }
-      },
-      style: {
-          classes: 'qtip-tools-options qtip-rounded qtip-shadow qtip-light',
-          tip: {
-            width: 25,
-            height: 15,
-        }
-      },
-      hide: {
-          event: 'click',
-          effect: function () {
-              $(this).slideUp(300);
-              $('.tools-options-icons').addClass('hidden');
-          }
-      },
-      overwrite: false,
-      position: {
-          my: 'center left',
-          at: 'center right',
-          target: $(this)
-      },
-  });
-  $('#tools-options').removeClass('invisible');
-}
-
-function searchByAddress_qtip() {
-  $(this).qtip({
-      content: {
-        text: $('#search-address'),
-        button: 'Close'
-      },
-      render: function (event, api) {
-          // Grab the content
-          var content = api.elements.content;
-          // Now it's is rendered, we can...
-          content.otherPlugin(); // ...Call our other plugins to act on its contents
-          $(this, content).otherPlugin(); // ...or a subset of it's contents!
       },
       show: {
           modal: {
@@ -367,12 +318,7 @@ function searchByAddress_qtip() {
           }
       },
       style: {
-          classes: 'qtip-address-panel qtip-rounded qtip-shadow qtip-light',
-          tip: {
-            corner: 'top center',
-            width: 50,
-            height: 30
-        }
+          classes: 'qtip-search-address qtip-bootstrap qtip-shadow qtip-light'
       },
       hide: {
           event: 'click',
@@ -382,12 +328,15 @@ function searchByAddress_qtip() {
       },
       overwrite: false,
       position: {
-          my: 'top center',
-          at: 'bottom center',
-          target: $('#search-by-address-button')
+          my: 'center',
+          at: 'center',
+          target: $(window),
+          adjust: {
+            scroll: true // Can be ommited (e.g. default behaviour)
+        }
       }
   });
-  $('#address-search').removeClass('invisible');
+  $('#search-address-content').removeClass('invisible');
 }
 
 function close_current_qtip() {
