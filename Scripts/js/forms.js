@@ -13,6 +13,7 @@ $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
 $('table.row-children tbody tr').on('click', open_current_contact_row);
 $('.form-button.save').on('click', show_saving_form); // use this when user saves form and form is saving
+$('.form-button.cancel').on('click', warn_exit_form); // use this when user exits form without saving
 // $('.form-button.save').on('click', alert_errors_form); // use this when user presses save but there are errors on form
 $('.input-group-addon .glyphicon-calendar').on('click', calendar_icon_click); //activate calendar on icon click
 $('.input-group-addon .glyphicon-time').on('click', clock_icon_click); //activate timepicker on icon click
@@ -21,10 +22,36 @@ $('.filename-delete').on('click', delete_selected_file);
 $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
 $('.form-container').bind('swipemove', get_bookmark_positions);
 
-//use function warn_exit_form() when users moves away from form without saving...
-
 function calendar_icon_click() {
   $(this).parent().parent().children('input').trigger('click');
+}
+
+function toggle_top_bar() {
+  if ($(this).hasClass('top-bar-is-down')) {
+    top_bar_slide_up();
+    $('.form-buttons').addClass('top');
+  }
+  else if ($(this).hasClass('top-bar-is-up')) {
+    top_bar_slide_down();
+    $('.form-buttons').removeClass('top');
+  }
+  $(this).toggleClass('top-bar-is-up').toggleClass('top-bar-is-down');
+}
+
+function unhide_top_toggle() {
+  $('#insert-top-toggle').removeClass('hidden');
+}
+
+function hide_top_toggle() {
+  $('#insert-top-toggle').addClass('hidden');
+}
+
+function top_bar_slide_up() {
+  $('#insert-top').slideUp();
+}
+
+function top_bar_slide_down() {
+  $('#insert-top').slideDown();
 }
 
 function add_filename() {
@@ -297,7 +324,6 @@ function warn_exit_form() {
         label: "Cancel",
         className: "btn-primary",
         callback: function() {
-          return false;
         }
       }
     }
@@ -438,6 +464,7 @@ function goto_map() {
     $('#insert-map').html(data);
     });
   close_current_qtip();
+  hide_top_toggle();
 }
 
 function map_navbar() {

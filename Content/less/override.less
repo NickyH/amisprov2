@@ -11,6 +11,35 @@ body {
   padding-bottom: 20px;
 }
 
+#insert-top-toggle {
+  &.toggle {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100px;
+    height: 40px;
+    background-color: fade(#e9e9e9, 30%);
+    z-index: 6;
+    opacity: 0.3;
+    &:hover {
+      opacity: 0.8;
+    }
+    &.top-bar-is-down {
+      top: 40px;
+      background: url('../images/toggle_up.png') center no-repeat;
+      background-color: fade(#e9e9e9, 30%);
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    &.top-bar-is-up {
+      background: url('../images/toggle_down.png') center no-repeat;
+      background-color: grey;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+}
+
 //login panel
 
 .container-fluid {
@@ -98,7 +127,7 @@ li.active {
 #insert-map {
   position: fixed;
   left: 0;
-  top: @top-bar-height;
+  top: 0;
   width: 1300px;
   height: auto;
 }
@@ -131,7 +160,7 @@ li.active {
   margin: 0;
   position: fixed;
   top: 0;
-  z-index: 3;
+  z-index: 5;
 }
 
 // top right icons
@@ -249,7 +278,7 @@ li.active {
   background-color: @left-bar-colour;
   position: fixed;
   left: 0;
-  top: 80px;
+  top: 0;
   bottom: 0;
   z-index: 4;
 }
@@ -393,6 +422,9 @@ li.active {
 
 // form buttons
 .form-buttons {
+  &.top {
+    top: 0 !important;
+  }
   .form-title {
     span {
       line-height: 20px;
@@ -417,6 +449,7 @@ li.active {
   height: 46px;
   position: fixed;
   top: @top-bar-height;
+  left: @left-bar-width;
   right: 0;
   background-color: @left-bar-colour;
   z-index: 3;
@@ -1406,7 +1439,7 @@ li.required {
 }
 
 .left-nav {
-  margin-top: 10px;
+  margin-top: 100px;
   li {
     cursor: pointer;
   }

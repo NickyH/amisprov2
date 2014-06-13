@@ -1,4 +1,7 @@
 var owlLayersHtml;
+var lastScrollTop = 0,
+    st,
+    direction;
 //dom ready functions
 $(function(){
   $('#details-link').on('click', form_navbar);
@@ -7,6 +10,7 @@ $(function(){
   //prototype only functions - Benito can delete in Visual Studio??
   insert_map();
   insert_top();
+  $('#insert-top-toggle.toggle').on('click', toggle_top_bar);
 });
 
 function toggle_layer_select_colour() {
@@ -22,7 +26,6 @@ function toggle_layer_select_colour() {
       layer_deselect_colour($(this).closest('li'));
     }
   });
-
 }
 
 function toggle_select_all_layers() {
@@ -351,6 +354,7 @@ function goto_forms() {
     });
   insert_left();
   close_current_qtip();
+  unhide_top_toggle();
 }
 
 function insert_form() {
