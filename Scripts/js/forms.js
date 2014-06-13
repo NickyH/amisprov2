@@ -47,11 +47,11 @@ function hide_top_toggle() {
 }
 
 function top_bar_slide_up() {
-  $('#insert-top').slideUp();
+  $('#insert-top').hide();
 }
 
 function top_bar_slide_down() {
-  $('#insert-top').slideDown();
+  $('#insert-top').show();
 }
 
 function add_filename() {
