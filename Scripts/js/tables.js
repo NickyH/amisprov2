@@ -10,7 +10,11 @@ $('#contact-reference-table').dataTable({
       { "class": "text" },
       { "class": "text" },
       { "class": "text" },
-      { "class": "text" },
+      {
+        "class": "text",
+        "sSortDataType": "dom-data-order",
+        "sType": "numeric"
+       },
       {
         "class": "remove-sort",
         "orderable": false
@@ -26,7 +30,7 @@ $('#contact-reference-table').dataTable({
     ]
   });
 
-// notes reference table
+// notes reference table cr
 $('#note-reference-table').dataTable({
     "columns": [
       { "class": "remove-sort details-control" },
@@ -50,7 +54,6 @@ $('#note-reference-table').dataTable({
   });
 
 
-
 // inspection tables
   // contact reference table
 $('#contact-reference-table2').dataTable({
@@ -63,7 +66,11 @@ $('#contact-reference-table2').dataTable({
       { "class": "text" },
       { "class": "text" },
       { "class": "text" },
-      { "class": "text" },
+      {
+        "class": "text",
+        "sSortDataType": "dom-data-order",
+        "sType": "numeric"
+      },
       {
         "class": "remove-sort",
         "orderable": false
@@ -85,7 +92,11 @@ $('#note-reference-table2').dataTable({
       { "class": "text" },
       { "class": "text" },
       { "class": "text" },
-      { "class": "text" },
+      {
+        "class": "text",
+        "sSortDataType": "dom-data-order",
+        "sType": "numeric"
+      },
       {
         "class": "remove-sort",
         "orderable": false
@@ -109,7 +120,11 @@ $('#note-reference-table3').dataTable({
       { "class": "text" },
       { "class": "text" },
       { "class": "text" },
-      { "class": "text" },
+      {
+        "class": "text",
+        "sSortDataType": "dom-data-order",
+        "sType": "numeric"
+      },
       {
         "class": "remove-sort",
         "orderable": false
