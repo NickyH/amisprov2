@@ -48,10 +48,12 @@ function hide_top_toggle() {
 
 function top_bar_slide_up() {
   $('#insert-top').hide();
+  $('.left-nav').addClass('up');
 }
 
 function top_bar_slide_down() {
   $('#insert-top').show();
+  $('.left-nav').removeClass('up');
 }
 
 function add_filename() {

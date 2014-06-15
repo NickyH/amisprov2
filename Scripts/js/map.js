@@ -42,6 +42,11 @@ function toggle_select_all_layers() {
     $(list).each(function() {
       $(this).children('.input-group').children('input').prop('checked', false);
       layer_deselect_colour(this);
+      // if select none but one in the list is no-deselect (eg active-layer) then keep it checked and green
+      if ($(this).children('.input-group').hasClass('no-deselect')) {
+        $(this).children('.input-group').children('input').prop('checked', true);
+        layer_select_colour(this);
+      }
     });
   }
 }
