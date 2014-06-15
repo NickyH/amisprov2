@@ -250,12 +250,9 @@ function history_qtip() {
       },
       overwrite: false,
       position: {
-          my: 'top right',
-          at: 'bottom left',
-          target: $(this),
-          adjust: {
-            scroll: true // Can be ommited (e.g. default behaviour)
-        }
+        my: 'top right',
+        at: 'bottom left',
+        target: $(this)
       }
   });
   $('#process-history').removeClass('hidden');
@@ -294,8 +291,8 @@ function show_raise_qtip() {
       },
       overwrite: false,
       position: {
-          my: 'top left',
-          at: 'bottom right',
+          my: 'top right',
+          at: 'bottom left',
           target: $(this)
       },
   });

@@ -83,6 +83,7 @@ function layer_active_clicked() {
 
 function show_layer_select_qtip() {
   $(this).addClass('active');
+  $('html, body').animate({ scrollTop: 0 }, 0 );
   $(this).qtip({
       content: {
         text: $('#layer-select-content'),
@@ -125,6 +126,7 @@ function show_layer_select_qtip() {
 
 function show_asset_select_qtip() {
   $(this).addClass('active');
+  $('html, body').animate({ scrollTop: 0 }, 0 );
   $(this).qtip({
       content: {
         text: $('#asset-select-content'),
