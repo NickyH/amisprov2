@@ -1,4 +1,5 @@
 var owlLayersHtml;
+var owlLayers;
 var lastScrollTop = 0,
     st,
     direction;
@@ -473,11 +474,11 @@ function create_layers_carousel() {
     navigation : true,
     navigationText : false,
     rewindNav : true,
-    scrollPerPage : false,
+    scrollPerPage : true,
 
     //Pagination
-    pagination : true,
-    paginationNumbers: true,
+    pagination : false,
+    // paginationNumbers: true,
 
     // Responsive
     responsive: true,
@@ -495,6 +496,13 @@ function create_layers_carousel() {
     })
   $('.owl-prev').addClass('arrow-left');
   $('.owl-next').addClass('arrow-right');
+
+  owlLayers = $('#owl-layers').data('owlCarousel');
+}
+
+function goto_owl_pagination() {
+  var page = $(this).data('pagination');
+  owlLayers.goTo(parseInt(page)-2);
 }
 
 function checkbox_when_clicked() {

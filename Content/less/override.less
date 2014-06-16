@@ -946,32 +946,26 @@ th.remove-sort {
   border-radius: 0;
 }
 
+.owl-prev,
 .owl-next {
-  position: relative;
-  bottom: 150px;
-  left: 52%;
-}
-
-.owl-prev {
-  position: relative;
-  bottom: 150px;
-  right: 52%;
-}
-
-.arrow-right {
-  width: 0;
-  height: 0;
-  border-top: 70px solid transparent;
-  border-bottom: 70px solid transparent;
-  border-left: 30px solid @black-medium;
-}
-
-.arrow-left {
-  width: 0;
-  height: 0;
-  border-top: 70px solid transparent;
-  border-bottom: 70px solid transparent;
-  border-right:30px solid @black-medium;
+  position: absolute;
+  top: 60px;
+  &.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    border-right:30px solid @black-medium;
+    left: -80px;
+  }
+  &.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 70px solid transparent;
+    border-bottom: 70px solid transparent;
+    border-left: 30px solid @black-medium;
+    right: -80px;
+  }
 }
 
 .owl-pagination {
@@ -979,6 +973,73 @@ th.remove-sort {
   top: -10px;
   margin-top: 10px;
   padding-top: 10px;
+}
+
+//custom pagination
+.pagination-container {
+  width: 90%;
+  height: auto;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid grey;
+  span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: bold;
+  }
+  .pagination {
+    font-size: 14px;
+    font-weight: normal;
+    display: inline-block;
+    margin: 5px 10px 5px 0;
+    background-color: #272825;
+    border-radius: 0;
+    width: intrinsic;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    color: white;
+    opacity: 0.5;
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .custom-owl-arrows {
+    img {
+      position: absolute;
+      top: 180px;
+      width: 80px;
+      height: 50px;
+      background-color: #272825;
+      opacity: 0.5;
+      cursor: pointer;
+      &:hover {
+        opacity: 1;
+      }
+      &.left {
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        transform: rotate(270deg);
+        left: 10px;
+      }
+      &.right {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+        right: 10px;
+      }
+    }
+  }
 }
 
 .owl-theme .owl-controls .owl-page span.owl-numbers {
@@ -995,7 +1056,7 @@ th.remove-sort {
 .layers-owl-wrapper {
   width: 90% !important;
   height: auto !important;
-  min-height: 300px;
+  min-height: 200px;
   margin-right: 5%;
   margin-left: 5%;
 }
