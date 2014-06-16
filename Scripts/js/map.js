@@ -511,6 +511,7 @@ function checkbox_when_clicked() {
     return false;
   }
   $(checkbox).prop('checked', !checkbox.prop("checked"));
+  make_tag_selected($(checkbox), checkbox.prop('checked'));
 }
 
 function layer_active_clicked() {
@@ -525,5 +526,24 @@ function layer_active_clicked() {
     $(this).parent().children().first().addClass('no-deselect');
     var checkbox = $(this).parent().children().first().children().first();
     $(checkbox).prop('checked', true);
+    make_tag_active($(checkbox));
   }
+}
+
+function make_tag_selected(checkbox, selected) {
+  var item_num = $(checkbox).parents('.item').data('item-number');
+  var tag = $('.pagination-container .pagination[data-pagination='+item_num+']');
+  if (selected) {
+    $(tag).addClass('selected');
+  }
+  else if ($(checkbox).parents('.item').find('input[type="checkbox"]').filter(':checked').length < 1) {
+    $(tag).removeClass('selected');
+  }
+}
+
+function make_tag_active(checkbox) {
+  var item_num = $(checkbox).parents('.item').data('item-number');
+  $('.pagination-container .pagination').removeClass('active'); // remove active from all tags before adding new active
+  var tag = $('.pagination-container .pagination[data-pagination='+item_num+']');
+  $(tag).addClass('active');
 }
