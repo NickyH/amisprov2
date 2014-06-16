@@ -502,7 +502,7 @@ function create_layers_carousel() {
 
 function goto_owl_pagination() {
   var page = $(this).data('pagination');
-  owlLayers.goTo(parseInt(page)-2);
+  owlLayers.goTo(parseInt(page)-1);
 }
 
 function checkbox_when_clicked() {
