@@ -268,6 +268,7 @@ $('#timesheet-edit-task-table').dataTable({
 //breaks
 $('#timesheet-breaks-table').dataTable({
   paging: false,
+  ordering: false,
   "columns": [
     {
       "class": "remove-sort",

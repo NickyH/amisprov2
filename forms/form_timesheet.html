@@ -879,6 +879,13 @@
                   </table>
                 </div>
 
+                <div class="form-group">
+                  <div class="col-sm-4 control-label"></div>
+                  <div class="col-sm-4">
+                    <div id="review-task-select" class="btn btn-primary">Review Tasks</div>
+                  </div>
+                </div>
+
               </form>
 
             </div>
@@ -976,85 +983,11 @@
                 </table>
 
                 <div class="form-group">
-                  <label class="col-sm-5 control-label">Nathan Adamson</label>
-                  <div class="col-sm-1"></div>
-                  <label class="col-sm-3 control-label">Hours:</label>
-                  <div class="col-sm-3">
-                    <div class="input-group merged">
-                      <label class="col-sm-4 control-label">07:25</label>
-                    </div>
+                  <div class="col-sm-4 control-label"></div>
+                  <div class="col-sm-4">
+                    <div id="review-member-select" class="btn btn-primary">Review Members</div>
                   </div>
                 </div>
-
-                <table class="table table-condensed table-striped">
-                  <thead>
-                    <tr>
-                      <th>Item</th>
-                      <th>Type</th>
-                      <th>Start Time</th>
-                      <th>End Time</th>
-                      <th>Total Time</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Task</td>
-                      <td>Task 1</td>
-                      <td>08:15am</td>
-                      <td>11:15am</td>
-                      <td>03:00</td>
-                    </tr>
-                    <tr>
-                      <td>Break</td>
-                      <td>Morning break</td>
-                      <td>11:15am</td>
-                      <td>11:30am</td>
-                      <td>00:15</td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td>Task 2</td>
-                      <td>11:30am</td>
-                      <td>12:30pm</td>
-                      <td>01:00</td>
-                    </tr>
-                    <tr>
-                      <td>Break</td>
-                      <td>Lunch</td>
-                      <td>12:30pm</td>
-                      <td>01:30pm</td>
-                      <td>01:25</td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td>Task 3</td>
-                      <td>01:30pm</td>
-                      <td>02:30pm</td>
-                      <td>01:00</td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td>Task 4</td>
-                      <td>02:30pm</td>
-                      <td>03:15pm</td>
-                      <td>00:45</td>
-                    </tr>
-                    <tr>
-                      <td>Break</td>
-                      <td>Afternoon Break</td>
-                      <td>03:15pm</td>
-                      <td>03:30pm</td>
-                      <td>00:15</td>
-                    </tr>
-                    <tr>
-                      <td>Task</td>
-                      <td>Task 5</td>
-                      <td>03:30pm</td>
-                      <td>04:30pm</td>
-                      <td>01:00</td>
-                    </tr>
-                  </tbody>
-                </table>
 
               </form>
 
@@ -1349,9 +1282,351 @@
 </div>
 <!-- add new break qtip -->
 
+<!--review tasks qtip-->
+<div class="invisible" id="timesheet-review-task-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Review Tasks
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1">
+    <div class="panel-body">
+
+      <form class="form-horizontal container">
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Select Task</label>
+            <div class="col-sm-8">
+              <select class="selectpicker form-control">
+                <option>Task 1</option>
+                <option>Task 2</option>
+                <option>Task 3</option>
+                <option>Task 4</option>
+                <option>Task 5</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="panel-divider"></div> <!-- panel dividing line-->
+            </div>
+          </div>
+
+          <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Work Order ID</label>
+              <div class="col-sm-8">
+                <select class="selectpicker form-control" title='4563.65'>
+                  <option>5354.67</option>
+                  <option>3532.54</option>
+                  <option>3532.54</option>
+                  <option>3532.54</option>
+                  <option>3532.54</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Start Time</label>
+              <div class="col-sm-8">
+                <div class="input-group merged">
+                  <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- end form column-->
+          <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">Task Status</label>
+              <div class="col-sm-8">
+                <select class="selectpicker form-control" multiple title='In Progress'>
+                  <option>Status</option>
+                  <option>Status</option>
+                  <option>Status</option>
+                  <option>Status</option>
+                  <option>Status</option>
+                  <option>Status</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label">End Time</label>
+              <div class="col-sm-8">
+                <div class="input-group merged">
+                  <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                  <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-time"></span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          </div><!--end form-column-->
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Members</label>
+            <div class="col-sm-8">
+              <select class="form-control" multiple title=''>
+                <option>Nathan Adamson</option>
+                <option>Tony Aaron</option>
+                <option>Brett Carlisle</option>
+                <option>Adrian Galloway</option>
+                <option>Henry Ingham</option>
+                <option>Sam Kelly</option>
+                <option>Rick Mally</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Description</label>
+            <div class="col-sm-8">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Location</label>
+            <div class="col-sm-8">
+              <textarea class="form-control" rows="1"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="panel-divider"></div> <!-- panel dividing line-->
+            </div>
+          </div>
+
+          <table class="table table-condensed table-striped">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Type</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Total Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Task</td>
+                <td>Task 1</td>
+                <td>08:15am</td>
+                <td>11:15am</td>
+                <td>03:00</td>
+              </tr>
+              <tr>
+                <td>Break</td>
+                <td>Morning break</td>
+                <td>11:15am</td>
+                <td>11:30am</td>
+                <td>00:15</td>
+              </tr>
+              <tr>
+                <td>Task</td>
+                <td>Task 2</td>
+                <td>11:30am</td>
+                <td>12:30pm</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Break</td>
+                <td>Lunch</td>
+                <td>12:30pm</td>
+                <td>01:30pm</td>
+                <td>01:25</td>
+              </tr>
+              <tr>
+                <td>Task</td>
+                <td>Task 3</td>
+                <td>01:30pm</td>
+                <td>02:30pm</td>
+                <td>01:00</td>
+              </tr>
+              <tr>
+                <td>Task</td>
+                <td>Task 4</td>
+                <td>02:30pm</td>
+                <td>03:15pm</td>
+                <td>00:45</td>
+              </tr>
+              <tr>
+                <td>Break</td>
+                <td>Afternoon Break</td>
+                <td>03:15pm</td>
+                <td>03:30pm</td>
+                <td>00:15</td>
+              </tr>
+              <tr>
+                <td>Task</td>
+                <td>Task 5</td>
+                <td>03:30pm</td>
+                <td>04:30pm</td>
+                <td>01:00</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="form-group">
+            <div class="col-sm-4 control-label"></div>
+            <div class="col-sm-4">
+              <div class="btn btn-success">Save</div>
+            </div>
+          </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<!-- review task qtip -->
+
+<!--review member qtip-->
+<div class="invisible" id="timesheet-review-member-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Review Members
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1">
+    <div class="panel-body">
+
+      <form class="form-horizontal container">
+
+        <div class="form-group">
+
+          <label class="col-sm-2 control-label">Select Member</label>
+          <div class="col-sm-2">
+            <select class="selectpicker form-control">
+              <option>Task 1</option>
+              <option>Task 2</option>
+              <option>Task 3</option>
+              <option>Task 4</option>
+              <option>Task 5</option>
+            </select>
+          </div>
+
+          <label class="col-sm-2 control-label">Date</label>
+          <div class="col-sm-3">
+            <div class="input-group merged">
+              <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-time"></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="input-group">
+              <input type="text" class="form-control" disabled placeholder="Hours: 08:30" />
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <div class="panel-divider"></div> <!-- panel dividing line-->
+          </div>
+        </div>
+
+        <table class="table table-condensed table-striped">
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Type</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+              <th>Total Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Task</td>
+              <td>Task 1</td>
+              <td>08:15am</td>
+              <td>11:15am</td>
+              <td>03:00</td>
+            </tr>
+            <tr>
+              <td>Break</td>
+              <td>Morning break</td>
+              <td>11:15am</td>
+              <td>11:30am</td>
+              <td>00:15</td>
+            </tr>
+            <tr>
+              <td>Task</td>
+              <td>Task 2</td>
+              <td>11:30am</td>
+              <td>12:30pm</td>
+              <td>01:00</td>
+            </tr>
+            <tr>
+              <td>Break</td>
+              <td>Lunch</td>
+              <td>12:30pm</td>
+              <td>01:30pm</td>
+              <td>01:25</td>
+            </tr>
+            <tr>
+              <td>Task</td>
+              <td>Task 3</td>
+              <td>01:30pm</td>
+              <td>02:30pm</td>
+              <td>01:00</td>
+            </tr>
+            <tr>
+              <td>Task</td>
+              <td>Task 4</td>
+              <td>02:30pm</td>
+              <td>03:15pm</td>
+              <td>00:45</td>
+            </tr>
+            <tr>
+              <td>Break</td>
+              <td>Afternoon Break</td>
+              <td>03:15pm</td>
+              <td>03:30pm</td>
+              <td>00:15</td>
+            </tr>
+            <tr>
+              <td>Task</td>
+              <td>Task 5</td>
+              <td>03:30pm</td>
+              <td>04:30pm</td>
+              <td>01:00</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<!-- review member qtip -->
+
 <script src="../Scripts/js/forms.js"></script>
 <script src="../Scripts/js/tables.js"></script>
 <script>
 $('.edit-task').on('click', open_edit_task_qtip);
 $('#add-new-break-select').on('click', open_add_new_break_qtip);
+$('#review-task-select').on('click', open_review_task_qtip);
+$('#review-member-select').on('click', open_review_member_qtip);
 </script>

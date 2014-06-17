@@ -412,6 +412,80 @@ function open_add_new_break_qtip() {
   $('#timesheet-add-new-break-content').removeClass('invisible');
 }
 
+function open_review_task_qtip() {
+  $(this).qtip({
+      content: {
+        text: $('#timesheet-review-task-content').clone(),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-timesheet-task-member qtip-rounded qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#timesheet-review-task-content').addClass('invisible');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(this)
+      },
+  });
+  $('#timesheet-review-task-content').removeClass('invisible');
+}
+
+function open_review_member_qtip() {
+  $(this).qtip({
+      content: {
+        text: $('#timesheet-review-member-content').clone(),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-timesheet-review-member qtip-rounded qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#timesheet-review-member-content').addClass('invisible');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(this)
+      },
+  });
+  $('#timesheet-review-member-content').removeClass('invisible');
+}
+
 function warn_exit_form() {
   bootbox.dialog({
     message: "You are about to exit this form without saving. Save changes before leaving this form?",
