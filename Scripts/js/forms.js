@@ -430,7 +430,7 @@ function open_review_task_qtip() {
           }
       },
       style: {
-          classes: 'qtip-timesheet-task-member qtip-rounded qtip-shadow qtip-light'
+          classes: 'qtip-timesheet-review-task qtip-rounded qtip-shadow qtip-light'
       },
       hide: {
           event: 'click',

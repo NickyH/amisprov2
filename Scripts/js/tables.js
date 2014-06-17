@@ -155,6 +155,10 @@ $('#timesheet-start-equipment-table').dataTable({
     {
       "class": "remove-sort",
       "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
     }
   ]
 });
@@ -167,6 +171,14 @@ $('#timesheet-start-member-table').dataTable({
     { "class": "text" },
     { "class": "text" },
     { "class": "text" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
     {
       "class": "remove-sort",
       "orderable": false
@@ -303,6 +315,10 @@ $('#timesheet-end-equipment-table').dataTable({
     {
       "class": "remove-sort",
       "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
     }
   ]
 });
@@ -315,6 +331,14 @@ $('#timesheet-end-member-table').dataTable({
     { "class": "text" },
     { "class": "text" },
     { "class": "text" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
     {
       "class": "remove-sort",
       "orderable": false

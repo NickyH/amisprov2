@@ -40,7 +40,7 @@
                     </select>
                   </div>
                   <div class="col-sm-2">
-                    <span class='btn btn-primary select-all'>Add Equipment</span>
+                    <span class='btn btn-primary timesheet-button'>Add Equipment</span>
                   </div>
                 </div>
 
@@ -54,6 +54,7 @@
                           <th>Number</th>
                           <th>Metre Start</th>
                           <th>Comments</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -71,6 +72,7 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -86,11 +88,11 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">DELETE</td>
                         </tr>
                       </tbody>
                     </table>
-                    <span class='btn btn-primary select-all'>Save List</span>
-                    <span class='btn btn-default select-none'>Remove Equipment</span>
+                    <span class='btn btn-success timesheet-button right'>Save List</span>
                   </div>
                 </div>
 
@@ -143,6 +145,15 @@
                     </div>
                   </div>
 
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label"></label>
+                    <div class="col-sm-8">
+                      <div class="input-group">
+                        <span class='btn btn-primary timesheet-button'>Add Member</span>
+                      </div>
+                    </div>
+                  </div>
+
                 </div><!--end form-column-->
 
                 <div class="form-group">
@@ -155,6 +166,8 @@
                           <th>Member</th>
                           <th>Start</th>
                           <th>Comments</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -168,6 +181,8 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -179,6 +194,8 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -190,6 +207,8 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -201,11 +220,11 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                       </tbody>
                     </table>
-                    <span class='btn btn-default select-none'>Remove Member</span>
-                    <span class='btn btn-primary select-all'>Add Member</span>
                   </div>
                 </div>
 
@@ -328,7 +347,7 @@
                       </div>
                     </div>
                     <div class="col-sm-4">
-                      <span class='btn btn-primary select-all'>Add Member/s</span>
+                      <span class='btn btn-primary timesheet-button'>Add Member/s</span>
                     </div>
                   </div>
 
@@ -425,8 +444,7 @@
                 <div class="form-group">
                   <label class="col-sm-4 control-label"></label>
                   <div class="col-sm-8">
-                    <span class='btn btn-default select-none'>Update Item</span>
-                    <span class='btn btn-primary select-all'>Add Item</span>
+                    <span class='btn btn-primary timesheet-button right'>Create New</span>
                   </div>
                 </div>
 
@@ -560,9 +578,9 @@
                 </table>
 
                 <div class="form-group">
-                  <div class="col-sm-4 control-label"></div>
+                  <div class="col-sm-8 control-label"></div>
                   <div class="col-sm-4">
-                    <div id="add-new-break-select" class="btn btn-primary">Add New Break</div>
+                    <div id="add-new-break-select" class="btn btn-primary timesheet-button right">Add New Break</div>
                   </div>
                 </div>
 
@@ -602,7 +620,7 @@
                     </select>
                   </div>
                   <div class="col-sm-2">
-                    <span class='btn btn-primary select-all'>Add Equipment</span>
+                    <span class='btn btn-primary timesheet-button'>Add Equipment</span>
                   </div>
                 </div>
 
@@ -616,6 +634,7 @@
                           <th>Number</th>
                           <th>Metre Start</th>
                           <th>Comments</th>
+                          <th></th>
                         </tr>
                       </thead>
                       <tbody>
@@ -633,6 +652,7 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -648,11 +668,11 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">DELETE</td>
                         </tr>
                       </tbody>
                     </table>
-                    <span class='btn btn-primary select-all'>Save List</span>
-                    <span class='btn btn-default select-none'>Remove Equipment</span>
+                    <span class='btn btn-success timesheet-button right'>Save List</span>
                   </div>
                 </div>
 
@@ -694,13 +714,22 @@
                 <div class="form-column col-lg-6 col-md-6 col-sm-12">
 
                   <div class="form-group">
-                    <label class="col-sm-4 control-label">Start Time</label>
+                    <label class="col-sm-4 control-label">End Time</label>
                     <div class="col-sm-8">
                       <div class="input-group merged">
                         <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
                         <span class="input-group-addon">
                           <span class="glyphicon glyphicon-time"></span>
                         </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label"></label>
+                    <div class="col-sm-8">
+                      <div class="input-group">
+                        <span class='btn btn-primary timesheet-button'>Add Member</span>
                       </div>
                     </div>
                   </div>
@@ -717,6 +746,8 @@
                           <th>Member</th>
                           <th>Start</th>
                           <th>Comments</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -730,6 +761,8 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -741,6 +774,8 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -752,6 +787,8 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                         <tr>
                           <td></td>
@@ -763,11 +800,11 @@
                               <input type="text" class="form-control" />
                             </div>
                           </td>
+                          <td class="locate">EDIT</td>
+                          <td class="locate">DELETE</td>
                         </tr>
                       </tbody>
                     </table>
-                    <span class='btn btn-default select-none'>Remove Member</span>
-                    <span class='btn btn-primary select-all'>Add Member</span>
                   </div>
                 </div>
 
@@ -797,30 +834,6 @@
 
               <form class="form-horizontal container">
 
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Start Time</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" value="7:00am"/>
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">End Time</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" value="4:30pm"/>
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="col-sm-12">
                   <table class="table table-condensed table-striped">
                     <thead>
@@ -834,42 +847,42 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td><a href="#">1<a/></td>
+                        <td>1</td>
                         <td>7:30am</td>
                         <td>8:10am</td>
                         <td>00:40</td>
                         <td><span class="glyphicon glyphicon-ok"></span></td>
                       </tr>
                       <tr>
-                        <td><a href="#" class="open-task-time-form">2<a/></td>
+                        <td>2</td>
                         <td>8:45am</td>
                         <td>10:10am</td>
                         <td>01:25</td>
                         <td><span class="glyphicon glyphicon-ok"></span></td>
                       </tr>
                       <tr>
-                        <td><a href="#" class="open-task-time-form">3<a/></td>
+                        <td>3</td>
                         <td>11:30am</td>
                         <td>12:10pm</td>
                         <td>00:40</td>
                         <td><span class="glyphicon glyphicon-ok"></span></td>
                       </tr>
                       <tr>
-                        <td><a href="#" class="open-task-time-form">4<a/></td>
+                        <td>4</td>
                         <td>1:30pm</td>
                         <td>2:00pm</td>
                         <td>00:30</td>
                         <td><span class="glyphicon glyphicon-remove"></span></td>
                       </tr>
                       <tr>
-                        <td><a href="#" class="open-task-time-form">5<a/></td>
+                        <td>5</td>
                         <td>2:30pm</td>
                         <td>3:00pm</td>
                         <td>00:30</td>
                         <td><span class="glyphicon glyphicon-remove"></span></td>
                       </tr>
                       <tr>
-                        <td><a href="#" class="open-task-time-form">6<a/></td>
+                        <td>6</td>
                         <td>3:30pm</td>
                         <td>4:00pm</td>
                         <td>00:30</td>
@@ -880,9 +893,9 @@
                 </div>
 
                 <div class="form-group">
-                  <div class="col-sm-4 control-label"></div>
+                  <div class="col-sm-8 control-label"></div>
                   <div class="col-sm-4">
-                    <div id="review-task-select" class="btn btn-primary">Review Tasks</div>
+                    <div id="review-task-select" class="btn btn-warning timesheet-button right">Review Tasks</div>
                   </div>
                 </div>
 
@@ -924,7 +937,7 @@
                   </thead>
                   <tbody>
                     <tr class="member-timesheet-row">
-                      <td><a href="#">Nathan Adamson</a></td>
+                      <td>Nathan Adamson</td>
                       <td>16/12/2013</td>
                       <td>7:30am</td>
                       <td>4:30pm</td>
@@ -932,7 +945,7 @@
                       <td>08:20</td>
                     </tr>
                     <tr class="member-timesheet-row">
-                      <td><a href="#">Tony Aaron</a></td>
+                      <td>Tony Aaron</td>
                       <td>16/12/2013</td>
                       <td>7:30am</td>
                       <td>4:30pm</td>
@@ -940,7 +953,7 @@
                       <td>08:20</td>
                     </tr>
                     <tr class="member-timesheet-row">
-                      <td><a href="#">Brett Carlisle</a></td>
+                      <td>Brett Carlisle</td>
                       <td>16/12/2013</td>
                       <td>7:30am</td>
                       <td>4:30pm</td>
@@ -948,7 +961,7 @@
                       <td>08:20</td>
                     </tr>
                     <tr class="member-timesheet-row">
-                      <td><a href="#">Adrian Galloway</a></td>
+                      <td>Adrian Galloway</td>
                       <td>16/12/2013</td>
                       <td>7:30am</td>
                       <td>4:30pm</td>
@@ -956,7 +969,7 @@
                       <td>08:20</td>
                     </tr>
                     <tr class="member-timesheet-row">
-                      <td><a href="#">Henry Ingham</a></td>
+                      <td>Henry Ingham</td>
                       <td>16/12/2013</td>
                       <td>7:30am</td>
                       <td>4:30pm</td>
@@ -964,7 +977,7 @@
                       <td>08:20</td>
                     </tr>
                     <tr class="member-timesheet-row">
-                      <td><a href="#">Sam Kelly</a></td>
+                      <td>Sam Kelly</td>
                       <td>16/12/2013</td>
                       <td>7:30am</td>
                       <td>4:30pm</td>
@@ -972,7 +985,7 @@
                       <td>08:20</td>
                     </tr>
                     <tr class="member-timesheet-row">
-                      <td><a href="#">Rick Mally</a></td>
+                      <td>Rick Mally</td>
                       <td>16/12/2013</td>
                       <td>7:30am</td>
                       <td>4:30pm</td>
@@ -983,9 +996,9 @@
                 </table>
 
                 <div class="form-group">
-                  <div class="col-sm-4 control-label"></div>
+                  <div class="col-sm-8 control-label"></div>
                   <div class="col-sm-4">
-                    <div id="review-member-select" class="btn btn-primary">Review Members</div>
+                    <div id="review-member-select" class="btn btn-warning timesheet-button right">Review Members</div>
                   </div>
                 </div>
 
@@ -1151,8 +1164,8 @@
                   </tr>
                 </tbody>
               </table>
-              <span class='btn btn-success select-none'>Save</span>
-              <span id="edit-task-add-item" onclick="open_add_item_qtip()" class='btn btn-primary select-all'>Add Item</span>
+              <span class='btn btn-success timesheet-button right'>Save</span>
+              <span id="edit-task-add-item" onclick="open_add_item_qtip()" class='btn btn-warning timesheet-button right'>Add Item</span>
             </div>
           </div>
 
@@ -1219,9 +1232,9 @@
         </div>
 
         <div class="form-group">
-          <div class="col-sm-4 control-label"></div>
+          <div class="col-sm-8 control-label"></div>
           <div class="col-sm-4">
-            <div class="btn btn-success">Save</div>
+            <div class="btn btn-success timesheet-button right">Save</div>
           </div>
         </div>
 
@@ -1270,7 +1283,7 @@
           <div class="form-group">
             <div class="col-sm-4 control-label"></div>
             <div class="col-sm-4">
-              <div class="btn btn-success">Save</div>
+              <div class="btn btn-success timesheet-button">Save</div>
             </div>
           </div>
 
@@ -1479,9 +1492,9 @@
           </table>
 
           <div class="form-group">
-            <div class="col-sm-4 control-label"></div>
+            <div class="col-sm-8 control-label"></div>
             <div class="col-sm-4">
-              <div class="btn btn-success">Save</div>
+              <div class="btn btn-success timesheet-button right">Save</div>
             </div>
           </div>
 
@@ -1613,6 +1626,13 @@
             </tr>
           </tbody>
         </table>
+
+        <div class="form-group">
+          <div class="col-sm-8 control-label"></div>
+          <div class="col-sm-4">
+            <div class="btn btn-success timesheet-button right">Save</div>
+          </div>
+        </div>
 
       </form>
 
