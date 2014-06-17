@@ -571,6 +571,58 @@ li.active {
   }
 }
 
+//timesheet qtips
+.qtip {
+  &.qtip-timesheet-edit-task {
+    width: 60% !important;
+    height: auto !important;
+    left: 20% !important;
+    right: 20% !important;
+    max-width: 2000px !important;
+    max-height: 2000px !important;
+    &.qtip-default {
+      opacity: 1 !important;
+    }
+    .ui-icon.ui-icon-close {
+      display: none;
+    }
+  }
+}
+
+.qtip {
+  &.qtip-timesheet-add-item {
+    width: 40% !important;
+    height: auto !important;
+    left: 30% !important;
+    right: 30% !important;
+    max-width: 2000px !important;
+    max-height: 2000px !important;
+    &.qtip-default {
+      opacity: 1 !important;
+    }
+    .ui-icon.ui-icon-close {
+      display: none;
+    }
+  }
+}
+
+.qtip {
+  &.qtip-timesheet-add-new-break {
+    width: 40% !important;
+    height: auto !important;
+    left: 30% !important;
+    right: 30% !important;
+    max-width: 2000px !important;
+    max-height: 2000px !important;
+    &.qtip-default {
+      opacity: 1 !important;
+    }
+    .ui-icon.ui-icon-close {
+      display: none;
+    }
+  }
+}
+
 #qtip-overlay.blurs {
   opacity: 0.3 !important;
 }
@@ -1541,12 +1593,14 @@ li.required {
       text-indent: -10px;
     }
     &.open,
+    &.edit-task,
     &.locate {
       width: 50px;
     }
   }
   tr td {
     &.open,
+    &.edit-task,
     &.locate {
       font-size: 11px;
       color: blue;
@@ -1577,6 +1631,13 @@ table.row-children {
   }
 }
 
+#timesheet-end-equipment-table_filter,
+#timesheet-start-equipment-table_filter,
+#timesheet-end-member-table_filter,
+#timesheet-start-member-table_filter,
+#timesheet-checklist-table_filter,
+#timesheet-worklist-table_filter,
+#timesheet-breaks-table_filter,
 #asset-select-table_filter,
 #contact-reference-table_filter,
 #contact-reference-table2_filter,
@@ -1588,6 +1649,13 @@ table.row-children {
   }
 }
 
+#timesheet-end-equipment-table_length,
+#timesheet-start-equipment-table_length,
+#timesheet-start-member-table_length,
+#timesheet-end-member-table_length,
+#timesheet-checklist-table_length,
+#timesheet-worklist-table_length,
+#timesheet-breaks-table_length,
 #asset-select-table_length,
 #contact-reference-table_length,
 #contact-reference-table2_length,
@@ -1600,7 +1668,6 @@ table.row-children {
   }
 }
 
-
 #asset-select-table_filter {
   input {
     margin-top: -5px;
@@ -1611,6 +1678,18 @@ table.row-children {
   select {
     margin-top: -5px;
     margin-left: 5px;
+  }
+}
+
+table {
+  .glyphicon-ok {
+    color: @save-button-colour;
+  }
+  .glyphicon-remove {
+    color: @cancel-button-colour;
+  }
+  .glyphicon-play {
+    color: @map-highlight-colour;
   }
 }
 
@@ -1814,4 +1893,20 @@ tr.current-break {
 
 img.temp-task-map {
   height: 300px;
+}
+
+.table {
+  input,
+  button.selectpicker,
+  .bootstrap-select {
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+  }
+  .filter-option {
+    height: 25px;
+  }
+  button.selectpicker {
+    padding-top: 0;
+  }
 }

@@ -137,3 +137,186 @@ $('#note-reference-table3').dataTable({
     }
   ]
 });
+
+
+//timesheet tables
+
+// start equipment
+$('#timesheet-start-equipment-table').dataTable({
+  paging: false,
+  "columns": [
+    { "class": "remove-sort details-control" },
+    { "class": "text" },
+    { "class": "text" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});
+
+//start members
+$('#timesheet-start-member-table').dataTable({
+  paging: false,
+  "columns": [
+    { "class": "remove-sort details-control" },
+    { "class": "text" },
+    { "class": "text" },
+    { "class": "text" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});
+
+//prestart checklist
+$('#timesheet-checklist-table').dataTable({
+  paging: false,
+  "columns": [
+    { "class": "remove-sort details-control" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});
+
+//worklist
+$('#timesheet-worklist-table').dataTable({
+  paging: false,
+  "columns": [
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});
+
+//edit task
+$('#timesheet-edit-task-table').dataTable({
+  paging: false,
+  "columns": [
+    { "class": "remove-sort details-control" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});
+
+//breaks
+$('#timesheet-breaks-table').dataTable({
+  paging: false,
+  "columns": [
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});
+
+// end equipment
+$('#timesheet-end-equipment-table').dataTable({
+  paging: false,
+  "columns": [
+    { "class": "remove-sort details-control" },
+    { "class": "text" },
+    { "class": "text" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});
+
+//end members
+$('#timesheet-end-member-table').dataTable({
+  paging: false,
+  "columns": [
+    { "class": "remove-sort details-control" },
+    { "class": "text" },
+    { "class": "text" },
+    { "class": "text" },
+    {
+      "class": "remove-sort",
+      "orderable": false
+    }
+  ]
+});

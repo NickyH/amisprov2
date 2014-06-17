@@ -301,6 +301,117 @@ function show_raise_qtip() {
   $('#raise-buttons').removeClass('invisible');
 }
 
+function open_edit_task_qtip() {
+  $(this).qtip({
+      content: {
+        text: $('#timesheet-edit-task-content').clone(),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-timesheet-edit-task qtip-rounded qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#timesheet-edit-task-content').addClass('invisible');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(window)
+      },
+  });
+  $('#timesheet-edit-task-content').removeClass('invisible');
+}
+
+function open_add_item_qtip() {
+  $(this).qtip({
+      content: {
+        text: $('#timesheet-add-item-content').clone(),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-timesheet-add-item qtip-rounded qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#timesheet-add-item-content').addClass('invisible');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(window)
+      },
+  });
+  $('#timesheet-add-item-content').removeClass('invisible');
+}
+
+function open_add_new_break_qtip() {
+  $(this).qtip({
+      content: {
+        text: $('#timesheet-add-new-break-content').clone(),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-timesheet-add-new-break qtip-rounded qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#timesheet-add-new-break-content').addClass('invisible');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(window)
+      },
+  });
+  $('#timesheet-add-new-break-content').removeClass('invisible');
+}
+
 function warn_exit_form() {
   bootbox.dialog({
     message: "You are about to exit this form without saving. Save changes before leaving this form?",

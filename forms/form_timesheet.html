@@ -31,65 +31,176 @@
               <form class="form-horizontal container">
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Start Time</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Member</label>
-                  <div class="col-sm-8">
+                  <label class="col-sm-2 control-label">Equipment</label>
+                  <div class="col-sm-4">
                     <select class="selectpicker form-control" multiple data-live-search="true" title=''>
-                      <option>Nathan Adamson</option>
-                      <option>Tony Aaron</option>
-                      <option>Brett Carlisle</option>
-                      <option>Adrian Galloway</option>
-                      <option>Henry Ingham</option>
-                      <option>Sam Kelly</option>
-                      <option>Rick Mally</option>
+                      <option>Toolbox</option>
+                      <option>PPE</option>
+                      <option>GPS</option>
                     </select>
-                    <span class='btn btn-default select-none'>Select None</span>
-                    <span class='btn btn-primary select-all'>Select All</span>
+                  </div>
+                  <div class="col-sm-2">
+                    <span class='btn btn-primary select-all'>Add Equipment</span>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Current Members</label>
-                  <div class="col-sm-8">
-                    <table class="table table-condensed">
+                  <div class="col-sm-12">
+                    <table id="timesheet-start-equipment-table" class="table table-condensed reference-history table-striped row-children">
                       <thead>
                         <tr>
-                          <th>Date</th>
-                          <th>Member</th>
-                          <th>Start</th>
+                          <th></th>
+                          <th>Equipment</th>
+                          <th>Number</th>
+                          <th>Metre Start</th>
+                          <th>Comments</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
+                          <td></td>
+                          <td>Truck 4x6</td>
+                          <td>789101</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" value="3547674" />
+                            </div>
+                          </td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>O/Cab Lite</td>
+                          <td>587235</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" value="3456799" />
+                            </div>
+                          </td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <span class='btn btn-primary select-all'>Save List</span>
+                    <span class='btn btn-default select-none'>Remove Equipment</span>
+                  </div>
+                </div>
+
+                <div class="panel-divider"></div> <!-- panel dividing line-->
+
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Work Supervisor</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control" title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Members</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control" multiple title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div><!-- end form column-->
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Start Time</label>
+                    <div class="col-sm-8">
+                      <div class="input-group merged">
+                        <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                        <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!--end form-column-->
+
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <table id="timesheet-start-member-table" class="table table-condensed reference-history table-striped row-children">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Date</th>
+                          <th>Member</th>
+                          <th>Start</th>
+                          <th>Comments</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Adrian Galloway</td>
                           <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                         <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Henry Ingham</td>
                           <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                         <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Sam Kelly</td>
                           <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                         <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Rick Mally</td>
                           <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -108,195 +219,74 @@
     <!-- end form row 1 -->
 
     <!-- form row 2 -->
-    <div class="row" data-oval-name="PreStart">
+    <div class="row" data-oval-name="PreStartChecklist">
 
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
+      <!-- form panel 1 -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="form-panel full-width">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Pre-Start
-                </div>
-              </div>
-
-              <form class="form-horizontal container" role="form">
-
-                <table class="table table-condensed">
-                  <thead>
-                    <tr>
-                      <th>Task</th>
-                      <th>Start</th>
-                      <th>Completed?</th>
-                      <th>Locate on Map</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="task-row current-task">
-                      <td><a href="#">1<a/></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play"></a></td>
-                      <td><span class="glyphicon glyphicon-ok"></span></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-picture"></a></td>
-                    </tr>
-                    <tr class="task-row">
-                      <td><a href="#">2<a/></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play"></a></td>
-                      <td><span class="glyphicon glyphicon-ok"></span></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-picture"></a></td>
-                    </tr>
-                    <tr class="task-row">
-                      <td><a href="#">3<a/></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play"></a></td>
-                      <td><span class="glyphicon glyphicon-ok"></span></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-picture"></a></td>
-                    </tr>
-                    <tr class="task-row">
-                      <td><a href="#">4<a/></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play"></a></td>
-                      <td><span class="glyphicon glyphicon-remove"></span></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-picture"></a></td>
-                    </tr>
-                    <tr class="task-row">
-                      <td><a href="#">5<a/></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play"></a></td>
-                      <td><span class="glyphicon glyphicon-remove"></span></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-picture"></a></td>
-                    </tr>
-                    <tr class="task-row">
-                      <td><a href="#">6<a/></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play"></a></td>
-                      <td><span class="glyphicon glyphicon-remove"></span></td>
-                      <td><a href="#"><span class="glyphicon glyphicon-picture"></a></td>
-                    </tr>
-                </tbody>
-                </table>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Find & Fix</label>
-                  <div class="col-sm-8">
-                    <input type="file" class="form-control">
-                    <span class='btn btn-info file-select'>Add Task</span>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Start Task</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii"/>
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Task Type</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" title=''>
-                      <option>Permanent</option>
-                      <option>Temporary</option>
-                      <option>Other</option>
-                      <option>Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Task Code</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" title=''>
-                      <option>211 - Crack Sealing Flexible Pavement</option>
-                      <option>220 - Crack Sealing Flexible Pavement</option>
-                      <option>250 - Crack Sealing Flexible Pavement</option>
-                      <option>270 - Crack Sealing Flexible Pavement</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Task Category</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" title=''>
-                      <option>Ctgy 1</option>
-                      <option>Ctgy 2</option>
-                      <option>Ctgy 3</option>
-                      <option>Ctgy 4</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">End Task</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Unit/Quantity</label>
-                  <div class="col-sm-4">
-                    <select class="selectpicker show-tick form-control" title='' data-live-search="true">
-                      <option data-hidden="true"></option>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-4">
-                    <input class="form-control all-touchspin" value="1" type="number" pattern="\d*">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Date Completed</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-date-picker" data-date-format="dd/mm/yyyy" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Completed By</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" title=''>
-                      <option>DP</option>
-                      <option>FP</option>
-                      <option>DS</option>
-                      <option>TG</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Actual Qty</label>
-                  <div class="col-sm-8">
-                    <input class="form-control all-touchspin" value="1" type="number" pattern="\d*">
-                  </div>
-                </div>
-
-              </form>
-
+        <div class="form-panel full-width">
+          <!-- numbered circle in each form panel-->
+          <div class="text-circle">
+            <div class="text-in-circle">
+              Pre-Start Checklist
             </div>
           </div>
-          <!-- end form panel 1 -->
+
+          <form class="form-horizontal container">
+
+            <table id="timesheet-checklist-table" class="table table-condensed reference-history table-striped row-children">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>Form</th>
+                  <th>Completed?</th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td></td>
+                  <td>Daily Vehicle Pre-Start Inspection</td>
+                  <td><span class="glyphicon glyphicon-ok"></span></td>
+                  <td class="open">EDIT</td>
+                  <td class="locate">VIEW</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Daily Job Record</td>
+                  <td><span class="glyphicon glyphicon-ok"></span></td>
+                  <td class="open">EDIT</td>
+                  <td class="locate">VIEW</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Form 3</td>
+                  <td><span class="glyphicon glyphicon-remove"></span></td>
+                  <td class="open">EDIT</td>
+                  <td class="locate">VIEW</td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>Form 4</td>
+                  <td><span class="glyphicon glyphicon-remove"></span></td>
+                  <td class="open">EDIT</td>
+                  <td class="locate">VIEW</td>
+                </tr>
+              </tbody>
+            </table>
+
+          </form>
+
+        </div>
+      </div>
+      <!-- end form panel 1 -->
 
     </div>
     <!-- end form row 2 -->
 
     <!-- form row 3 -->
-    <div class="row" data-oval-name="LevelOfEffort">
+    <div class="row" data-oval-name="WorkList">
 
           <!-- form panel 1 -->
           <div class="col-lg-12 col-md-12 col-sm-12">
@@ -305,43 +295,129 @@
               <!-- numbered circle in each form panel-->
               <div class="text-circle">
                 <div class="text-in-circle">
-                  Level Of Effort
+                  Work List
                 </div>
               </div>
 
-              <form class="form-horizontal container" role="form">
+              <form class="form-horizontal container">
 
-                <table class="table table-condensed table-striped">
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Members</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control" multiple data-live-search="true" title=''>
+                        <option>Toolbox</option>
+                        <option>PPE</option>
+                        <option>GPS</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div><!--end form column-->
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Start Time</label>
+                    <div class="col-sm-4">
+                      <div class="input-group merged">
+                        <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                        <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <span class='btn btn-primary select-all'>Add Member/s</span>
+                    </div>
+                  </div>
+
+                </div><!--end form-column-->
+
+                <table id="timesheet-worklist-table" class="table table-condensed reference-history table-striped">
                   <thead>
                     <tr>
-                      <th>Item Code</th>
-                      <th>Description</th>
-                      <th>Unit</th>
-                      <th>Estimated Qty</th>
-                      <th>Actual Qty</th>
+                      <th>Work Order ID</th>
+                      <th>Task</th>
+                      <th>Job Start Form</th>
+                      <th>Start</th>
+                      <th>Completed?</th>
+                      <th>Locate On Map</th>
+                      <th>Edit Task</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>8583.56</td>
-                      <td>Railing</td>
-                      <td>m</td>
-                      <td>10</td>
-                      <td>8</td>
+                      <td>457.00</td>
+                      <td>Task 1</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-ok"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
                     </tr>
                     <tr>
-                      <td>8583.56</td>
-                      <td>Railing</td>
-                      <td>m</td>
-                      <td>10</td>
-                      <td>8</td>
+                      <td>457.00</td>
+                      <td>Task 2</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-ok"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
                     </tr>
                     <tr>
-                      <td>8583.56</td>
-                      <td>Railing</td>
-                      <td>m</td>
-                      <td>10</td>
-                      <td>8</td>
+                      <td>457.00</td>
+                      <td>Task 3</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-remove"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
+                    </tr>
+                    <tr>
+                      <td>457.00</td>
+                      <td>Task 4</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-remove"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
+                    </tr>
+                    <tr>
+                      <td>235.89</td>
+                      <td>Task 5</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-ok"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
+                    </tr>
+                    <tr>
+                      <td>235.89</td>
+                      <td>Task 6</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-ok"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
+                    </tr>
+                    <tr>
+                      <td>235.89</td>
+                      <td>Task 7</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-remove"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
+                    </tr>
+                    <tr>
+                      <td>235.89</td>
+                      <td>Task 8</td>
+                      <td><span class="glyphicon glyphicon-play"></span></td>
+                      <td>07:30</td>
+                      <td><span class="glyphicon glyphicon-remove"></span></td>
+                      <td class="locate">VIEW</td>
+                      <td class="edit-task">EDIT</td>
                     </tr>
                   </tbody>
                 </table>
@@ -351,51 +427,6 @@
                   <div class="col-sm-8">
                     <span class='btn btn-default select-none'>Update Item</span>
                     <span class='btn btn-primary select-all'>Add Item</span>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Total Qty</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">LOE Group</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" title=''>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">LOE Name</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" title=''>
-                      <option>Name</option>
-                      <option>Name</option>
-                      <option>Name</option>
-                      <option>Name</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Qty</label>
-                  <div class="col-sm-8">
-                    <input type="text" class="form-control">
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Notes</label>
-                  <div class="col-sm-8">
-                    <input type="textarea" class="form-control" rows="3">
                   </div>
                 </div>
 
@@ -423,91 +454,115 @@
                 </div>
               </div>
 
-              <form class="form-horizontal container" role="form">
+              <form class="form-horizontal container">
 
-                <table class="table table-condensed">
+                <table id="timesheet-breaks-table" class="table table-condensed reference-history">
                   <thead>
                     <tr>
-                      <th>Break Type</th>
-                      <th>Start Break</th>
-                      <th>End Break</th>
+                      <th>Break</th>
+                      <th>Members</th>
+                      <th>Start</th>
+                      <th>End</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr class="breaks-row current-break">
-                      <td>Morning Break</td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play breaks"></a></td>
-                      <td></td>
-                    </tr>
                     <tr class="breaks-row">
+                      <td>Morning Break</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <select class="selectpicker form-control" multiple title=''>
+                            <option>Nathan Adamson</option>
+                            <option>Tony Aaron</option>
+                            <option>Brett Carlisle</option>
+                            <option>Adrian Galloway</option>
+                            <option>Henry Ingham</option>
+                            <option>Sam Kelly</option>
+                            <option>Rick Mally</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td>07:30</td>
+                      <td>09:50</td>
+                    </tr>
+                    <tr class="breaks-row current-break">
                       <td>Toolbox</td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play breaks"></a></td>
-                      <td></td>
+                      <td>
+                        <div class="col-sm-12">
+                          <select class="selectpicker form-control" multiple title=''>
+                            <option>Nathan Adamson</option>
+                            <option>Tony Aaron</option>
+                            <option>Brett Carlisle</option>
+                            <option>Adrian Galloway</option>
+                            <option>Henry Ingham</option>
+                            <option>Sam Kelly</option>
+                            <option>Rick Mally</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td>11:30</td>
+                      <td>11:45</td>
                     </tr>
                     <tr class="breaks-row">
                       <td>Lunch</td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play breaks"></a></td>
-                      <td></td>
+                      <td>
+                        <div class="col-sm-12">
+                          <select class="selectpicker form-control" multiple title=''>
+                            <option>Nathan Adamson</option>
+                            <option>Tony Aaron</option>
+                            <option>Brett Carlisle</option>
+                            <option>Adrian Galloway</option>
+                            <option>Henry Ingham</option>
+                            <option>Sam Kelly</option>
+                            <option>Rick Mally</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td>12:15</td>
+                      <td>13:15</td>
                     </tr>
                     <tr class="breaks-row">
                       <td>Afternoon Break</td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play breaks"></a></td>
+                      <td>
+                        <div class="col-sm-12">
+                          <select class="selectpicker form-control" multiple title=''>
+                            <option>Nathan Adamson</option>
+                            <option>Tony Aaron</option>
+                            <option>Brett Carlisle</option>
+                            <option>Adrian Galloway</option>
+                            <option>Henry Ingham</option>
+                            <option>Sam Kelly</option>
+                            <option>Rick Mally</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td>15:30</td>
                       <td></td>
                     </tr>
                     <tr class="breaks-row">
                       <td>Dinner</td>
-                      <td><a href="#"><span class="glyphicon glyphicon-play breaks"></a></td>
+                      <td>
+                        <div class="col-sm-12">
+                          <select class="selectpicker form-control" multiple title=''>
+                            <option>Nathan Adamson</option>
+                            <option>Tony Aaron</option>
+                            <option>Brett Carlisle</option>
+                            <option>Adrian Galloway</option>
+                            <option>Henry Ingham</option>
+                            <option>Sam Kelly</option>
+                            <option>Rick Mally</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td></td>
                       <td></td>
                     </tr>
                 </tbody>
                 </table>
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label"></label>
-                  <div class="col-sm-8">
-                    <input type="file" class="form-control">
-                    <span class='btn btn-info file-select'>Add New Break</span>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Start Break</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">End Break</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Members</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" multiple data-live-search="true" title=''>
-                      <option>Nathan Adamson</option>
-                      <option>Tony Aaron</option>
-                      <option>Brett Carlisle</option>
-                      <option>Adrian Galloway</option>
-                      <option>Henry Ingham</option>
-                      <option>Sam Kelly</option>
-                      <option>Rick Mally</option>
-                    </select>
-                    <span class='btn btn-default select-none'>Select None</span>
-                    <span class='btn btn-primary select-all'>Select All</span>
+                  <div class="col-sm-4 control-label"></div>
+                  <div class="col-sm-4">
+                    <div id="add-new-break-select" class="btn btn-primary">Add New Break</div>
                   </div>
                 </div>
 
@@ -538,99 +593,181 @@
               <form class="form-horizontal container">
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">End Time</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Member</label>
-                  <div class="col-sm-8">
+                  <label class="col-sm-2 control-label">Equipment</label>
+                  <div class="col-sm-4">
                     <select class="selectpicker form-control" multiple data-live-search="true" title=''>
-                      <option>Nathan Adamson</option>
-                      <option>Tony Aaron</option>
-                      <option>Brett Carlisle</option>
-                      <option>Adrian Galloway</option>
-                      <option>Henry Ingham</option>
-                      <option>Sam Kelly</option>
-                      <option>Rick Mally</option>
+                      <option>Toolbox</option>
+                      <option>PPE</option>
+                      <option>GPS</option>
                     </select>
-                    <span class='btn btn-default select-none'>Select None</span>
-                    <span class='btn btn-primary select-all'>Select All</span>
+                  </div>
+                  <div class="col-sm-2">
+                    <span class='btn btn-primary select-all'>Add Equipment</span>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label class="col-sm-4 control-label">Current Members</label>
-                  <div class="col-sm-8">
-                    <table class="table table-condensed">
+                  <div class="col-sm-12">
+                    <table id="timesheet-end-equipment-table" class="table table-condensed reference-history table-striped row-children">
                       <thead>
                         <tr>
-                          <th>Date</th>
-                          <th>Member</th>
-                          <th>End</th>
+                          <th></th>
+                          <th>Equipment</th>
+                          <th>Number</th>
+                          <th>Metre Start</th>
+                          <th>Comments</th>
                         </tr>
                       </thead>
                       <tbody>
                         <tr>
+                          <td></td>
+                          <td>Truck 4x6</td>
+                          <td>789101</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" value="3547674" />
+                            </div>
+                          </td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td></td>
+                          <td>O/Cab Lite</td>
+                          <td>587235</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" value="3456799" />
+                            </div>
+                          </td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <span class='btn btn-primary select-all'>Save List</span>
+                    <span class='btn btn-default select-none'>Remove Equipment</span>
+                  </div>
+                </div>
+
+                <div class="panel-divider"></div> <!-- panel dividing line-->
+
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Work Supervisor</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control" title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Members</label>
+                    <div class="col-sm-8">
+                      <select class="selectpicker form-control" multiple title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
+                    </div>
+                  </div>
+
+                </div><!-- end form column-->
+                <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+                  <div class="form-group">
+                    <label class="col-sm-4 control-label">Start Time</label>
+                    <div class="col-sm-8">
+                      <div class="input-group merged">
+                        <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                        <span class="input-group-addon">
+                          <span class="glyphicon glyphicon-time"></span>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div><!--end form-column-->
+
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <table id="timesheet-end-member-table" class="table table-condensed reference-history table-striped row-children">
+                      <thead>
+                        <tr>
+                          <th></th>
+                          <th>Date</th>
+                          <th>Member</th>
+                          <th>Start</th>
+                          <th>Comments</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Adrian Galloway</td>
-                          <td>16:30pm</td>
+                          <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                         <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Henry Ingham</td>
-                          <td>16:30pm</td>
+                          <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                         <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Sam Kelly</td>
-                          <td>16:30pm</td>
+                          <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                         <tr>
+                          <td></td>
                           <td>16/12/2013</td>
                           <td>Rick Mally</td>
-                          <td>16:30pm</td>
+                          <td>7:00am</td>
+                          <td>
+                            <div class="col-sm-12">
+                              <input type="text" class="form-control" />
+                            </div>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
                     <span class='btn btn-default select-none'>Remove Member</span>
                     <span class='btn btn-primary select-all'>Add Member</span>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">End Time</label>
-                  <div class="col-sm-8">
-                    <div class="input-group merged">
-                      <input type="text" class="form-control insert-time-picker" />
-                      <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-time"></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label">Member</label>
-                  <div class="col-sm-8">
-                    <select class="selectpicker form-control" multiple data-live-search="true" title=''>
-                      <option>Nathan Adamson</option>
-                      <option>Tony Aaron</option>
-                      <option>Brett Carlisle</option>
-                      <option>Adrian Galloway</option>
-                      <option>Henry Ingham</option>
-                      <option>Sam Kelly</option>
-                      <option>Rick Mally</option>
-                    </select>
-                    <span class='btn btn-default select-none'>Select None</span>
-                    <span class='btn btn-primary select-all'>Select All</span>
                   </div>
                 </div>
 
@@ -932,7 +1069,289 @@
   <!-- end form container -->
 </div>
 
+
+
+
+<!--edit task qtip-->
+<div class="invisible" id="timesheet-edit-task-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Edit Task
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1">
+    <div class="panel-body">
+
+      <form class="form-horizontal container">
+
+        <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Work Order ID</label>
+            <div class="col-sm-8">
+              <select class="selectpicker form-control" title='432.78455'>
+                <option>422.785644</option>
+                <option>423.566785</option>
+                <option>424.546788</option>
+                <option>425.654367</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Task Category</label>
+            <div class="col-sm-8">
+              <select class="selectpicker form-control" title=''>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+                <option>Category</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Completed</label>
+            <div class="col-sm-8">
+              <div class="input-group merged">
+                <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-time"></span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div><!--end form column-->
+        <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Repair Type</label>
+            <div class="col-sm-8">
+              <select class="selectpicker form-control" title=''>
+                <option>Repair Type</option>
+                <option>Repair Type</option>
+                <option>Repair Type</option>
+                <option>Repair Type</option>
+                <option>Repair Type</option>
+                <option>Repair Type</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Task Code</label>
+            <div class="col-sm-8">
+              <select class="selectpicker form-control" title='432.78455'>
+                <option>45.7854</option>
+                <option>12.5785</option>
+                <option>56.5788</option>
+                <option>78.4367</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Actual Qty</label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control">
+            </div>
+            <div class="col-sm-2">UOM</div>
+          </div>
+
+        </div><!--end form column-->
+
+          <div class="form-group">
+            <div class="col-sm-12">
+              <table id="timesheet-edit-task-table" class="table table-condensed reference-history table-striped row-children">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Item Code</th>
+                    <th>Description</th>
+                    <th>Unit</th>
+                    <th>Qty</th>
+                    <th>Edit</th>
+                    <th>Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>8583.56</td>
+                    <td>Railing</td>
+                    <td>m</td>
+                    <td>10</td>
+                    <td class="locate">EDIT</td>
+                    <td class="locate">DELETE</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>8583.56</td>
+                    <td>Railing</td>
+                    <td>m</td>
+                    <td>10</td>
+                    <td class="locate">EDIT</td>
+                    <td class="locate">DELETE</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>8583.56</td>
+                    <td>Railing</td>
+                    <td>m</td>
+                    <td>10</td>
+                    <td class="locate">EDIT</td>
+                    <td class="locate">DELETE</td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td>8583.56</td>
+                    <td>Railing</td>
+                    <td>m</td>
+                    <td>10</td>
+                    <td class="locate">EDIT</td>
+                    <td class="locate">DELETE</td>
+                  </tr>
+                </tbody>
+              </table>
+              <span class='btn btn-success select-none'>Save</span>
+              <span id="edit-task-add-item" onclick="open_add_item_qtip()" class='btn btn-primary select-all'>Add Item</span>
+            </div>
+          </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<!-- edit task qtip -->
+
+<!--add item qtip-->
+<div class="invisible" id="timesheet-add-item-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Add Item
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1">
+    <div class="panel-body">
+
+      <form class="form-horizontal container">
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">LOE Group</label>
+          <div class="col-sm-8">
+            <select class="selectpicker form-control" title='432.78455'>
+              <option>422.785644</option>
+              <option>423.566785</option>
+              <option>424.546788</option>
+              <option>425.654367</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">LOE Name</label>
+          <div class="col-sm-8">
+            <select class="selectpicker form-control" title=''>
+              <option>Name</option>
+              <option>Name</option>
+              <option>Name</option>
+              <option>Name</option>
+              <option>Name</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Actual Qty</label>
+          <div class="col-sm-6">
+            <input type="text" class="form-control">
+          </div>
+          <div class="col-sm-2">UOM</div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-4 control-label">Notes</label>
+          <div class="col-sm-8">
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-4 control-label"></div>
+          <div class="col-sm-4">
+            <div class="btn btn-success">Save</div>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<!-- add item qtip -->
+
+<!--add new break qtip-->
+<div class="invisible" id="timesheet-add-new-break-content">
+
+  <div class="panel panel-default asset-select-panel title-panel">
+    <div class="panel-body">
+      Add New Break
+    </div>
+  </div>
+
+  <div class="panel panel-default asset-select-panel panel-1">
+    <div class="panel-body">
+
+      <form class="form-horizontal container">
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Break Type</label>
+            <div class="col-sm-8">
+              <select class="selectpicker form-control">
+                <option>Break Type</option>
+                <option>Break Type</option>
+                <option>Break Type</option>
+                <option>Break Type</option>
+                <option>Break Type</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-sm-4 control-label">Notes</label>
+            <div class="col-sm-8">
+              <textarea class="form-control" rows="3"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-4 control-label"></div>
+            <div class="col-sm-4">
+              <div class="btn btn-success">Save</div>
+            </div>
+          </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+<!-- add new break qtip -->
+
 <script src="../Scripts/js/forms.js"></script>
 <script src="../Scripts/js/tables.js"></script>
 <script>
+$('.edit-task').on('click', open_edit_task_qtip);
+$('#add-new-break-select').on('click', open_add_new_break_qtip);
 </script>
