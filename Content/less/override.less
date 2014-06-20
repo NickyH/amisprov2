@@ -11,6 +11,10 @@ body {
   padding-bottom: 20px;
 }
 
+.row.last {
+  margin-bottom: 100px;
+}
+
 #insert-top-toggle {
   &.toggle {
     position: fixed;
@@ -21,6 +25,7 @@ body {
     background-color: fade(#e9e9e9, 30%);
     z-index: 6;
     opacity: 0.3;
+    cursor: pointer;
     &:hover {
       opacity: 0.8;
     }
@@ -51,8 +56,8 @@ body {
     padding-right: 10%;
     padding-top: 100px;
     background-color: @background-main;
-    }
   }
+}
 
 .login-icon {
   position: absolute;
@@ -65,17 +70,17 @@ body {
 }
 
 .login-title {
-    span {
-      line-height: 33px;
-    }
-    padding-left: 40px;
-    position: relative;
-    left: 10%;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    display: inline-block;
-    font: @form-header-font;
-    font-weight: bold;
+  span {
+    line-height: 33px;
+  }
+  padding-left: 40px;
+  position: relative;
+  left: 10%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  font: @form-header-font;
+  font-weight: bold;
 }
 
 .login-dtims {
@@ -385,9 +390,13 @@ li.active {
   &.full-width {
     @media @widthMediumLarge {
       width: 90% !important;
+      min-width: 700px;
+      // margin-left: 0;
     }
     @media @widthLarge {
       width: 95% !important;
+      min-width: 700px;
+      // margin-left: 0;
     }
   }
 }
@@ -786,15 +795,27 @@ li.active {
       .panel-body {
         padding-bottom: 1px !important;
         padding-top: 9px !important;
-        padding-right: 30px !important;
-        padding-left: 30px !important;
+        padding-right: 15px !important;
+        padding-left: 15px !important;
         font-size: 12px !important;
         font-weight: normal;
         color: black;
       }
       img {
         height: 25px;
-        margin-left: 20px;
+        margin-left: 3px;
+      }
+      span {
+        margin-left: -3px;
+      }
+      @media @widthMediumLarge {
+        span {
+          font-size: 10px;
+        }
+        img {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
     .panel-body {

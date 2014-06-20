@@ -360,9 +360,9 @@ function goto_forms() {
   $.get('forms/form_cr.html', function(data) {
     $('#insert-form').html(data);
     });
-  insert_left();
   close_current_qtip();
   unhide_top_toggle();
+  insert_left();
 }
 
 function insert_form() {

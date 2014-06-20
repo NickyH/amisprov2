@@ -22,6 +22,7 @@ $('.filename-delete').on('click', delete_selected_file);
 $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
 $('.form-container').bind('swipemove', get_bookmark_positions);
 
+
 function calendar_icon_click() {
   $(this).parent().parent().children('input').trigger('click');
 }
@@ -420,8 +421,8 @@ function open_review_task_qtip() {
       },
       show: {
           modal: {
-              on: true,
-              solo: true
+            on: true,
+            solo: true
           },
           ready: true,
           event: 'click',
@@ -457,8 +458,8 @@ function open_review_member_qtip() {
       },
       show: {
           modal: {
-              on: true,
-              solo: true
+            on: true,
+            solo: true
           },
           ready: true,
           event: 'click',
@@ -548,6 +549,7 @@ function table_search(thisObj, tableID) {
 }
 
 function get_bubbles() {
+  console.log('buble');
   $('.row[data-oval-name]').each(function() {
     var ovalNameValue = this.dataset.ovalName;
     var ovalNameText = this.dataset.ovalName.replace(/([a-z])([A-Z])/g, '$1 $2');

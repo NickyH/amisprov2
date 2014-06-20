@@ -17,222 +17,222 @@
     <!-- form row 1 -->
     <div class="row first" data-oval-name="Start">
 
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
+      <!-- form panel 1 -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="form-panel full-width">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Start
+        <div class="form-panel full-width">
+          <!-- numbered circle in each form panel-->
+          <div class="text-circle">
+            <div class="text-in-circle">
+              Start
+            </div>
+          </div>
+
+          <form class="form-horizontal container">
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Equipment</label>
+              <div class="col-sm-4">
+                <select class="selectpicker form-control" multiple data-live-search="true" title=''>
+                  <option>Toolbox</option>
+                  <option>PPE</option>
+                  <option>GPS</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                <span class='btn btn-primary timesheet-button'>Add Equipment</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <table id="timesheet-start-equipment-table" class="table table-condensed reference-history table-striped row-children">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Equipment</th>
+                      <th>Number</th>
+                      <th>Metre Start</th>
+                      <th>Comments</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>Truck 4x6</td>
+                      <td>789101</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" value="3547674" />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>O/Cab Lite</td>
+                      <td>587235</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" value="3456799" />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <span class='btn btn-success timesheet-button right'>Save List</span>
+              </div>
+            </div>
+
+            <div class="panel-divider"></div> <!-- panel dividing line-->
+
+            <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Work Supervisor</label>
+                <div class="col-sm-8">
+                  <select class="selectpicker form-control" title=''>
+                    <option>Nathan Adamson</option>
+                    <option>Tony Aaron</option>
+                    <option>Brett Carlisle</option>
+                    <option>Adrian Galloway</option>
+                    <option>Henry Ingham</option>
+                    <option>Sam Kelly</option>
+                    <option>Rick Mally</option>
+                  </select>
                 </div>
               </div>
 
-              <form class="form-horizontal container">
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Members</label>
+                <div class="col-sm-8">
+                  <select class="selectpicker form-control" multiple title=''>
+                    <option>Nathan Adamson</option>
+                    <option>Tony Aaron</option>
+                    <option>Brett Carlisle</option>
+                    <option>Adrian Galloway</option>
+                    <option>Henry Ingham</option>
+                    <option>Sam Kelly</option>
+                    <option>Rick Mally</option>
+                  </select>
+                </div>
+              </div>
 
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Equipment</label>
-                  <div class="col-sm-4">
-                    <select class="selectpicker form-control" multiple data-live-search="true" title=''>
-                      <option>Toolbox</option>
-                      <option>PPE</option>
-                      <option>GPS</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-2">
-                    <span class='btn btn-primary timesheet-button'>Add Equipment</span>
+            </div><!-- end form column-->
+            <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Start Time</label>
+                <div class="col-sm-8">
+                  <div class="input-group merged">
+                    <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </span>
                   </div>
                 </div>
+              </div>
 
-                <div class="form-group">
-                  <div class="col-sm-12">
-                    <table id="timesheet-start-equipment-table" class="table table-condensed reference-history table-striped row-children">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>Equipment</th>
-                          <th>Number</th>
-                          <th>Metre Start</th>
-                          <th>Comments</th>
-                          <th>Delete</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td></td>
-                          <td>Truck 4x6</td>
-                          <td>789101</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" value="3547674" />
-                            </div>
-                          </td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>O/Cab Lite</td>
-                          <td>587235</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" value="3456799" />
-                            </div>
-                          </td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <span class='btn btn-success timesheet-button right'>Save List</span>
+              <div class="form-group">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <span class='btn btn-primary timesheet-button'>Add Member</span>
                   </div>
                 </div>
+              </div>
 
-                <div class="panel-divider"></div> <!-- panel dividing line-->
+            </div><!--end form-column-->
 
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">Work Supervisor</label>
-                    <div class="col-sm-8">
-                      <select class="selectpicker form-control" title=''>
-                        <option>Nathan Adamson</option>
-                        <option>Tony Aaron</option>
-                        <option>Brett Carlisle</option>
-                        <option>Adrian Galloway</option>
-                        <option>Henry Ingham</option>
-                        <option>Sam Kelly</option>
-                        <option>Rick Mally</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">Members</label>
-                    <div class="col-sm-8">
-                      <select class="selectpicker form-control" multiple title=''>
-                        <option>Nathan Adamson</option>
-                        <option>Tony Aaron</option>
-                        <option>Brett Carlisle</option>
-                        <option>Adrian Galloway</option>
-                        <option>Henry Ingham</option>
-                        <option>Sam Kelly</option>
-                        <option>Rick Mally</option>
-                      </select>
-                    </div>
-                  </div>
-
-                </div><!-- end form column-->
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">Start Time</label>
-                    <div class="col-sm-8">
-                      <div class="input-group merged">
-                        <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label"></label>
-                    <div class="col-sm-8">
-                      <div class="input-group">
-                        <span class='btn btn-primary timesheet-button'>Add Member</span>
-                      </div>
-                    </div>
-                  </div>
-
-                </div><!--end form-column-->
-
-                <div class="form-group">
-                  <div class="col-sm-12">
-                    <table id="timesheet-start-member-table" class="table table-condensed reference-history table-striped row-children">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>Date</th>
-                          <th>Member</th>
-                          <th>Start</th>
-                          <th>Comments</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Adrian Galloway</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Henry Ingham</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Sam Kelly</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Rick Mally</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-              </form>
-
+            <div class="form-group">
+              <div class="col-sm-12">
+                <table id="timesheet-start-member-table" class="table table-condensed reference-history table-striped row-children">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Date</th>
+                      <th>Member</th>
+                      <th>Start</th>
+                      <th>Comments</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Adrian Galloway</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Henry Ingham</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Sam Kelly</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Rick Mally</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-          <!-- end form panel 1 -->
+
+          </form>
+
+        </div>
+      </div>
+      <!-- end form panel 1 -->
 
     </div>
     <!-- end form row 1 -->
@@ -307,153 +307,155 @@
     <!-- form row 3 -->
     <div class="row" data-oval-name="WorkList">
 
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
+      <!-- form panel 1 -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="form-panel full-width">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Work List
+        <div class="form-panel full-width">
+          <!-- numbered circle in each form panel-->
+          <div class="text-circle">
+            <div class="text-in-circle">
+              Work List
+            </div>
+          </div>
+
+          <form class="form-horizontal container">
+
+            <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Tasks</label>
+                <div class="col-sm-8">
+                  <select class="selectpicker form-control" multiple data-live-search="true" title=''>
+                    <option>Task 10</option>
+                    <option>Task 11</option>
+                    <option>Task 12</option>
+                    <option>Task 13</option>
+                    <option>Task 14</option>
+                  </select>
                 </div>
               </div>
 
-              <form class="form-horizontal container">
+            </div><!--end form column-->
+            <div class="form-column col-lg-6 col-md-6 col-sm-12">
 
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">Members</label>
-                    <div class="col-sm-8">
-                      <select class="selectpicker form-control" multiple data-live-search="true" title=''>
-                        <option>Toolbox</option>
-                        <option>PPE</option>
-                        <option>GPS</option>
-                      </select>
-                    </div>
-                  </div>
-
-                </div><!--end form column-->
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">Start Time</label>
-                    <div class="col-sm-4">
-                      <div class="input-group merged">
-                        <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                      </div>
-                    </div>
-                    <div class="col-sm-4">
-                      <span class='btn btn-primary timesheet-button'>Add Member/s</span>
-                    </div>
-                  </div>
-
-                </div><!--end form-column-->
-
-                <table id="timesheet-worklist-table" class="table table-condensed reference-history table-striped">
-                  <thead>
-                    <tr>
-                      <th>Work Order ID</th>
-                      <th>Task</th>
-                      <th>Job Start Form</th>
-                      <th>Start</th>
-                      <th>Completed?</th>
-                      <th>Locate On Map</th>
-                      <th>Edit Task</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>457.00</td>
-                      <td>Task 1</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-ok"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                    <tr>
-                      <td>457.00</td>
-                      <td>Task 2</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-ok"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                    <tr>
-                      <td>457.00</td>
-                      <td>Task 3</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-remove"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                    <tr>
-                      <td>457.00</td>
-                      <td>Task 4</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-remove"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                    <tr>
-                      <td>235.89</td>
-                      <td>Task 5</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-ok"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                    <tr>
-                      <td>235.89</td>
-                      <td>Task 6</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-ok"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                    <tr>
-                      <td>235.89</td>
-                      <td>Task 7</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-remove"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                    <tr>
-                      <td>235.89</td>
-                      <td>Task 8</td>
-                      <td><span class="glyphicon glyphicon-play"></span></td>
-                      <td>07:30</td>
-                      <td><span class="glyphicon glyphicon-remove"></span></td>
-                      <td class="locate">VIEW</td>
-                      <td class="edit-task">EDIT</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <div class="form-group">
-                  <label class="col-sm-4 control-label"></label>
-                  <div class="col-sm-8">
-                    <span class='btn btn-primary timesheet-button right'>Create New</span>
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Start Time</label>
+                <div class="col-sm-4">
+                  <div class="input-group merged">
+                    <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </span>
                   </div>
                 </div>
+                <div class="col-sm-4">
+                  <span class='btn btn-primary timesheet-button'>Add Task/s</span>
+                </div>
+              </div>
 
-              </form>
+            </div><!--end form-column-->
 
+            <table id="timesheet-worklist-table" class="table table-condensed reference-history table-striped">
+              <thead>
+                <tr>
+                  <th>Work Order ID</th>
+                  <th>Task</th>
+                  <th>Job Start Form</th>
+                  <th>Start</th>
+                  <th>Completed?</th>
+                  <th>Locate On Map</th>
+                  <th>Edit Task</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>457.00</td>
+                  <td>Task 1</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-ok"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+                <tr>
+                  <td>457.00</td>
+                  <td>Task 2</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-ok"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+                <tr>
+                  <td>457.00</td>
+                  <td>Task 3</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-remove"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+                <tr>
+                  <td>457.00</td>
+                  <td>Task 4</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-remove"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+                <tr>
+                  <td>235.89</td>
+                  <td>Task 5</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-ok"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+                <tr>
+                  <td>235.89</td>
+                  <td>Task 6</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-ok"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+                <tr>
+                  <td>235.89</td>
+                  <td>Task 7</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-remove"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+                <tr>
+                  <td>235.89</td>
+                  <td>Task 8</td>
+                  <td><span class="glyphicon glyphicon-play"></span></td>
+                  <td>07:30</td>
+                  <td><span class="glyphicon glyphicon-remove"></span></td>
+                  <td class="locate">VIEW</td>
+                  <td class="edit-task">EDIT</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="form-group">
+              <label class="col-sm-4 control-label"></label>
+              <div class="col-sm-8">
+                <span class='btn btn-primary timesheet-button right'>Create New</span>
+              </div>
             </div>
 
-          </div>
-          <!-- end form panel 1 -->
+          </form>
+
+        </div>
+
+      </div>
+      <!-- end form panel 1 -->
 
     </div>
     <!-- end form row 3 -->
@@ -461,243 +463,33 @@
     <!-- form row 4 -->
     <div class="row" data-oval-name="Breaks">
 
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
+      <!-- form panel 1 -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="form-panel full-width">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Breaks
-                </div>
-              </div>
-
-              <form class="form-horizontal container">
-
-                <table id="timesheet-breaks-table" class="table table-condensed reference-history">
-                  <thead>
-                    <tr>
-                      <th>Break</th>
-                      <th>Members</th>
-                      <th>Start</th>
-                      <th>End</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="breaks-row">
-                      <td>Morning Break</td>
-                      <td>
-                        <div class="col-sm-12">
-                          <select class="selectpicker form-control" multiple title=''>
-                            <option>Nathan Adamson</option>
-                            <option>Tony Aaron</option>
-                            <option>Brett Carlisle</option>
-                            <option>Adrian Galloway</option>
-                            <option>Henry Ingham</option>
-                            <option>Sam Kelly</option>
-                            <option>Rick Mally</option>
-                          </select>
-                        </div>
-                      </td>
-                      <td>07:30</td>
-                      <td>09:50</td>
-                    </tr>
-                    <tr class="breaks-row current-break">
-                      <td>Toolbox</td>
-                      <td>
-                        <div class="col-sm-12">
-                          <select class="selectpicker form-control" multiple title=''>
-                            <option>Nathan Adamson</option>
-                            <option>Tony Aaron</option>
-                            <option>Brett Carlisle</option>
-                            <option>Adrian Galloway</option>
-                            <option>Henry Ingham</option>
-                            <option>Sam Kelly</option>
-                            <option>Rick Mally</option>
-                          </select>
-                        </div>
-                      </td>
-                      <td>11:30</td>
-                      <td>11:45</td>
-                    </tr>
-                    <tr class="breaks-row">
-                      <td>Lunch</td>
-                      <td>
-                        <div class="col-sm-12">
-                          <select class="selectpicker form-control" multiple title=''>
-                            <option>Nathan Adamson</option>
-                            <option>Tony Aaron</option>
-                            <option>Brett Carlisle</option>
-                            <option>Adrian Galloway</option>
-                            <option>Henry Ingham</option>
-                            <option>Sam Kelly</option>
-                            <option>Rick Mally</option>
-                          </select>
-                        </div>
-                      </td>
-                      <td>12:15</td>
-                      <td>13:15</td>
-                    </tr>
-                    <tr class="breaks-row">
-                      <td>Afternoon Break</td>
-                      <td>
-                        <div class="col-sm-12">
-                          <select class="selectpicker form-control" multiple title=''>
-                            <option>Nathan Adamson</option>
-                            <option>Tony Aaron</option>
-                            <option>Brett Carlisle</option>
-                            <option>Adrian Galloway</option>
-                            <option>Henry Ingham</option>
-                            <option>Sam Kelly</option>
-                            <option>Rick Mally</option>
-                          </select>
-                        </div>
-                      </td>
-                      <td>15:30</td>
-                      <td></td>
-                    </tr>
-                    <tr class="breaks-row">
-                      <td>Dinner</td>
-                      <td>
-                        <div class="col-sm-12">
-                          <select class="selectpicker form-control" multiple title=''>
-                            <option>Nathan Adamson</option>
-                            <option>Tony Aaron</option>
-                            <option>Brett Carlisle</option>
-                            <option>Adrian Galloway</option>
-                            <option>Henry Ingham</option>
-                            <option>Sam Kelly</option>
-                            <option>Rick Mally</option>
-                          </select>
-                        </div>
-                      </td>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                </tbody>
-                </table>
-
-                <div class="form-group">
-                  <div class="col-sm-8 control-label"></div>
-                  <div class="col-sm-4">
-                    <div id="add-new-break-select" class="btn btn-primary timesheet-button right">Add New Break</div>
-                  </div>
-                </div>
-
-              </form>
-
+        <div class="form-panel full-width">
+          <!-- numbered circle in each form panel-->
+          <div class="text-circle">
+            <div class="text-in-circle">
+              Breaks
             </div>
-
           </div>
-          <!-- end form panel 1 -->
 
-    </div>
-    <!-- end form row 4 -->
+          <form class="form-horizontal container">
 
-    <!-- form row 5 -->
-    <div class="row" data-oval-name="End">
-
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
-
-            <div class="form-panel full-width">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  End
-                </div>
-              </div>
-
-              <form class="form-horizontal container">
-
-                <div class="form-group">
-                  <label class="col-sm-2 control-label">Equipment</label>
-                  <div class="col-sm-4">
-                    <select class="selectpicker form-control" multiple data-live-search="true" title=''>
-                      <option>Toolbox</option>
-                      <option>PPE</option>
-                      <option>GPS</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-2">
-                    <span class='btn btn-primary timesheet-button'>Add Equipment</span>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-sm-12">
-                    <table id="timesheet-end-equipment-table" class="table table-condensed reference-history table-striped row-children">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>Equipment</th>
-                          <th>Number</th>
-                          <th>Metre Start</th>
-                          <th>Comments</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td></td>
-                          <td>Truck 4x6</td>
-                          <td>789101</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" value="3547674" />
-                            </div>
-                          </td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>O/Cab Lite</td>
-                          <td>587235</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" value="3456799" />
-                            </div>
-                          </td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <span class='btn btn-success timesheet-button right'>Save List</span>
-                  </div>
-                </div>
-
-                <div class="panel-divider"></div> <!-- panel dividing line-->
-
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">Work Supervisor</label>
-                    <div class="col-sm-8">
-                      <select class="selectpicker form-control" title=''>
-                        <option>Nathan Adamson</option>
-                        <option>Tony Aaron</option>
-                        <option>Brett Carlisle</option>
-                        <option>Adrian Galloway</option>
-                        <option>Henry Ingham</option>
-                        <option>Sam Kelly</option>
-                        <option>Rick Mally</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">Members</label>
-                    <div class="col-sm-8">
+            <table id="timesheet-breaks-table" class="table table-condensed reference-history">
+              <thead>
+                <tr>
+                  <th>Break</th>
+                  <th>Members</th>
+                  <th>Start</th>
+                  <th>End</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="breaks-row">
+                  <td>Morning Break</td>
+                  <td>
+                    <div class="col-sm-12">
                       <select class="selectpicker form-control" multiple title=''>
                         <option>Nathan Adamson</option>
                         <option>Tony Aaron</option>
@@ -708,112 +500,322 @@
                         <option>Rick Mally</option>
                       </select>
                     </div>
-                  </div>
-
-                </div><!-- end form column-->
-                <div class="form-column col-lg-6 col-md-6 col-sm-12">
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label">End Time</label>
-                    <div class="col-sm-8">
-                      <div class="input-group merged">
-                        <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
-                        <span class="input-group-addon">
-                          <span class="glyphicon glyphicon-time"></span>
-                        </span>
-                      </div>
+                  </td>
+                  <td>07:30</td>
+                  <td>09:50</td>
+                </tr>
+                <tr class="breaks-row">
+                  <td>Toolbox</td>
+                  <td>
+                    <div class="col-sm-12">
+                      <select class="selectpicker form-control" multiple title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
                     </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="col-sm-4 control-label"></label>
-                    <div class="col-sm-8">
-                      <div class="input-group">
-                        <span class='btn btn-primary timesheet-button'>Add Member</span>
-                      </div>
+                  </td>
+                  <td>11:30</td>
+                  <td>11:45</td>
+                </tr>
+                <tr class="breaks-row">
+                  <td>Lunch</td>
+                  <td>
+                    <div class="col-sm-12">
+                      <select class="selectpicker form-control" multiple title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
                     </div>
-                  </div>
+                  </td>
+                  <td>12:15</td>
+                  <td>13:15</td>
+                </tr>
+                <tr class="breaks-row current-break">
+                  <td>Afternoon Break</td>
+                  <td>
+                    <div class="col-sm-12">
+                      <select class="selectpicker form-control" multiple title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
+                    </div>
+                  </td>
+                  <td>15:30</td>
+                  <td></td>
+                </tr>
+                <tr class="breaks-row">
+                  <td>Dinner</td>
+                  <td>
+                    <div class="col-sm-12">
+                      <select class="selectpicker form-control" multiple title=''>
+                        <option>Nathan Adamson</option>
+                        <option>Tony Aaron</option>
+                        <option>Brett Carlisle</option>
+                        <option>Adrian Galloway</option>
+                        <option>Henry Ingham</option>
+                        <option>Sam Kelly</option>
+                        <option>Rick Mally</option>
+                      </select>
+                    </div>
+                  </td>
+                  <td></td>
+                  <td></td>
+                </tr>
+            </tbody>
+            </table>
 
-                </div><!--end form-column-->
-
-                <div class="form-group">
-                  <div class="col-sm-12">
-                    <table id="timesheet-end-member-table" class="table table-condensed reference-history table-striped row-children">
-                      <thead>
-                        <tr>
-                          <th></th>
-                          <th>Date</th>
-                          <th>Member</th>
-                          <th>Start</th>
-                          <th>Comments</th>
-                          <th>Edit</th>
-                          <th>Delete</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Adrian Galloway</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Henry Ingham</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Sam Kelly</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                        <tr>
-                          <td></td>
-                          <td>16/12/2013</td>
-                          <td>Rick Mally</td>
-                          <td>7:00am</td>
-                          <td>
-                            <div class="col-sm-12">
-                              <input type="text" class="form-control" />
-                            </div>
-                          </td>
-                          <td class="locate">EDIT</td>
-                          <td class="locate">DELETE</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-
-              </form>
-
+            <div class="form-group">
+              <div class="col-sm-8 control-label"></div>
+              <div class="col-sm-4">
+                <div id="add-new-break-select" class="btn btn-warning timesheet-button right">Add New Break</div>
+              </div>
             </div>
 
+          </form>
+
+        </div>
+
+      </div>
+      <!-- end form panel 1 -->
+
+    </div>
+    <!-- end form row 4 -->
+
+    <!-- form row 5 -->
+    <div class="row" data-oval-name="End">
+
+      <!-- form panel 1 -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
+
+        <div class="form-panel full-width">
+          <!-- numbered circle in each form panel-->
+          <div class="text-circle">
+            <div class="text-in-circle">
+              End
+            </div>
           </div>
-          <!-- end form panel 1 -->
+
+          <form class="form-horizontal container">
+
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Equipment</label>
+              <div class="col-sm-4">
+                <select class="selectpicker form-control" multiple data-live-search="true" title=''>
+                  <option>Toolbox</option>
+                  <option>PPE</option>
+                  <option>GPS</option>
+                </select>
+              </div>
+              <div class="col-sm-2">
+                <span class='btn btn-primary timesheet-button'>Add Equipment</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <table id="timesheet-end-equipment-table" class="table table-condensed reference-history table-striped row-children">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Equipment</th>
+                      <th>Number</th>
+                      <th>Metre Start</th>
+                      <th>Comments</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>Truck 4x6</td>
+                      <td>789101</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" value="3547674" />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>O/Cab Lite</td>
+                      <td>587235</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" value="3456799" />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <span class='btn btn-success timesheet-button right'>Save List</span>
+              </div>
+            </div>
+
+            <div class="panel-divider"></div> <!-- panel dividing line-->
+
+            <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Work Supervisor</label>
+                <div class="col-sm-8">
+                  <select class="selectpicker form-control" title=''>
+                    <option>Nathan Adamson</option>
+                    <option>Tony Aaron</option>
+                    <option>Brett Carlisle</option>
+                    <option>Adrian Galloway</option>
+                    <option>Henry Ingham</option>
+                    <option>Sam Kelly</option>
+                    <option>Rick Mally</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label">Members</label>
+                <div class="col-sm-8">
+                  <select class="selectpicker form-control" multiple title=''>
+                    <option>Nathan Adamson</option>
+                    <option>Tony Aaron</option>
+                    <option>Brett Carlisle</option>
+                    <option>Adrian Galloway</option>
+                    <option>Henry Ingham</option>
+                    <option>Sam Kelly</option>
+                    <option>Rick Mally</option>
+                  </select>
+                </div>
+              </div>
+
+            </div><!-- end form column-->
+            <div class="form-column col-lg-6 col-md-6 col-sm-12">
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label">End Time</label>
+                <div class="col-sm-8">
+                  <div class="input-group merged">
+                    <input type="text" class="form-control insert-time-picker" data-date-format="hh:ii" />
+                    <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-time"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-4 control-label"></label>
+                <div class="col-sm-8">
+                  <div class="input-group">
+                    <span class='btn btn-primary timesheet-button'>Add Member</span>
+                  </div>
+                </div>
+              </div>
+
+            </div><!--end form-column-->
+
+            <div class="form-group">
+              <div class="col-sm-12">
+                <table id="timesheet-end-member-table" class="table table-condensed reference-history table-striped row-children">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>Date</th>
+                      <th>Member</th>
+                      <th>Start</th>
+                      <th>Comments</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Adrian Galloway</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Henry Ingham</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Sam Kelly</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td>16/12/2013</td>
+                      <td>Rick Mally</td>
+                      <td>7:00am</td>
+                      <td>
+                        <div class="col-sm-12">
+                          <input type="text" class="form-control" />
+                        </div>
+                      </td>
+                      <td class="locate">EDIT</td>
+                      <td class="locate">DELETE</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+      <!-- end form panel 1 -->
 
     </div>
     <!-- end form row 5 -->
@@ -821,192 +823,192 @@
     <!-- form row 6 -->
     <div class="row" data-oval-name="ReviewTasks">
 
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
+      <!-- form panel 1 -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="form-panel full-width">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Review - Tasks
-                </div>
-              </div>
-
-              <form class="form-horizontal container">
-
-                <div class="col-sm-12">
-                  <table class="table table-condensed table-striped">
-                    <thead>
-                      <tr>
-                        <th>Task</th>
-                        <th>Start Time</th>
-                        <th>End Time</th>
-                        <th>Total</th>
-                        <th>Completed?</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>1</td>
-                        <td>7:30am</td>
-                        <td>8:10am</td>
-                        <td>00:40</td>
-                        <td><span class="glyphicon glyphicon-ok"></span></td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>8:45am</td>
-                        <td>10:10am</td>
-                        <td>01:25</td>
-                        <td><span class="glyphicon glyphicon-ok"></span></td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>11:30am</td>
-                        <td>12:10pm</td>
-                        <td>00:40</td>
-                        <td><span class="glyphicon glyphicon-ok"></span></td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>1:30pm</td>
-                        <td>2:00pm</td>
-                        <td>00:30</td>
-                        <td><span class="glyphicon glyphicon-remove"></span></td>
-                      </tr>
-                      <tr>
-                        <td>5</td>
-                        <td>2:30pm</td>
-                        <td>3:00pm</td>
-                        <td>00:30</td>
-                        <td><span class="glyphicon glyphicon-remove"></span></td>
-                      </tr>
-                      <tr>
-                        <td>6</td>
-                        <td>3:30pm</td>
-                        <td>4:00pm</td>
-                        <td>00:30</td>
-                        <td><span class="glyphicon glyphicon-remove"></span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-
-                <div class="form-group">
-                  <div class="col-sm-8 control-label"></div>
-                  <div class="col-sm-4">
-                    <div id="review-task-select" class="btn btn-warning timesheet-button right">Review Tasks</div>
-                  </div>
-                </div>
-
-              </form>
-
+        <div class="form-panel full-width">
+          <!-- numbered circle in each form panel-->
+          <div class="text-circle">
+            <div class="text-in-circle">
+              Review - Tasks
             </div>
           </div>
-          <!-- end form panel 1 -->
+
+          <form class="form-horizontal container">
+
+            <div class="col-sm-12">
+              <table class="table table-condensed table-striped">
+                <thead>
+                  <tr>
+                    <th>Task</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Total</th>
+                    <th>Completed?</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>7:30am</td>
+                    <td>8:10am</td>
+                    <td>00:40</td>
+                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>8:45am</td>
+                    <td>10:10am</td>
+                    <td>01:25</td>
+                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>11:30am</td>
+                    <td>12:10pm</td>
+                    <td>00:40</td>
+                    <td><span class="glyphicon glyphicon-ok"></span></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>1:30pm</td>
+                    <td>2:00pm</td>
+                    <td>00:30</td>
+                    <td><span class="glyphicon glyphicon-remove"></span></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>2:30pm</td>
+                    <td>3:00pm</td>
+                    <td>00:30</td>
+                    <td><span class="glyphicon glyphicon-remove"></span></td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>3:30pm</td>
+                    <td>4:00pm</td>
+                    <td>00:30</td>
+                    <td><span class="glyphicon glyphicon-remove"></span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-8 control-label"></div>
+              <div class="col-sm-4">
+                <div id="review-task-select" class="btn btn-warning timesheet-button right">Review Tasks</div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+      <!-- end form panel 1 -->
 
     </div>
     <!-- end form row 6 -->
 
     <!-- form row 7 -->
-    <div class="row" data-oval-name="ReviewMember">
+    <div class="row last" data-oval-name="ReviewMember">
 
-          <!-- form panel 1 -->
-          <div class="col-lg-12 col-md-12 col-sm-12">
+      <!-- form panel 1 -->
+      <div class="col-lg-12 col-md-12 col-sm-12">
 
-            <div class="form-panel full-width">
-              <!-- numbered circle in each form panel-->
-              <div class="text-circle">
-                <div class="text-in-circle">
-                  Review - Member
-                </div>
-              </div>
-
-              <form class="form-horizontal container">
-
-                <table class="table table-condensed table-striped">
-                  <thead>
-                    <tr>
-                      <th>Member</th>
-                      <th>Date</th>
-                      <th>Start Time</th>
-                      <th>End Time</th>
-                      <th>Breaks</th>
-                      <th>Total</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="member-timesheet-row">
-                      <td>Nathan Adamson</td>
-                      <td>16/12/2013</td>
-                      <td>7:30am</td>
-                      <td>4:30pm</td>
-                      <td>00:40</td>
-                      <td>08:20</td>
-                    </tr>
-                    <tr class="member-timesheet-row">
-                      <td>Tony Aaron</td>
-                      <td>16/12/2013</td>
-                      <td>7:30am</td>
-                      <td>4:30pm</td>
-                      <td>00:40</td>
-                      <td>08:20</td>
-                    </tr>
-                    <tr class="member-timesheet-row">
-                      <td>Brett Carlisle</td>
-                      <td>16/12/2013</td>
-                      <td>7:30am</td>
-                      <td>4:30pm</td>
-                      <td>00:40</td>
-                      <td>08:20</td>
-                    </tr>
-                    <tr class="member-timesheet-row">
-                      <td>Adrian Galloway</td>
-                      <td>16/12/2013</td>
-                      <td>7:30am</td>
-                      <td>4:30pm</td>
-                      <td>00:40</td>
-                      <td>08:20</td>
-                    </tr>
-                    <tr class="member-timesheet-row">
-                      <td>Henry Ingham</td>
-                      <td>16/12/2013</td>
-                      <td>7:30am</td>
-                      <td>4:30pm</td>
-                      <td>00:40</td>
-                      <td>08:20</td>
-                    </tr>
-                    <tr class="member-timesheet-row">
-                      <td>Sam Kelly</td>
-                      <td>16/12/2013</td>
-                      <td>7:30am</td>
-                      <td>4:30pm</td>
-                      <td>00:40</td>
-                      <td>08:20</td>
-                    </tr>
-                    <tr class="member-timesheet-row">
-                      <td>Rick Mally</td>
-                      <td>16/12/2013</td>
-                      <td>7:30am</td>
-                      <td>4:30pm</td>
-                      <td>00:40</td>
-                      <td>08:20</td>
-                    </tr>
-                  </tbody>
-                </table>
-
-                <div class="form-group">
-                  <div class="col-sm-8 control-label"></div>
-                  <div class="col-sm-4">
-                    <div id="review-member-select" class="btn btn-warning timesheet-button right">Review Members</div>
-                  </div>
-                </div>
-
-              </form>
-
+        <div class="form-panel full-width">
+          <!-- numbered circle in each form panel-->
+          <div class="text-circle">
+            <div class="text-in-circle">
+              Review - Member
             </div>
           </div>
-          <!-- end form panel 1 -->
+
+          <form class="form-horizontal container">
+
+            <table class="table table-condensed table-striped">
+              <thead>
+                <tr>
+                  <th>Member</th>
+                  <th>Date</th>
+                  <th>Start Time</th>
+                  <th>End Time</th>
+                  <th>Breaks</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="member-timesheet-row">
+                  <td>Nathan Adamson</td>
+                  <td>16/12/2013</td>
+                  <td>7:30am</td>
+                  <td>4:30pm</td>
+                  <td>00:40</td>
+                  <td>08:20</td>
+                </tr>
+                <tr class="member-timesheet-row">
+                  <td>Tony Aaron</td>
+                  <td>16/12/2013</td>
+                  <td>7:30am</td>
+                  <td>4:30pm</td>
+                  <td>00:40</td>
+                  <td>08:20</td>
+                </tr>
+                <tr class="member-timesheet-row">
+                  <td>Brett Carlisle</td>
+                  <td>16/12/2013</td>
+                  <td>7:30am</td>
+                  <td>4:30pm</td>
+                  <td>00:40</td>
+                  <td>08:20</td>
+                </tr>
+                <tr class="member-timesheet-row">
+                  <td>Adrian Galloway</td>
+                  <td>16/12/2013</td>
+                  <td>7:30am</td>
+                  <td>4:30pm</td>
+                  <td>00:40</td>
+                  <td>08:20</td>
+                </tr>
+                <tr class="member-timesheet-row">
+                  <td>Henry Ingham</td>
+                  <td>16/12/2013</td>
+                  <td>7:30am</td>
+                  <td>4:30pm</td>
+                  <td>00:40</td>
+                  <td>08:20</td>
+                </tr>
+                <tr class="member-timesheet-row">
+                  <td>Sam Kelly</td>
+                  <td>16/12/2013</td>
+                  <td>7:30am</td>
+                  <td>4:30pm</td>
+                  <td>00:40</td>
+                  <td>08:20</td>
+                </tr>
+                <tr class="member-timesheet-row">
+                  <td>Rick Mally</td>
+                  <td>16/12/2013</td>
+                  <td>7:30am</td>
+                  <td>4:30pm</td>
+                  <td>00:40</td>
+                  <td>08:20</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="form-group">
+              <div class="col-sm-8 control-label"></div>
+              <div class="col-sm-4">
+                <div id="review-member-select" class="btn btn-warning timesheet-button right">Review Members</div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+      <!-- end form panel 1 -->
 
     </div>
     <!-- end form row 7 -->
@@ -1014,6 +1016,9 @@
   </div>
   <!-- end form container -->
 </div>
+
+
+
 
 
 
@@ -1645,6 +1650,8 @@
 <script src="../Scripts/js/forms.js"></script>
 <script src="../Scripts/js/tables.js"></script>
 <script>
+get_bubbles();
+$('#bookmark-nav .left-nav li .oval').on('click', bubble_click );
 $('.edit-task').on('click', open_edit_task_qtip);
 $('#add-new-break-select').on('click', open_add_new_break_qtip);
 $('#review-task-select').on('click', open_review_task_qtip);

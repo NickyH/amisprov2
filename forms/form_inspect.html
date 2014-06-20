@@ -814,7 +814,7 @@
     <!-- end form row 6 -->
 
     <!-- form row 7 -->
-    <div class="row"   data-oval-name="Close-Out">
+    <div class="row last" data-oval-name="Close-Out">
 
       <!-- form panel 1 -->
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -830,6 +830,7 @@
           <div class="form-horizontal container"><!-- form-->
 
             <div class="form-group">
+
               <label class="col-sm-2 control-label">Close-Out Options:</label>
               <div class="col-sm-3 closeout left">
                 <div class="checkbox">
@@ -929,6 +930,8 @@
 <script src="../Scripts/js/tables.js"></script>
 <script src="../Scripts/js/forms.js"></script>
 <script>
+get_bubbles();
+$('#bookmark-nav .left-nav li .oval').on('click', bubble_click );
   skip_to_details();
   $('input[type=file]').on('change', add_filename);
 </script>

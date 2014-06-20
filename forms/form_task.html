@@ -760,7 +760,7 @@
     <!-- end form row 6 -->
 
     <!-- form row 7 -->
-    <div class="row" data-oval-name="Notes">
+    <div class="row last" data-oval-name="Notes">
 
       <!-- form panel 1 -->
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -874,8 +874,8 @@
 
 <script src="../Scripts/js/forms.js"></script>
 <script>
-  $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
-  $('.form-container').bind('swipemove', get_bookmark_positions);
+  get_bubbles();
+  $('#bookmark-nav .left-nav li .oval').on('click', bubble_click );
   skip_to_details();
   $('input[type=file]').on('change', add_filename);
 </script>
