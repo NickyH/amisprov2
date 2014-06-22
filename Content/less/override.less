@@ -386,6 +386,7 @@ li.active {
   width: 90% !important;
   min-height: 200px;
   padding: 5px;
+  padding-bottom: 20px;
   float: left;
   &.full-width {
     @media @widthMediumLarge {
@@ -576,6 +577,24 @@ li.active {
       margin-left: 10px !important;
       padding-left: 5px;
       padding-right: 30px;
+    }
+  }
+}
+
+// cr qtips
+.qtip {
+  &.qtip-cr-edit-contact {
+    width: 80% !important;
+    height: auto !important;
+    left: 10% !important;
+    right: 10% !important;
+    max-width: 2000px !important;
+    max-height: 2000px !important;
+    &.qtip-default {
+      opacity: 1 !important;
+    }
+    .ui-icon.ui-icon-close {
+      display: none;
     }
   }
 }
@@ -1950,7 +1969,6 @@ img.temp-task-map {
   height: 300px;
 }
 
-
 .btn {
   &.timesheet-button {
     height: 32px !important;
@@ -1977,5 +1995,8 @@ img.temp-task-map {
   }
   button.selectpicker {
     padding-top: 0;
+  }
+  .glyphicon-edit {
+    cursor: pointer;
   }
 }

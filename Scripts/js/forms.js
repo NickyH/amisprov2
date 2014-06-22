@@ -22,6 +22,8 @@ $('.filename-delete').on('click', delete_selected_file);
 $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
 $('.form-container').bind('swipemove', get_bookmark_positions);
 
+$('#contact-reference-table .glyphicon-edit').on('click', show_edit_contact_qtip);
+
 
 function calendar_icon_click() {
   $(this).parent().parent().children('input').trigger('click');
@@ -300,6 +302,43 @@ function show_raise_qtip() {
       },
   });
   $('#raise-buttons').removeClass('invisible');
+}
+
+function show_edit_contact_qtip() {
+  $(this).qtip({
+      content: {
+        text: $('#cr-contact-history-edit').clone(),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-cr-edit-contact qtip-rounded qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+              $('#cr-contact-history-edit').addClass('invisible');
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(window)
+      },
+  });
+  $('#cr-contact-history-edit').removeClass('invisible');
 }
 
 function open_edit_task_qtip() {
