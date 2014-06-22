@@ -23,6 +23,7 @@ $('.form-container').on('DOMMouseScroll mousewheel', get_bookmark_positions);
 $('.form-container').bind('swipemove', get_bookmark_positions);
 
 $('#contact-reference-table .glyphicon-edit').on('click', show_edit_contact_qtip);
+$('#cr-new-contact').on('click', show_edit_contact_qtip);
 
 
 function calendar_icon_click() {
@@ -307,7 +308,7 @@ function show_raise_qtip() {
 function show_edit_contact_qtip() {
   $(this).qtip({
       content: {
-        text: $('#cr-contact-history-edit').clone(),
+        text: $('#cr-contact-history-edit'),
         button: 'Close'
       },
       show: {
@@ -335,7 +336,7 @@ function show_edit_contact_qtip() {
       position: {
           my: 'center',
           at: 'center',
-          target: $(window)
+          target: $(this)
       },
   });
   $('#cr-contact-history-edit').removeClass('invisible');
