@@ -1,14 +1,11 @@
 var topOffset = 140;
 var position_array = {}
 
-add_cross_to_required_forms();
 change_selectpicker_values();
 disable_datepickers();
 disable_timepickers();
 $('.datepicker').pickadate();
 
-$('.form-horizontal').on('keyup', this, check_panel_valid);
-$('.form-horizontal').on('change', this, check_panel_valid);
 $( '.form-horizontal .container' ).parsley( 'validate');
 $('.selectpicker').selectpicker({ size: 5 });
 $('table.row-children tbody tr').on('click', open_current_contact_row);
@@ -116,64 +113,6 @@ $(".checkbox label input").change(function() {
       $(this).removeAttr('checked');
     }
 });
-
-function add_cross_to_required_forms() {
-  var required;
-  var ovalName;
-  var change_oval_colour;
-  var allPanels = $('.form-horizontal');
-  $(allPanels).each(function() {
-    required = false
-      $(this).find('.form-control').each(function() {
-        if ($(this).attr('data-required')) {
-          required = true
-        }
-      });
-    if (required) {
-      $(this).find('.insert-cross-icon').addClass('glyphicon-remove panel-cross');
-      toggle_oval_colour( $(this), 'incomplete' );
-    }
-  });
-}
-
-function check_panel_valid() {
-  if ($(this).children('.form-group').find('.search')) {
-    var tableID = $(this).children('.form-group').find('.search').parents('.form-horizontal').children('table').attr('id');
-    var thisObj = $(this).children('.form-group').find('.search');
-    table_search(thisObj, tableID);
-  }
-  var icon = $(this).children().last();
-  var rowValid = false;
-  var panelValid = $(this).parsley( 'isValid' );
-  var required = check_this_panel_required( $(this) );
-  if (panelValid && required ) {
-    $(icon).removeClass('glyphicon-remove panel-remove glyphicon-ok panel-ok').addClass('glyphicon-ok panel-ok');
-    $(this).parent().parent().parent().find('.form-panel').each(function() {
-      if (!$(this).children('form').parsley('isValid')) {
-        rowValid = false;
-        return rowValid
-      }
-      else {
-        rowValid = true;
-      }
-    });
-    if (rowValid) {
-      toggle_oval_colour( (this), 'complete' );
-    }
-  }
-  if (panelValid === false) {
-    $(icon).removeClass('glyphicon-remove panel-remove glyphicon-ok panel-ok').addClass('glyphicon-remove panel-remove');
-  }
-}
-
-function toggle_oval_colour( thisObj, className) {
-  $(thisObj).parent().find('.text-circle').removeClass('incomplete complete').addClass(className);
-  ovalName = '#' + $(thisObj).parents("div[id^='bookmark_']" ).attr('id');
-  change_oval_colour = $("[data-href=" + ovalName + "]");
-  if ($(change_oval_colour).attr('data-href') === ovalName ) {
-    $(change_oval_colour).children('div').removeClass('incomplete complete').addClass(className);
-  }
-}
 
 function change_selectpicker_values() {
   $('.selectpicker').each(function() {
