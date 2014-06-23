@@ -12,6 +12,7 @@ $(function(){
   insert_map();
   insert_top();
   $('#insert-top-toggle.toggle').on('click', toggle_top_bar);
+  $('#insert-map').on('click', map_select_qtip);
 });
 
 function toggle_layer_select_colour() {
@@ -85,6 +86,49 @@ function layer_active_clicked() {
     var checkbox = $(this).parent().children().first().children().first();
     $(checkbox).prop('checked', true);
   }
+}
+
+function map_select_qtip() {
+  console.log('hello');
+  $(this).addClass('active');
+  $('html, body').animate({ scrollTop: 0 }, 0 );
+  $(this).qtip({
+      content: {
+        text: $('#map-popup-content'),
+        button: 'Close'
+      },
+      show: {
+          modal: {
+              on: true,
+              solo: true
+          },
+
+          ready: true,
+          event: 'click',
+          effect: function (offset) {
+              $(this).slideDown(300);
+          }
+      },
+      style: {
+          classes: 'qtip-map-popup qtip-bootstrap qtip-shadow qtip-light'
+      },
+      hide: {
+          event: 'click',
+          effect: function () {
+              $(this).slideUp(300);
+          }
+      },
+      overwrite: false,
+      position: {
+          my: 'center',
+          at: 'center',
+          target: $(this),
+          adjust: {
+            scroll: true // Can be ommited (e.g. default behaviour)
+        }
+      }
+  });
+  $('#map-popup-content').removeClass('invisible');
 }
 
 function show_layer_select_qtip() {
@@ -452,14 +496,18 @@ function create_layers_carousel() {
   owlLayersHtml = $("#owl-layers").owlCarousel({
 
     // Most important owl features
-    items : 4,
-    itemsDesktop : [1199,4],
-    itemsDesktopSmall : [980,4],
-    itemsTablet: [800,4],
-    itemsTabletSmall: [400,3],
-    itemsMobile : [479,2],
+    itemsCustom : [
+        [0, 1],
+        [450, 4],
+        [600, 4],
+        [700, 6],
+        [1000, 8],
+        [1200, 8],
+        [1400, 8],
+        [1600, 8]
+      ],
     singleItem : false,
-    itemsScaleUp : false,
+    itemsScaleUp : true,
 
     //Basic Speeds
     slideSpeed : 200,
@@ -474,7 +522,7 @@ function create_layers_carousel() {
     navigation : true,
     navigationText : false,
     rewindNav : true,
-    scrollPerPage : true,
+    scrollPerPage : false,
 
     //Pagination
     pagination : false,

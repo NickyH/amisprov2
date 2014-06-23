@@ -157,10 +157,8 @@ function open_current_contact_row() {
     $(this).next('tr').remove();
   } else if (!$(this).hasClass('row-open')) {
     $(this).addClass('row-open');
-    $(this).after("<tr class='reference-details'><td colspan='8'><span>Vivamus ut arcu" +
-      "posuere, molestie quam et, rhoncus diam. Nunc suscipit porta urna, tincidunt" +
-      "vehicula libero elementum sed. Aliquam vestibulum blandit tortor. Curabitur" +
-      "dolor eget odio ultricies adipiscing et vel ante.</span></td></tr>");
+    $(this).after("<tr class='reference-details'><td colspan='8'><span>Show Notes Description " +
+      "here, and show any attachments included in note.</span></td></tr>");
   }
 }
 
@@ -436,31 +434,31 @@ function open_review_member_qtip() {
         button: 'Close'
       },
       show: {
-          modal: {
-            on: true,
-            solo: true
-          },
-          ready: true,
-          event: 'click',
-          effect: function (offset) {
-              $(this).slideDown(300);
-          }
+        modal: {
+          on: true,
+          solo: true
+        },
+        ready: true,
+        event: 'click',
+        effect: function (offset) {
+          $(this).slideDown(300);
+        }
       },
       style: {
-          classes: 'qtip-timesheet-review-member qtip-rounded qtip-shadow qtip-light'
+        classes: 'qtip-timesheet-review-member qtip-rounded qtip-shadow qtip-light'
       },
       hide: {
-          event: 'click',
-          effect: function () {
-              $(this).slideUp(300);
-              $('#timesheet-review-member-content').addClass('invisible');
-          }
+        event: 'click',
+        effect: function () {
+          $(this).slideUp(300);
+          $('#timesheet-review-member-content').addClass('invisible');
+        }
       },
       overwrite: false,
       position: {
-          my: 'center',
-          at: 'center',
-          target: $(this)
+        my: 'center',
+        at: 'center',
+        target: $(this)
       },
   });
   $('#timesheet-review-member-content').removeClass('invisible');
@@ -521,14 +519,13 @@ function table_search(thisObj, tableID) {
       text;
 
   $rows.show().filter(function() {
-      text = $(this).text().replace(/\s+/g, ' ');
-      return !reg.test(text);
+    text = $(this).text().replace(/\s+/g, ' ');
+    return !reg.test(text);
   }).hide();
   $('thead tr').show();
 }
 
 function get_bubbles() {
-  console.log('buble');
   $('.row[data-oval-name]').each(function() {
     var ovalNameValue = this.dataset.ovalName;
     var ovalNameText = this.dataset.ovalName.replace(/([a-z])([A-Z])/g, '$1 $2');

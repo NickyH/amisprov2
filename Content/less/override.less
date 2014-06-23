@@ -689,6 +689,22 @@ li.active {
   opacity: 0.3 !important;
 }
 
+.qtip.qtip-map-popup {
+  width: 96% !important;
+  height: auto !important;
+  top: 60px !important;
+  left: 2% !important;
+  right: 2% !important;
+  max-width: 2000px !important;
+  max-height: 2000px !important;
+  &.qtip-default {
+    opacity: 1 !important;
+  }
+  .ui-icon.ui-icon-close {
+    display: none;
+  }
+}
+
 .qtip.qtip-layer-select {
   width: 96% !important;
   height: auto !important;
@@ -1185,7 +1201,6 @@ th.remove-sort {
       background-color: lighten(@map-highlight-colour, 10%);
       border-top-left-radius: 1px solid @map-highlight-colour;
       text-overflow: ellipsis;
-      // width: 140px;
       white-space: nowrap;
       overflow: hidden;
       &.lvl1 {
