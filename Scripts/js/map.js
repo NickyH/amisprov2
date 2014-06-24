@@ -89,7 +89,6 @@ function layer_active_clicked() {
 }
 
 function map_select_qtip() {
-  console.log('hello');
   $(this).addClass('active');
   $('html, body').animate({ scrollTop: 0 }, 0 );
   $(this).qtip({
